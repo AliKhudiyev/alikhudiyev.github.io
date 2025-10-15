@@ -1,0 +1,3 @@
+#!/bin/sh
+
+pandoc -s $1.tex -o $1.md --mathjax && (printf '---\nlayout: post\n---\n'; cat $1.md) > _tmp.md && mv _tmp.md $1.md 

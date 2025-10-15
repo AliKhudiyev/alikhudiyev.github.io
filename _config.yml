@@ -18,14 +18,13 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Ali Khudiyev's Blog
+title: Ali Khudiyev
 author:
     name: Ali Khudiyev
     email: ali.khudiyev.99@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  PhD candidate in (Computationally Unbounded) AI. 
-  Love learning math and coding in C. 
-  I like cooking my own science for myself. 
+  It takes one's curiosity to try and one's sheer will to try again. 
+  -- Ali Khudiyev
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -38,6 +37,10 @@ plugins:
 # sass:
 #   quiet_deps: true
 #   silence_deprecations: [import]
+
+markdown: kramdown
+kramdown:
+  math_engine: mathjax # or katex
 
 minima:
   skin: solarized-light
@@ -61,14 +64,15 @@ minima:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - local/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

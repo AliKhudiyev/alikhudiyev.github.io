@@ -23,7 +23,7 @@ layout: base
 
 <!-- Extended Biography -->
 <section style="margin-bottom: 2em;">
-    <h2>Career Path</h2>
+    <h2>Background</h2>
     <p>
     I realized my deep interest in math and programming when I was a high school student at Turkiye Diyanat Vagfi - Baku Turskish Lyceum (TDV-BTL). After graduating from TDV-BTL, I began my journey in <i>Computer Science</i> with a BSc from French-Azerbaijani University (UFAZ) in 2016. Due to COVID breakdown, I started my MSc at UFAZ in <i>Data Science & Artificial Intelligence</i>. Then, I started my PhD at Strasbourg University in 2022, where I proposed working on making machine learning computationally unbounded by fixing the non-scalability of current AI scaling approaches. Currently, I’m an Engineer/Researcher at UFAZ and my research focus is revolving around the same/similar things that I did in my PhD.
     </p>
