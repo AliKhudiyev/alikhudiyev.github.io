@@ -51,7 +51,7 @@ layout: base
 <!-- Works and Publications -->
 <section style="margin-bottom: 2em;">
     <h2>Works and Publications</h2>
-    <p>Below is a selection of my recent publications. For a full list, see my <a href="/publications">Publications page</a>.</p>
+    <p>Below is a selection of my recent publications. For a full list, see my <a href="https://scholar.google.com/citations?user=OFCiSWIAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>.</p>
     <!-- Example publication with LaTeX equation -->
     <p>coming soon...</p>
 </section>
@@ -60,9 +60,9 @@ layout: base
 <section style="margin-bottom: 2em;">
     <h2>Achievements</h2>
     <ul>
-        <li>Top 5 in Azerbaijan in ICPC 2017.</li>
-        <li>Top 10 in Azerbaijan in ICPC 2019.</li>
-        <li>The first place in Azerbaijan in Google HashCode 2018.</li>
+        <li>Google HashCode, Top 10 in Azerbaijan, 2019.</li>
+        <li>International Collegiate Programming Contest (ICPC), Top 10 in Azerbaijan, 2018-2019.</li>
+        <li>Google HashCode, $1^\text{st}$ place in Azerbaijan, 2018.</li>
         <!--
         <li>Best Paper Award at [Conference Name], 2024, for work on [topic].</li>
         <li>Recipient of [Fellowship Name], 2022-2024, supporting AI research.</li>
