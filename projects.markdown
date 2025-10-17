@@ -13,6 +13,8 @@ title: "Projects"
 
 **Contact.**
 
+<hr>
+
 # Past Projects
 
 ...

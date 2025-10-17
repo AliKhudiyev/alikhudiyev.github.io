@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Archive"
-date:   2025-10-15 15:30:56 +0400
+title: "Blog"
+date:   2025-10-15 10:00:00 +0400
 ---
 
 <div class="home">
@@ -9,7 +9,7 @@ date:   2025-10-15 15:30:56 +0400
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
-    {% assign posts = site.categories.archive %}
+    {% assign posts = site.categories.blog %}
   {% endif %}
 
   {%- if posts.size > 0 -%}

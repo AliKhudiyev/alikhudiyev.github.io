@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Archive"
-date:   2025-10-15 15:30:56 +0400
+title: "Quizzes & Surveys"
+date:   2025-10-15 12:00:00 +0400
 ---
 
 <div class="home">
@@ -9,7 +9,7 @@ date:   2025-10-15 15:30:56 +0400
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
-    {% assign posts = site.categories.archive %}
+    {% assign posts = site.categories.test %}
   {% endif %}
 
   {%- if posts.size > 0 -%}
@@ -29,7 +29,7 @@ date:   2025-10-15 15:30:56 +0400
         {%- if site.minima.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
-        <hr style="opacity: 0.1;">
+        <hr style="opacity: 0.1;"
       </li>
       {%- endfor -%}
     </ul>
