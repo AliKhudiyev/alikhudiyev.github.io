@@ -49,6 +49,7 @@ minima:
     - tutorials.markdown
     - quizzes.markdown
     - projects.markdown
+    - reviews.markdown
     - library.markdown
     - archive.markdown
   show_excerpts: false
