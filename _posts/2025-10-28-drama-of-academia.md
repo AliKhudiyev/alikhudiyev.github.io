@@ -44,7 +44,7 @@ reading about the <a target="_blank" href="https://www.marxists.org/reference/ar
 by Louis Althusser, in which the philosopher argues how institutions
 (e.g., schools, media, religion, family) are used to legitimize the
 ruling class's values and social norms through consent and subtle
-methods unlike the *repressive state appartus (RSA)*.
+methods unlike the *repressive state apparatus (RSA)*.
 
 The *fall of academia* may seem like an impossibility, especially when
 many parents are huge believers in putting their children through many
@@ -54,7 +54,7 @@ keep climbing higher in the pyramid of academia. More people realize
 that the tip of the pyramid is the bottom of the best lives they could
 be living if they did not sacrifice it to the academic system. This
 paragraph, talking about the indoctrination of pupils and students, just
-reminded me of this good old Pink Floyd cover: <a target="_blank" href="https://youtu.be/uLMobfyKB9o?si=lRxdKwF-_vBZvwda">Another Brick In The
+reminded me of this good old Pink Floyd song: <a target="_blank" href="https://youtu.be/bZwxTX2pWmw?si=0Zm-hQTRPbXMZXSl">Another Brick In The
 Wall</a>, the title of
 which refers to someone being insignificant part of a larger, often
 oppressive, system; how individuals are molded by social institutions
