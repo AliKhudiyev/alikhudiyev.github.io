@@ -20,7 +20,14 @@ date:   2025-10-15 10:00:00 +0400
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
       <li>
-        <span class="post-meta">{{ post.date | date: date_format }} • {{ post.author }}</span>
+        <span class="post-meta">{{ post.date | date: date_format }} • {{ post.author }} • 
+        {% for category in post.categories %}
+        {% if category != "blog" %}
+            {{ category }}
+            {% if forloop.index < forloop.length %} | {% endif %}
+        {% endif %}
+        {% endfor %}
+        </span>
         <h3 style="margin-top: 0;">
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
