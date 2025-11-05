@@ -9,7 +9,7 @@ date:   2025-10-15 12:00:00 +0400
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
-    {% assign posts = site.categories.test %}
+    {% assign posts = site.categories.quiz %}
   {% endif %}
 
   {%- if posts.size > 0 -%}
@@ -29,7 +29,7 @@ date:   2025-10-15 12:00:00 +0400
         {%- if site.minima.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
-        <hr style="opacity: 0.1;"
+        <hr style="opacity: 0.1;" />
       </li>
       {%- endfor -%}
     </ul>
