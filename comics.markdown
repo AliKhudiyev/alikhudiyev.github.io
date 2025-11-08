@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Blog"
+title: "Comics"
 date:   2025-10-15 10:00:00 +0400
 ---
 
@@ -9,7 +9,7 @@ date:   2025-10-15 10:00:00 +0400
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
-    {% assign posts = site.categories.blog %}
+    {% assign posts = site.categories.comics %}
   {% endif %}
 
   {%- if posts.size > 0 -%}
@@ -23,7 +23,7 @@ date:   2025-10-15 10:00:00 +0400
         <span class="post-meta">{{ post.date | date: date_format }} • {{ post.author }} • 
         {% assign pass = 1 %}
         {% for category in post.categories %}
-        {% if category != "blog" %}
+        {% if category != "comics" %}
             {% if pass == 0 %} | {% endif %}
             {{ category }}
             {% assign pass = 0 %}
