@@ -1,0 +1,85 @@
+<!--
+  Shared filter JavaScript for the projects pages.
+
+  Include parameters:
+    include.mode  — "full"     : both category (research/product) and status filters active
+                    "research" : status filter only; research section always visible
+                    "product"  : status filter only; products section always visible
+-->
+<script>
+(function () {
+  var mode           = '{{ include.mode | default: "full" }}';
+  var activeStatus   = 'all';
+  var activeCategory = 'research';
+
+  /* ── Core filter logic ─────────────────────────────────────────────────── */
+  function applyFilters() {
+    var researchSection = document.getElementById('research-section');
+    var productsSection = document.getElementById('products-section');
+
+    // 1. Show / hide whole sections based on category filter (full mode only)
+    if (mode === 'full') {
+      if (researchSection) researchSection.style.display = (activeCategory === 'product')   ? 'none' : '';
+      if (productsSection) productsSection.style.display = (activeCategory === 'research')  ? 'none' : '';
+    }
+
+    // 2. Within each visible section, show / hide individual items by status.
+    //    We select any element that carries a data-status attribute —
+    //    this covers .project-entry (hardcoded content) as well as
+    //    .project-item and .product-card / .product-entry (post-based).
+    document.querySelectorAll('[data-status]').forEach(function (el) {
+      // Don't touch section-level wrappers that also happen to carry
+      // data-status (sections are controlled by the category filter above).
+      if (el.classList.contains('projects-section')) return;
+
+      if (activeStatus === 'all' || el.dataset.status === activeStatus) {
+        el.style.display = '';
+      } else {
+        el.style.display = 'none';
+      }
+    });
+
+    // 3. Toggle "no results" message per section
+    document.querySelectorAll('.projects-section').forEach(function (section) {
+      // skip if section itself is hidden
+      if (section.style.display === 'none') return;
+
+      // Count filterable items (anything with data-status that isn't a section)
+      var items = Array.prototype.slice.call(
+        section.querySelectorAll('[data-status]')
+      ).filter(function (el) { return !el.classList.contains('projects-section'); });
+
+      var anyVisible = items.some(function (el) {
+        return el.style.display !== 'none';
+      });
+
+      var emptyMsg = section.querySelector('.projects-empty');
+      if (emptyMsg && items.length > 0) {
+        emptyMsg.style.display = anyVisible ? 'none' : '';
+      }
+    });
+  }
+
+  /* ── Button click handler ──────────────────────────────────────────────── */
+  document.querySelectorAll('.filter-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var filter = this.dataset.filter;
+      var value  = this.dataset.value;
+
+      // Deactivate siblings in the same filter group
+      document.querySelectorAll('.filter-btn[data-filter="' + filter + '"]').forEach(function (b) {
+        b.classList.remove('active');
+      });
+      this.classList.add('active');
+
+      if (filter === 'status')   activeStatus   = value;
+      if (filter === 'category') activeCategory = value;
+
+      applyFilters();
+    });
+  });
+
+  // Run once on page load to sync UI state
+  applyFilters();
+})();
+</script>

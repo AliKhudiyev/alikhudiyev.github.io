@@ -1,0 +1,82 @@
+<!--
+  Products card grid view.
+  Include parameters:
+    include.show_heading  — boolean; renders a "Products" section heading if true
+
+  Expected post front matter for product projects:
+    tags: [project, product, ongoing]   # or "finished"
+    image: /assets/images/products/my-product.png   # shown as card image
+    link:  https://my-product.com                   # where the image/title link goes
+                                                    # (falls back to post URL if absent)
+    description: "One-sentence summary shown in the card."
+-->
+{% assign product_posts = site.posts | where_exp: "post", "post.tags contains 'project' and post.tags contains 'product'" %}
+
+<section id="products-section" class="projects-section" data-section="product">
+
+  {% if include.show_heading %}
+  <h2 class="projects-section-title">Products</h2>
+  {% endif %}
+
+  <div class="product-grid">
+    {% for post in product_posts %}
+    {% if post.tags contains "ongoing" %}
+      {% assign status = "ongoing" %}
+    {% else %}
+      {% assign status = "finished" %}
+    {% endif %}
+
+    {% if post.link %}
+      {% assign product_url   = post.link %}
+      {% assign is_external   = true %}
+    {% else %}
+      {% assign product_url   = post.url | relative_url %}
+      {% assign is_external   = false %}
+    {% endif %}
+
+    <div class="product-card" data-status="{{ status }}" data-type="product">
+
+      <a href="{{ product_url }}"
+         {% if is_external %}target="_blank" rel="noopener noreferrer"{% endif %}
+         class="product-card__image-link"
+         title="{{ post.title | escape }}">
+        {% if post.image %}
+          <img src="{{ post.image | relative_url }}"
+               alt="{{ post.title | escape }}"
+               class="product-card__image"
+               loading="lazy">
+        {% else %}
+          <div class="product-card__image-placeholder">
+            {{ post.title | slice: 0 | upcase }}
+          </div>
+        {% endif %}
+      </a>
+
+      <div class="product-card__body">
+        <span class="project-badge project-badge--{{ status }}">{{ status }}</span>
+        <h3 class="product-card__title">
+          <a href="{{ product_url }}"
+             {% if is_external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        <p class="product-card__description">
+          {% if post.description %}
+            {{ post.description }}
+          {% elsif post.excerpt %}
+            {{ post.excerpt | strip_html | truncatewords: 20 }}
+          {% endif %}
+        </p>
+      </div>
+
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if product_posts.size == 0 %}
+  <p class="projects-empty">No products yet.</p>
+  {% else %}
+  <p class="projects-empty" style="display:none;">No products match this filter.</p>
+  {% endif %}
+
+</section>

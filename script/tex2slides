@@ -1,0 +1,328 @@
+#!/usr/bin/env python3
+"""
+tex2slides — Convert a course's chapter .tex files into Jekyll slide posts.
+
+Usage
+-----
+    script/tex2slides <course-directory>
+
+Example
+-------
+    script/tex2slides local/courses/2025-12-07-set-theory
+
+How it works
+------------
+1. Reads course.yml from <course-directory> for title, author, date, categories.
+2. Finds the main .tex file in <course-directory> and extracts its LaTeX preamble
+   (everything before \\begin{document}) so custom theorem environments are
+   available when pandoc converts each chapter.
+3. Reads every *.tex file inside <course-directory>/chap/ in sorted order — each
+   file is one slide.
+4. For each chapter file it:
+   a. Pre-processes theorem/definition environments: \begin{defn}[Title]...\end{defn}
+      is converted to a labeled LaTeX quote block so pandoc preserves the label.
+   b. Wraps the pre-processed content with the shared preamble.
+   c. Converts the temporary full document to Markdown via pandoc (--mathjax).
+   d. Strips any YAML front-matter that pandoc emits.
+   e. Prepends a Jekyll front-matter block with layout: slide, order, slides, etc.
+5. Writes the result to _posts/<date>-<slug>-<N>.md, overwriting any existing file.
+
+Naming convention for output posts
+-----------------------------------
+  _posts/YYYY-MM-DD-<slug>-1.md   <- first slide  (visible on /courses page)
+  _posts/YYYY-MM-DD-<slug>-2.md   <- subsequent slides (hidden from /courses page)
+  ...
+
+The slide layout (_layouts/slide.html) uses page.order and page.slides for the
+progress bar and derives prev/next URLs from the trailing number in the post URL,
+so the YYYY-MM-DD-<slug>-<N>.md naming scheme must be preserved.
+"""
+
+import sys
+import os
+import glob
+import subprocess
+import tempfile
+import re
+
+# ---------------------------------------------------------------------------
+# Theorem environment pre-processor
+# ---------------------------------------------------------------------------
+
+# Maps LaTeX environment names to human-readable labels.
+THEOREM_ENVS = {
+    'defn': 'Definition',
+    'axom': 'Axiom',
+    'thrm': 'Theorem',
+    'lemm': 'Lemma',
+    'crly': 'Corollary',
+    'rmak': 'Remark',
+}
+
+
+def preprocess_theorem_envs(tex_content):
+    """
+    Convert custom theorem environments to labeled blockquotes that pandoc
+    understands, preserving the theorem number and optional title.
+
+    Example transformation:
+        \begin{defn}[Set]
+            Set is a bucket that holds objects.
+        \end{defn}
+
+    becomes:
+        \begin{quote}
+        \textbf{Definition 1 (Set).} Set is a bucket that holds objects.
+        \end{quote}
+
+    This works for multi-line bodies that include math environments.
+    The counters are local to the chapter (reset for each file).
+    """
+    counters = {k: 0 for k in THEOREM_ENVS}
+
+    def replacer(m):
+        env   = m.group(1)
+        title = m.group(2)        # optional [Title] — may be None
+        body  = m.group(3).strip()
+
+        if env not in THEOREM_ENVS:
+            return m.group(0)    # leave unknown environments unchanged
+
+        counters[env] += 1
+        label = THEOREM_ENVS[env]
+        n     = counters[env]
+
+        title_str = f' ({title})' if title else ''
+        header    = rf'\textbf{{{label} {n}{title_str}.}}'
+
+        return (
+            r'\begin{quote}' + '\n'
+            + header + ' ' + body + '\n'
+            + r'\end{quote}' + '\n'
+        )
+
+    env_pat = '|'.join(re.escape(e) for e in THEOREM_ENVS)
+    pattern = (
+        r'\\begin\{(' + env_pat + r')\}'   # \begin{envname}
+        r'(?:\[([^\]]*)\])?'               # optional [Title]
+        r'\s*\n'                            # whitespace / newline
+        r'(.*?)'                            # body (non-greedy, DOTALL)
+        r'\n\s*\\end\{\1\}'                # \end{envname}
+    )
+    return re.sub(pattern, replacer, tex_content, flags=re.DOTALL)
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def parse_simple_yaml(text):
+    """
+    Minimal YAML parser sufficient for course.yml.
+    Handles scalar values and simple single-level lists (- item).
+    """
+    result = {}
+    current_key = None
+    for line in text.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith('#'):
+            continue
+        if stripped.startswith('- ') and current_key is not None:
+            value = stripped[2:].strip().strip('"')
+            if isinstance(result.get(current_key), list):
+                result[current_key].append(value)
+            else:
+                result[current_key] = [value]
+            continue
+        if ':' in stripped:
+            key, _, value = stripped.partition(':')
+            key   = key.strip()
+            value = value.strip().strip('"')
+            if value:
+                result[key] = value
+                current_key = key
+            else:
+                result[key] = []
+                current_key = key
+    return result
+
+
+def extract_preamble(tex_path):
+    """Return everything in the .tex file before \\begin{document}."""
+    lines = []
+    with open(tex_path, encoding='utf-8') as fh:
+        for line in fh:
+            if r'\begin{document}' in line:
+                break
+            lines.append(line)
+    return ''.join(lines)
+
+
+def strip_pandoc_frontmatter(md_text):
+    """Remove the YAML front-matter block pandoc may insert at the top."""
+    if md_text.startswith('---'):
+        end = md_text.find('\n---', 3)
+        if end != -1:
+            return md_text[end + 4:].lstrip('\n')
+    return md_text
+
+
+def convert_tex_to_md(preamble, chapter_content):
+    """
+    Pre-process theorem environments, build a full temporary LaTeX document,
+    and convert it to Markdown with pandoc.  Returns the body Markdown string.
+    """
+    preprocessed = preprocess_theorem_envs(chapter_content)
+
+    full_latex = (
+        preamble
+        + r'\begin{document}' + '\n'
+        + preprocessed + '\n'
+        + r'\end{document}' + '\n'
+    )
+
+    with tempfile.NamedTemporaryFile(suffix='.tex', mode='w',
+                                     encoding='utf-8', delete=False) as tmp_tex:
+        tmp_tex.write(full_latex)
+        tmp_tex_path = tmp_tex.name
+
+    tmp_md_path = tmp_tex_path.replace('.tex', '.md')
+
+    try:
+        subprocess.run(
+            ['pandoc', tmp_tex_path,
+             '-f', 'latex',
+             '-t', 'markdown',
+             '--mathjax',
+             '-o', tmp_md_path],
+            check=True,
+            capture_output=True,
+        )
+        with open(tmp_md_path, encoding='utf-8') as fh:
+            md = fh.read()
+    finally:
+        for p in (tmp_tex_path, tmp_md_path):
+            if os.path.exists(p):
+                os.unlink(p)
+
+    return strip_pandoc_frontmatter(md)
+
+
+def build_front_matter(title, authors, date, order, total, visibility, categories):
+    """Return a Jekyll YAML front-matter string."""
+    author_lines = '\n'.join(f'- {a}' for a in authors)
+    return (
+        f'---\n'
+        f'layout: slide\n'
+        f'author:\n'
+        f'{author_lines}\n'
+        f'title: "{title}"\n'
+        f'order: {order}\n'
+        f'slides: {total}\n'
+        f'visibility: {visibility}\n'
+        f'date: {date}\n'
+        f'categories: {categories}\n'
+        f'---\n'
+    )
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+def main():
+    if len(sys.argv) < 2:
+        print(__doc__)
+        sys.exit(1)
+
+    course_dir = sys.argv[1].rstrip('/')
+    chap_dir   = os.path.join(course_dir, 'chap')
+    yaml_path  = os.path.join(course_dir, 'course.yml')
+
+    # ── Validate paths ──────────────────────────────────────────────────────
+    for path, label in [(course_dir, 'course directory'),
+                        (chap_dir,   'chap/ subdirectory'),
+                        (yaml_path,  'course.yml')]:
+        if not os.path.exists(path):
+            print(f'Error: {label} not found: {path}')
+            sys.exit(1)
+
+    # ── Read metadata ────────────────────────────────────────────────────────
+    with open(yaml_path, encoding='utf-8') as fh:
+        meta = parse_simple_yaml(fh.read())
+
+    title      = meta.get('title', 'Untitled Course')
+    authors    = meta.get('author', ['Unknown'])
+    if isinstance(authors, str):
+        authors = [authors]
+    date        = meta.get('date', '1970-01-01 00:00:00 +0000')
+    date_prefix = str(date).split(' ')[0]       # YYYY-MM-DD
+    base_cats   = meta.get('categories', 'self-study')
+
+    # ── Find preamble from main .tex ─────────────────────────────────────────
+    main_tex_files = sorted(glob.glob(os.path.join(course_dir, '*.tex')))
+    if not main_tex_files:
+        print(f'Error: no .tex file found in {course_dir}')
+        sys.exit(1)
+    preamble = extract_preamble(main_tex_files[0])
+
+    # ── Derive slug from directory name (strip YYYY-MM-DD- prefix) ───────────
+    dir_name = os.path.basename(course_dir)
+    slug = re.sub(r'^\d{4}-\d{2}-\d{2}-', '', dir_name)
+
+    # ── Find chapter files ───────────────────────────────────────────────────
+    chap_files = sorted(glob.glob(os.path.join(chap_dir, '*.tex')))
+    if not chap_files:
+        print(f'Error: no .tex files found in {chap_dir}')
+        sys.exit(1)
+    total = len(chap_files)
+
+    print(f'Course   : {title}')
+    print(f'Slug     : {slug}')
+    print(f'Date     : {date_prefix}')
+    print(f'Chapters : {total}')
+    print()
+
+    # ── Convert each chapter ─────────────────────────────────────────────────
+    for i, chap_file in enumerate(chap_files):
+        order     = i + 1
+        chap_name = os.path.basename(chap_file)
+        print(f'[{order}/{total}] Converting {chap_name} ...', end=' ', flush=True)
+
+        with open(chap_file, encoding='utf-8') as fh:
+            chapter_content = fh.read()
+
+        md_body = convert_tex_to_md(preamble, chapter_content)
+
+        # First slide gets "courses" category so it appears on the /courses page.
+        # Subsequent slides omit "courses" and are marked hidden.
+        if order == 1:
+            visibility = 'visible'
+        else:
+            visibility = 'hidden'
+        categories = f'courses {base_cats}'
+
+        front_matter = build_front_matter(
+            title=title,
+            authors=authors,
+            date=date,
+            order=order,
+            total=total,
+            visibility=visibility,
+            categories=categories,
+        )
+
+        output_path = f'_posts/{date_prefix}-{slug}-{order}.md'
+        with open(output_path, 'w', encoding='utf-8') as fh:
+            fh.write(front_matter + '\n' + md_body)
+
+        print(f'-> {output_path}')
+
+    print(f'\nDone! {total} slide post(s) written.')
+    print()
+    print('Reminder: only the first slide has the "courses" category and')
+    print('visibility: visible — so only it will appear on your /courses page.')
+
+
+if __name__ == '__main__':
+    main()

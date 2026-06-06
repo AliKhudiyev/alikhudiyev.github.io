@@ -1,0 +1,47 @@
+<!--
+  Research project list view.
+  Include parameters:
+    include.show_heading  — boolean; renders a "Research" section heading if true
+
+  Expected post front matter for research projects:
+    tags: [project, research, ongoing]   # or "finished"
+-->
+{% assign research_posts = site.posts | where_exp: "post", "post.tags contains 'project' and post.tags contains 'research'" %}
+
+<section id="research-section" class="projects-section" data-section="research">
+
+  {% if include.show_heading %}
+  <h2 class="projects-section-title">Research</h2>
+  {% endif %}
+
+  <ul class="project-list">
+    {% for post in research_posts %}
+    {% if post.tags contains "ongoing" %}
+      {% assign status = "ongoing" %}
+    {% else %}
+      {% assign status = "finished" %}
+    {% endif %}
+    <li class="project-item" data-status="{{ status }}" data-type="research">
+      <div class="project-item__header">
+        <span class="project-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <span class="project-badge project-badge--{{ status }}">{{ status }}</span>
+      </div>
+      <h3 class="project-item__title">
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </h3>
+      {% if post.description %}
+      <p class="project-item__excerpt">{{ post.description }}</p>
+      {% elsif post.excerpt %}
+      <p class="project-item__excerpt">{{ post.excerpt | strip_html | truncatewords: 35 }}</p>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+
+  {% if research_posts.size == 0 %}
+  <p class="projects-empty">No research projects yet.</p>
+  {% else %}
+  <p class="projects-empty" style="display:none;">No research projects match this filter.</p>
+  {% endif %}
+
+</section>

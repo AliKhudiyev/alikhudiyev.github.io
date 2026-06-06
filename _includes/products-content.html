@@ -1,0 +1,77 @@
+<!--
+  ╔══════════════════════════════════════════════════════════════════════╗
+  ║  EDIT THIS FILE to add, remove, or update products.                 ║
+  ║                                                                      ║
+  ║  Each product goes inside a .product-entry block:                   ║
+  ║                                                                      ║
+  ║    <div class="product-entry" data-status="ongoing">                ║
+  ║      <a href="URL" target="_blank"                                  ║
+  ║         class="product-card__image-link" title="Name">              ║
+  ║        <img src="/assets/images/products/name.png"                  ║
+  ║             alt="Name" class="product-card__image">                 ║
+  ║        <!-- or omit <img> to show an auto letter-placeholder ->     ║
+  ║      </a>                                                            ║
+  ║      <div class="product-card__body">                               ║
+  ║        <span class="project-badge project-badge--ongoing">          ║
+  ║          ongoing</span>                                             ║
+  ║        <h3 class="product-card__title">                             ║
+  ║          <a href="URL" target="_blank">Name</a>                     ║
+  ║        </h3>                                                         ║
+  ║        <p class="product-card__description">                        ║
+  ║          One or two sentence description.                           ║
+  ║        </p>                                                          ║
+  ║      </div>                                                          ║
+  ║    </div>                                                            ║
+  ║                                                                      ║
+  ║  data-status must be "ongoing" or "finished".                       ║
+  ╚══════════════════════════════════════════════════════════════════════╝
+-->
+
+<div class="product-grid">
+
+  <!-- First product -->
+  <div class="product-entry" data-status="finished">
+    <a href="https://webposts.live" target="_blank" rel="noopener noreferrer"
+       class="product-card__image-link" title="WebPosts.live">
+      <img src="/assets/images/products/webposts.png"
+           alt="webposts.live"
+           class="product-card__image"
+           loading="lazy">
+    </a>
+    <div class="product-card__body">
+      <span class="project-badge project-badge--finished">finished</span>
+      <h3 class="product-card__title">
+        <a href="https://webposts.live" target="_blank" rel="noopener noreferrer">
+          webposts.live
+        </a>
+      </h3>
+      <p class="product-card__description">
+	  	Social media where posts are written collectively by multiple users through word proposals and votes.
+      </p>
+    </div>
+  </div>
+
+  <div class="product-entry" data-status="ongoing">
+    <a href="https://cheatnt.dev" target="_blank" rel="noopener noreferrer"
+       class="product-card__image-link" title="CheatNt">
+      <img src="/assets/images/products/cheatnt.png"
+           alt="CheatNt.dev"
+           class="product-card__image"
+           loading="lazy">
+    </a>
+    <div class="product-card__body">
+      <span class="project-badge project-badge--ongoing">ongoing</span>
+      <h3 class="product-card__title">
+        <a href="https://cheatnt.dev" target="_blank" rel="noopener noreferrer">
+          CheatNt.dev
+        </a>
+      </h3>
+      <p class="product-card__description">
+	  	Anti-cheating software that detects cheating cases in Computer Science projects.
+      </p>
+    </div>
+  </div>
+
+  <!-- Add your products above this line -->
+
+</div>

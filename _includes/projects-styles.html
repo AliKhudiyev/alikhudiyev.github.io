@@ -1,0 +1,246 @@
+<style>
+  /* ── Filter bar ─────────────────────────────────────────────────────────── */
+  .projects-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.5rem;
+    margin: 1.4rem 0 2rem;
+    align-items: center;
+  }
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+  }
+  .filter-label {
+    font-size: 0.8rem;
+    color: #93a1a1;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-right: 0.25rem;
+    white-space: nowrap;
+  }
+  .filter-btn {
+    padding: 0.28rem 0.75rem;
+    border: 1px solid #e8e3d4;
+    border-radius: 20px;
+    background: transparent;
+    color: #93a1a1;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    line-height: 1.5;
+  }
+  .filter-btn:hover {
+    border-color: #268bd2;
+    color: #268bd2;
+  }
+  .filter-btn.active {
+    background: #268bd2;
+    border-color: #268bd2;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  /* ── Section headings ───────────────────────────────────────────────────── */
+  .projects-section {
+    margin-bottom: 2.5rem;
+  }
+  .projects-section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #93a1a1;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #e8e3d4;
+  }
+
+  /* ── Status badges ──────────────────────────────────────────────────────── */
+  .project-badge {
+    display: inline-block;
+    padding: 0.1rem 0.55rem;
+    border-radius: 12px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .project-badge--ongoing {
+    color: #859900;
+    border-color: #c8d880;
+    background: rgba(133,153,0,0.07);
+  }
+  .project-badge--finished {
+    color: #93a1a1;
+    border-color: #d0d4d4;
+    background: rgba(147,161,161,0.07);
+  }
+
+  /* ── Research project entries ───────────────────────────────────────────── */
+  /* Each project in research-content.html is wrapped in .project-entry.     */
+  .project-entry {
+    padding-bottom: 1.8rem;
+    margin-bottom: 1.8rem;
+    border-bottom: 1px solid #f0ece0;
+  }
+  .project-entry:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  /* Inline reference list inside a project entry */
+  .project-refs {
+    font-size: 0.82rem;
+    color: #93a1a1;
+    margin-top: 0.5rem;
+    padding-left: 1.4em;
+  }
+  .project-refs li { margin-bottom: 0.25rem; }
+  /* The project-entry h2 needs a bit less top margin since section title
+     already provides spacing. */
+  .project-entry h2:first-child,
+  .project-entry > div > h2:first-child {
+    margin-top: 0;
+  }
+
+  /* ── Post-based research list (kept for backward compat) ────────────────── */
+  .project-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .project-item {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid #f0ece0;
+  }
+  .project-item:first-child { padding-top: 0; }
+  .project-item__header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.2rem;
+  }
+  .project-meta {
+    font-size: 0.8rem;
+    color: #93a1a1;
+  }
+  .project-item__title {
+    margin: 0 0 0.3rem;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .project-item__title a {
+    text-decoration: none;
+    color: #4e626a;
+  }
+  .project-item__title a:hover {
+    color: #268bd2;
+    text-decoration: underline;
+  }
+  .project-item__excerpt {
+    margin: 0;
+    font-size: 0.87rem;
+    color: #93a1a1;
+    line-height: 1.5;
+  }
+
+  /* ── Products grid ──────────────────────────────────────────────────────── */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.4rem;
+  }
+  /* .product-entry is what products-content.html uses;
+     .product-card is kept for post-based backward compat. */
+  .product-entry,
+  .product-card {
+    border: 1px solid #e8e3d4;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-entry:hover,
+  .product-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    transform: translateY(-2px);
+  }
+  .product-card__image-link {
+    display: block;
+    text-decoration: none;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #eee8d5;
+    flex-shrink: 0;
+  }
+  .product-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .product-entry:hover .product-card__image,
+  .product-card:hover .product-card__image {
+    transform: scale(1.04);
+  }
+  .product-card__image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #93a1a1;
+    background: #eee8d5;
+  }
+  .product-card__body {
+    padding: 0.85rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+  }
+  .product-card__title {
+    margin: 0;
+    font-size: 0.97rem;
+    line-height: 1.35;
+  }
+  .product-card__title a {
+    text-decoration: none;
+    color: #4e626a;
+  }
+  .product-card__title a:hover {
+    color: #268bd2;
+    text-decoration: underline;
+  }
+  .product-card__description {
+    margin: 0;
+    font-size: 0.83rem;
+    color: #93a1a1;
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  /* ── Empty state ────────────────────────────────────────────────────────── */
+  .projects-empty {
+    font-size: 0.9rem;
+    color: #93a1a1;
+    font-style: italic;
+    padding: 1rem 0;
+  }
+
+  @media (max-width: 480px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

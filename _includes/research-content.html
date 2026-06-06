@@ -1,0 +1,160 @@
+<!--
+  ╔══════════════════════════════════════════════════════════════════════╗
+  ║  EDIT THIS FILE to add, remove, or update research projects.        ║
+  ║                                                                      ║
+  ║  Each project goes inside a block like this:                        ║
+  ║                                                                      ║
+  ║    <div class="project-entry" data-status="ongoing" markdown="1">   ║
+  ║    ## Title                                                          ║
+  ║    ...content (markdown + math supported)...                        ║
+  ║    </div>                                                            ║
+  ║                                                                      ║
+  ║  data-status must be "ongoing" or "finished".                       ║
+  ╚══════════════════════════════════════════════════════════════════════╝
+-->
+
+<div class="project-entry" data-status="ongoing" markdown="1">
+
+## SORRIUSS — A Formal and Practical Framework for Computationally Unbounded AI {#sorriuss-acls-cuai}
+
+### Description
+
+There is a big noise around the so-called AGI — how it is going to change our lives, debates on whether we will have it built by some people before the next year or whether we have had AGI since the 1940s, confusions about the very notion of general intelligence and what it really means, and so on. Well, in my opinion, solving AGI is not interesting because we do not yet fully understand what problem we are precisely trying to solve. It is, however, more interesting to talk about *Autonomous Continual Learning Systems (ACLS)* and trying to build one.
+
+The notion of ACLS has not been fully developed, and that's the point. I believe that there is something that we could do about this that no one has done in a more satisfactory way before. To do it, there needs to be formal constraints to shape this SORRIUSS framework — what we are trying to formalize are my personal intuitions about how this stuff should probably work in real life. That said, I am also open to hearing new ideas from other like-minded people so that my intuitions can get checked in a serious and constructive way.
+
+**Research Objective.**
+
+This is what SORRIUSS stands for:
+
+1. **S**eriality: Infinite computational resources exist (i.e., computation is unbounded), however, we are only allowed to use a finite subset of them at any given time.
+2. **O**perability: The learning algorithm must preserve the operational capacity of the learned model from one time step to the next.
+3. **R**ecursivity: The learning and prediction algorithms must possess a recursive nature, once designed, to be sufficient for breaking down and working with any model structure without the need of further algorithmic modifications.
+4. **R**ecoverability: Any path of model evolutions through the learning process that perform below-threshold can reach a final point of above-threshold performance by extending the model evolution path further through the same learning process.
+5. **I**mprovability: There exists a path of model evolution through the learning process that results in above-threshold satisfactory performance.
+6. **U**niformity: The learning and prediction algorithms must be free-of-bias toward the model structure, i.e., the overall model structure should be homogeneous to prevent rendering some parts of the underlying structure less important or even obsolete for the final decision-making/prediction.
+7. **S**electivity: There always exists a non-empty subset of the data stream that is modeled by the learning function in the limit, even when the model size/capacity is not enough to capture the complexity of the whole data stream.
+8. **S**calability: The process of learning, as well as the process of predicting, must be scalable (by not depending on the underlying model architecture or other such details that may change quite often in the real world with significant cost).
+
+The objective is to formalize and analyze these properties.
+
+### Team
+
+Feel free to contact if you are interested in this project:
+
+1. Ali Khudiyev (<ali.khudiyev.99@gmail.com>)
+
+</div>
+
+<div class="project-entry" data-status="ongoing" markdown="1">
+
+## Online Regret Minimization in Modelling a Finite-State Transducer over an Infinite Input-Output Stream through Scalable Aggregation of Small Stateful Predictors {#online-regret-minimization-fst}
+
+### Description
+
+Let $M = (\Sigma, \Gamma, Q, q_0, \delta)$ denote a finite-state transducer (FST); where
+
+- $\Sigma = \{0, 1\}$ is the input alphabet;
+- $\Gamma = \{0, 1\}$ is the output alphabet;
+- $Q$ is the finite set of states;
+- $q_0 \in Q$ is the initial state;
+- $\delta: \begin{cases} Q, \Sigma \rightarrow Q, \Gamma \\ q, x \mapsto q' := \delta_q(q, x),\ y := \delta_y(q') \end{cases}$ is the transition function.
+
+At each time step $t$, $M$ takes an input $x^{(t)} \in \Sigma$ and produces an output $y^{(t)} \in \Gamma$ by the following procedure:
+
+- $q^{(0)} := q_0$
+- $q^{(t+1)} = \delta_q(q^{(t)}, x^{(t+1)})$ for all $t \in \mathbb{N}$
+- $y^{(t+1)} = \delta_y(q^{(t+1)})$ for all $t \in \mathbb{N}$
+
+Let $I = \{(t, b) : t \in \mathbb{N}, b \in \Sigma\}$ denote the infinite ordered input stream; where $X_{i:j} := (b_t : (t, b_t) \in I,\ i \leq t \leq j)$ and $Y_{i:j} := (y_t : i \leq t \leq j)$. Let $x_t := X_{t:t}$ and $y_t := Y_{t:t}$.
+
+**Research Objective.**
+
+Let $$\{P_i\}_{i=1}^{N}$$ denote an ordered set of $p$-state FSTs, $\Sigma_i = \Sigma \cup \{\varnothing\}$, $\Gamma_i = \Gamma$, and $$\hat{P}_m : X_{i:j}, \{P_i\}_{i=1}^{m} \mapsto \hat{Y}_{i:j}$$ denote an aggregator. Let $\|Y' - Y\|$ denote the Hadamard distance between two binary strings.
+
+Is the following claim true?
+
+$$
+\begin{align*}
+  \forall \epsilon, \delta > 0\ &\exists p \in \mathbb{N}\ \forall n \in \mathbb{N}\ \exists N \in \mathbb{N} \\
+    &\left[\exists \mu_P : m \mapsto \hat{P}_m \land \operatorname{pr}\!\left(\lim_{t \to \infty} \frac{\|\hat{P}_N(X_{1:t}, \{P_i\}_{i=1}^{N}) - M(X_{1:t})\|}{t} \leq \epsilon\right) \geq 1-\delta\right]
+\end{align*}
+$$
+
+In other words, does there exist $p \in \mathbb{N}$ such that there always exists some finite set of $p$-state FSTs achieving below-$\epsilon$ asymptotic regret for any given $n$-state target FST with probability at least $1-\delta$, while the aggregator is accessible through a *scalable* function $\mu_P : m \mapsto \hat{P}_m$ that depends solely on the number of predictors?
+
+<div style="background-color: #f0ece0; padding: 0.75rem 1rem; border-radius: 4px; margin-top: 1rem;">
+<i>Speculation:</i>
+
+$$
+\begin{align*}
+  \forall \epsilon, \delta > 0\ &\forall p, n \in \mathbb{N}\ \exists N \in \mathbb{N},\ \{P_i : |Q_i| = p\}_{i=1}^{N}\ \exists f : \Gamma^N \rightarrow \Gamma \\
+    &\left[\hat{P}_N : X_{i:j},\, \{P_i\}_{i=1}^{N} \mapsto f\!\left(P_1(y'_{0,i}, x'_{1,i}),\ldots, P_N(y'_{N-1,i}, x'_{N,i})\right) \land\right. \\
+    &\hspace{1em}\left.\operatorname{pr}\!\left(\lim_{t \to \infty} \frac{\|\hat{P}_N(X_{1:t}, \{P_i\})\! -\! M(X_{1:t})\|}{t} \leq \epsilon\right) \geq 1\!-\!\delta\right]
+\end{align*}
+$$
+
+where $x'_{p,t} := \begin{cases} x_{t-p+1}, & p \leq t \\ \varepsilon, & p > t \end{cases}$ and $y'_{p,t} := \begin{cases} 0, & p = 0 \\ P_p(y'_{p-1,t}, x'_{p,t}), & p \geq 1 \end{cases}$.
+
+Even if correct, this speculation does not resolve the scalability property of the aggregator: the scalability of $\mu_P$ would then depend on the nature of $f$.
+</div>
+
+### Team
+
+Feel free to contact if you are interested in this project:
+
+1. Ali Khudiyev (<ali.khudiyev.99@gmail.com>)
+
+</div>
+
+<div class="project-entry" data-status="ongoing" markdown="1">
+
+## MuLang: Inventing a New Mutually Understandable Language for Speakers of Different Native Languages {#mulang}
+
+### Description
+
+The task is to come up with a new non-trivial artificial language, given two or more source (natural) languages, that is relatively easier to understand (or even speak) by all the natives of those source languages. By *non-trivial*, a silly counter-example would be a language generated by concatenating the matching-meaning words from each source language's vocabulary.
+
+Here is a sentence Claude (Sonnet 4.6) generated to be understandable by both Azerbaijani and French natives: *"Lə dərslər bu gün ləğv edildi, mais sûr deyiləm si onları gələn həftəyə reporté aləcəyik"* — meaning "The classes were canceled today, but I am not sure if we will have them postponed to next week." There is clearly room for improvement in how this task is approached scientifically.
+
+**Research Objective.**
+
+The goal is to come up with a scientific approach to tackle this *research and development* problem.
+
+### Team
+
+Feel free to contact if you are interested in this project:
+
+1. Ali Khudiyev (<ali.khudiyev.99@gmail.com>)
+
+</div>
+
+<div class="project-entry" data-status="ongoing" markdown="1">
+
+## Comparative Study of CALNets on Image Datasets {#comparative-study-calnet-image-datasets}
+
+### Description
+
+CALNets<sup><a href="https://doi.org/10.1016/j.procs.2025.09.254" target="_blank" rel="noopener">[1]</a></sup> were developed by me during my PhD as a proof of concept for the possibility of accumulating new knowledge without forgetting the past in a continual learning setting, through an independent (non-joint) training process of uniform artificial neural network models. Essentially, a Capacity-Aware Network (CALNet) is an ensemble/sequence of smaller neural nets with the same underlying architecture that are trained sequentially and independently — each correcting the false predictions of the previous models in the sequence. No model is re-trained. To add new knowledge, a new model of the same architecture is initialized with random weights and trained upon the mistakes of its predecessors.
+
+This learning paradigm can simply be seen as the combination of boosting and selective prediction. It is not simply boosting because each neural net in the CALNet is trained with the reject option integrated, so as to learn what it can learn and reject the rest of the training dataset — training on extra samples could disrupt already-acquired knowledge, leading to the well-known catastrophic forgetting problem. The CAL training paradigm has been tested in the self-supervised image reconstruction task using MNIST.
+
+**Research Objective.**
+
+Although preliminary results were promising, the natural next steps include (1) testing how CALNets perform compared to standard approaches on larger datasets, and (2) exploring a modified variant known as Hierarchical CP-CALNets<sup><a href="https://theses.hal.science/tel-05477262v1" target="_blank" rel="noopener">[2]</a></sup> — which follow a binary tree-like structure for training and confidence-based predictions for inference.
+
+### Team
+
+Feel free to contact if you are interested in this project:
+
+1. Ali Khudiyev (<ali.khudiyev.99@gmail.com>)
+
+### References
+
+<ol class="project-refs">
+  <li>Khudiyev, Ali &amp; Jeannin-Girardon, Anne. (2025). Capacity-aware learning by rejecting complex samples. <em>Procedia Computer Science</em>, 270. <a href="https://doi.org/10.1016/j.procs.2025.09.254" target="_blank" rel="noopener">10.1016/j.procs.2025.09.254</a>.</li>
+  <li>Ali Khudiyev. <em>Scaling intelligence: a formal and practical framework for computationally unbounded AI</em>. Université de Strasbourg, 2025. <a href="https://www.theses.fr/2025STRAD044" target="_blank" rel="noopener">NNT: 2025STRAD044</a>. <a href="https://theses.hal.science/tel-05477262v1" target="_blank" rel="noopener">tel-05477262</a>.</li>
+</ol>
+
+</div>
+

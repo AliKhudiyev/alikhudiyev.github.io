@@ -1,0 +1,223 @@
+---
+layout: base
+---
+<style>
+  /* ── Progress bar ──────────────────────────────────────────────────────── */
+  .slide-progress-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    font-size: 0.82rem;
+    color: #888;
+    letter-spacing: 0.02em;
+  }
+  .slide-progress-bar {
+    flex: 1;
+    height: 4px;
+    background: #ddd;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .slide-progress-fill {
+    height: 100%;
+    background: #268bd2;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+  .slide-progress-label {
+    white-space: nowrap;
+    min-width: 3.5em;
+    text-align: right;
+  }
+
+  /* ── Navigation ────────────────────────────────────────────────────────── */
+  .slide-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+  .nav-btn {
+    display: inline-block;
+    padding: 0.45rem 1.1rem;
+    border: 1px solid #268bd2;
+    border-radius: 4px;
+    color: #268bd2;
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: background 0.15s, color 0.15s;
+    line-height: 1.4;
+  }
+  .nav-btn:hover {
+    background: #268bd2;
+    color: #fff;
+    text-decoration: none;
+  }
+  .nav-btn:visited {
+    color: #268bd2;
+  }
+  .nav-btn:hover:visited {
+    color: #fff;
+  }
+  .nav-spacer {
+    flex: 1;
+  }
+  .slide-nav-center {
+    flex: 1;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #aaa;
+  }
+
+  /* ── Theorem / definition blockquotes ──────────────────────────────────── */
+  /* Base blockquote style — definitions (blue) */
+  .post-content blockquote {
+    border-left: 3px solid #268bd2;
+    background: rgba(38,139,210,0.05);
+    margin: 1.2rem 0;
+    padding: 0.55rem 1rem;
+    border-radius: 0 4px 4px 0;
+    font-style: normal;
+    color: inherit;
+  }
+  /* Axioms — orange */
+  .post-content blockquote.th-axom {
+    border-left-color: #cb4b16;
+    background: rgba(203,75,22,0.05);
+  }
+  /* Theorems & Lemmas & Corollaries — purple */
+  .post-content blockquote.th-thrm,
+  .post-content blockquote.th-lemm,
+  .post-content blockquote.th-crly {
+    border-left-color: #6c71c4;
+    background: rgba(108,113,196,0.05);
+  }
+  /* Remarks — green */
+  .post-content blockquote.th-rmak {
+    border-left-color: #859900;
+    background: rgba(133,153,0,0.05);
+  }
+</style>
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  {%- comment -%}
+    Progress bar — page.order is the current slide (1-based),
+    page.slides is the total number of slides in this course.
+    The percentage is computed with integer arithmetic; at 100 % the bar is full.
+  {%- endcomment -%}
+  {% assign progress_pct = page.order | times: 100 | divided_by: page.slides %}
+  <div class="slide-progress-wrapper">
+    <div class="slide-progress-bar">
+      <div class="slide-progress-fill" style="width: {{ progress_pct }}%;"></div>
+    </div>
+    <span class="slide-progress-label">{{ page.order }}&thinsp;/&thinsp;{{ page.slides }}</span>
+  </div>
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <div class="post-meta">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {% assign pdate = page.date | date_to_xmlschema %}
+      {%- if page.modified_date %}<span class="meta-label">Published:</span>{% endif %}
+      <time class="dt-published" datetime="{{ pdate }}" itemprop="datePublished">
+        {{ pdate | date: date_format }}
+      </time>
+      {%- if page.modified_date -%}
+        <span class="bullet-divider">•</span>
+        <span class="meta-label">Updated:</span>
+        {%- assign mdate = page.modified_date | date_to_xmlschema %}
+        <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
+          {{ mdate | date: date_format }}
+        </time>
+      {%- endif -%}
+      {%- if page.author %}
+      <div class="{% unless page.modified_date %}force-inline {% endunless %}post-authors">
+        {%- for author in page.author %}
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
+          {%- if forloop.last == false %}, {% endif -%}
+        {% endfor %}
+      </div>
+      {%- endif %}
+    </div>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {%- comment -%}
+    URL construction:
+      page.url for slide N is e.g. /2025/12/07/set-theory-N.html
+      We strip the trailing -N.html, then re-attach -prev.html / -next.html.
+      Step 1 — remove extension:   split on "."  → take first element
+      Step 2 — remove order suffix: split on "-" → pop last → rejoin → append "-"
+  {%- endcomment -%}
+  {% assign raw_url   = site.url | append: page.url %}
+  {% assign no_ext    = raw_url  | split: "." | first %}
+  {% assign url_parts = no_ext   | split: "-" | pop %}
+  {% assign base_url  = url_parts | join: "-" | append: "-" %}
+
+  {% assign prev_order = page.order | minus: 1 %}
+  {% assign next_order = page.order | plus:  1 %}
+  {% assign prev_url   = base_url | append: prev_order | append: ".html" %}
+  {% assign next_url   = base_url | append: next_order | append: ".html" %}
+
+  <div class="slide-nav">
+    {%- if page.order > 1 %}
+      <a class="nav-btn" href="{{ prev_url }}">← Previous</a>
+    {%- else %}
+      <span class="nav-spacer"></span>
+    {%- endif %}
+
+    <span class="slide-nav-center">
+      Slide {{ page.order }} of {{ page.slides }}
+    </span>
+
+    {%- if page.order < page.slides %}
+      <a class="nav-btn" href="{{ next_url }}">Next →</a>
+    {%- else %}
+      <span class="nav-spacer"></span>
+    {%- endif %}
+  </div>
+
+  {% if jekyll.environment == 'production' -%}
+    {% if page.comments == false -%}
+    <div class="comments-disabled-message">
+      Comments have been disabled for this post.
+    </div>
+    {% else -%}
+      {%- include comments.html -%}
+    {% endif -%}
+  {% endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
+
+<script>
+// Classify theorem blockquotes by type so CSS can colour them correctly.
+// Each blockquote produced by tex2slides starts with a bold label like
+// "Definition 1 (…)." or "Axiom 3 (…)." — we read that text and add
+// a th-<type> class to the blockquote element.
+(function () {
+  var map = {
+    'definition': 'th-defn',
+    'axiom':      'th-axom',
+    'theorem':    'th-thrm',
+    'lemma':      'th-lemm',
+    'corollary':  'th-crly',
+    'remark':     'th-rmak',
+  };
+  document.querySelectorAll('.post-content blockquote').forEach(function (bq) {
+    var strong = bq.querySelector('strong');
+    if (!strong) return;
+    var text = strong.textContent.trim().toLowerCase().split(/[\s\d]/)[0];
+    var cls = map[text];
+    if (cls) bq.classList.add(cls);
+  });
+})();
+</script>
