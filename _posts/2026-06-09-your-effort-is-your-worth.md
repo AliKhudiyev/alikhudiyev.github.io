@@ -1,7 +1,10 @@
 ---
+layout: post
 author:
 - Ali Khudiyev
 title: Your Effort is Your Worth
+date: 2025-06-09 17:40:00 +0400
+categories: blog opinion
 ---
 
 You have a bachelor's diploma? -Yes. Add master's degree to get more
