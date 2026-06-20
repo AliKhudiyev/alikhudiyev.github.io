@@ -28,6 +28,7 @@ ado, let me get right into it.
 | *Environment*                          |
 | Episodic -- Sequential                 |Sequential Environment|
 | Fully -- Partially Observable          |Partially Observable Environment|
+| Known -- Unknown                       |Unknown Environment|
 | Deterministic -- Stochastic            |Stochastic Environment|
 | Single-Agent -- Multi-Agent            |Multi-Agent Environment|
 | Stationary -- Dynamic/Non-stationary   |Dynamic Environment|
@@ -36,7 +37,7 @@ ado, let me get right into it.
 To sum the table above, what I am trying to tell is, (breathing in...)
 **Continual Active Learning with Semi-Supervision for Multi-Objective
 Optimization for an Embodied Agent Partially Observing in a Sequential
-and Open-ended Environment with Stochastic and Non-Stationary Dynamics
+and Open-ended Unknown Environment with Stochastic and Non-Stationary Dynamics
 in the presence of Multi-Agents and Sparse Explicit Rewards**
 (gasping...)
 
