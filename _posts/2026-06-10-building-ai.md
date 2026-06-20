@@ -2,8 +2,7 @@
 layout: post
 author:
 - Ali Khudiyev
-title: "Building General Purpose AI\
-        (highly personal approach)"
+title: "Building General Purpose AI (highly personal approach)"
 date: 2026-06-10 18:30:00 +0400
 categories: blog draft AI opinion
 ---
