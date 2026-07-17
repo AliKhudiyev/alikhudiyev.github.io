@@ -1,0 +1,89 @@
+module dx8 (
+	input wire reset,
+	input wire [7:0] data,
+	input wire [7:0] addr,
+	input wire write,
+	input wire clk
+)
+	
+	wire s1, s2, s3, s4, s5, s6, s7, s8;
+	wire regDI_we, regDA_we;
+	wire ram_in, ram_addr, ram_we, ram_re, ram_out, arg_addr;
+	wire load, load_val, load_aluOUT, store;
+	wire reg_in, reg_addr, reg_we, reg_re, reg_out, regFile_we;
+	wire ip, set_ip;
+
+	stepper_3b stepper (
+		.clk(clk),
+		.s1(s1),
+		.s2(s2),
+		.s3(s3),
+		.s4(s4),
+		.s5(s5),
+		.s6(s6),
+		.s7(s7),
+		.s8(s8)
+	);
+
+	ram_256B ram (
+		.we(ram_we),
+		.re(b'1),
+		.data_in( ),
+		.addr(ram_addr),
+		.clk(clk)
+	);
+
+	reg_3x8 regfile (
+		.we(regFile_we),
+		.re(b'1),
+		.data_in( ),
+		.addr(reg_addr),
+		.clk(clk)
+	);
+
+	alu_8b alu (
+		.inst( ),
+		.in1( ),
+		.in2( ),
+		.out( ),
+		.flg( )
+	);
+
+
+	// ;
+	mux_8x1 mux_ram_addr (
+		.in1(mem_addr),
+		.in2(arg_addr),
+		.in3(maddr),
+		.in4(maddr),
+		.in5(addr),
+		.in6(addr),
+		.in7(addr),
+		.in8(addr),
+		.s1(write),
+		.s2(ram_we),
+		.s3(s2),
+		.out(ram_addr)
+	);
+
+	mux_4x1 mux_reg_in (
+		.in1(ram_out),
+		.in2(aluOUT),
+		.in3(val),
+		.in4(val),
+		.s1(load_val),
+		.s2(load_aluOUT),
+		.out(reg_in),
+	);
+
+	mux_4x1 mux_reg_addr (
+		.in1(regDI),
+		.in2(regDA),
+		.in3(regFile_addr),
+		.in4(regFile_addr),
+		.s1(load),
+		.s2(regDA_we_OR_s4),
+		.out(reg_addr),
+	);
+
+endmodule

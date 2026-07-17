@@ -1,0 +1,234 @@
+$date
+	Wed Jul  8 16:41:20 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module d_flipflop_tb $end
+$var wire 1 ! q_n $end
+$var wire 1 " q $end
+$var reg 1 # clk $end
+$var reg 1 $ d $end
+$scope module dff $end
+$var wire 1 # clk $end
+$var wire 1 % clk_n $end
+$var wire 1 $ d $end
+$var wire 1 ! q_n $end
+$var wire 1 " q $end
+$var wire 1 & _q_n $end
+$var wire 1 ' _q $end
+$scope module master $end
+$var wire 1 $ d $end
+$var wire 1 ( d_n $end
+$var wire 1 % en $end
+$var wire 1 ) r $end
+$var wire 1 * s $end
+$var wire 1 & q_n $end
+$var wire 1 ' q $end
+$scope module srlatch $end
+$var wire 1 ' q $end
+$var wire 1 & q_n $end
+$var wire 1 ) r $end
+$var wire 1 + r_n $end
+$var wire 1 * s $end
+$var wire 1 , s_n $end
+$upscope $end
+$upscope $end
+$scope module slave $end
+$var wire 1 ' d $end
+$var wire 1 - d_n $end
+$var wire 1 # en $end
+$var wire 1 . r $end
+$var wire 1 / s $end
+$var wire 1 ! q_n $end
+$var wire 1 " q $end
+$scope module srlatch $end
+$var wire 1 " q $end
+$var wire 1 ! q_n $end
+$var wire 1 . r $end
+$var wire 1 0 r_n $end
+$var wire 1 / s $end
+$var wire 1 1 s_n $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+11
+10
+0/
+0.
+1-
+1,
+0+
+0*
+1)
+1(
+0'
+1&
+1%
+0$
+0#
+x"
+x!
+$end
+#5
+0(
+1$
+0"
+1+
+1!
+0)
+00
+0%
+1.
+1#
+#10
+0&
+0-
+1'
+0,
+1*
+10
+1%
+0.
+0#
+#15
+1(
+0$
+0!
+1,
+1"
+0*
+01
+0%
+1/
+1#
+#20
+0,
+0(
+1*
+1$
+0-
+1'
+0&
+1+
+0)
+11
+1%
+0/
+0#
+#25
+1,
+0*
+01
+0%
+1/
+1#
+#30
+0,
+1*
+11
+1%
+0/
+0#
+#32
+1-
+0'
+1&
+0+
+1)
+1,
+1(
+0*
+0$
+#35
+0(
+1$
+0"
+1+
+1!
+0)
+00
+0%
+1.
+1#
+#40
+0&
+0-
+1'
+0,
+1*
+10
+1%
+0.
+0#
+#45
+0!
+1,
+1"
+0*
+01
+0%
+1/
+1#
+#50
+0,
+1*
+11
+1%
+0/
+0#
+#52
+1-
+0'
+1&
+0+
+1)
+1,
+1(
+0*
+0$
+#55
+0"
+1+
+1!
+0)
+00
+0%
+1.
+1#
+#60
+0+
+1)
+10
+1%
+0.
+0#
+#62
+0&
+0-
+1+
+1'
+0)
+0,
+0(
+1*
+1$
+#65
+0!
+1,
+1"
+0*
+01
+0%
+1/
+1#
