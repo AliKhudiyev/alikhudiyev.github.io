@@ -1,5 +1,5 @@
 ---
-layout: fun
+layout: post
 author:
 - Ali Khudiyev
 title: Brainstormed
