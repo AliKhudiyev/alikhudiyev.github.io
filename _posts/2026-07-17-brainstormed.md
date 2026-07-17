@@ -17,7 +17,9 @@ moments, you initially get multiple ideas, but then after some time they
 merge to one idea. In other moments, you may have a single idea
 initially, but it may branch to multiple ideas.
 
-![image](assets/blog/idea-tree.png){width="70%"}
+<figure>
+<img src="/assets/blog/idea-tree.png" width="70%" style="margin: auto;"/>
+</figure>
 
 The image above illustrates *linear progression* of ideas on the top
 (first level) and bottom part (fourth level) of the *idea chain*,
