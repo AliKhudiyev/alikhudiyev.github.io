@@ -3,43 +3,41 @@ layout: post
 author:
 - Ali Khudiyev
 title: "A Student's Computer Architecture Book I"
-date: 2026-05-12 15:00:00 +0400
-categories: courses self-study computer-architecture draft book
+categories: courses self-study computer-architecture book
 ---
 
 <!-- <!DOCTYPE html> --> 
-<!-- <html lang='en' xml:lang='en'> --> 
-<!-- <head><title></title> --> 
-<!-- <meta charset='utf-8' /> --> 
-<!-- <meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> --> 
-<!-- <meta content='width=device-width,initial-scale=1' name='viewport' /> --> 
-<!-- <link href='2026-05-12-computer-architecture-1.css' rel='stylesheet' type='text/css' /> --> 
-<!-- <meta content='2026-05-12-computer-architecture-1.tex' name='src' /> --> 
-<!-- <script>window.MathJax = { tex: { tags: "ams", }, }; </script> --> 
-<!-- <script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script> -->  
-<!-- </head><body> -->
+<html lang='en' xml:lang='en'> 
+<head><title></title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='/assets/css/2026-05-12-computer-architecture-1.css' rel='stylesheet' type='text/css' /> 
+<meta content='2026-05-12-computer-architecture-1.tex' name='src' /> 
+<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
+<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
+</head><body>
                                                                           
 
                                                                           
-<!-- <!-1- l. 30 -1-><p class='indent'> -->
+<!-- l. 31 --><p class='indent'>
                                                                           
 
                                                                           
-<!-- </p><!-1- l. 30 -1-><p class='indent'> -->
+</p><!-- l. 31 --><p class='indent'>
                                                                           
 
                                                                           
-<!-- </p><!-1- l. 32 -1-><p class='noindent'><span class='cmr-17'>A Student’s Computer Architecture Book I</span> -->
-<!-- </p><!-1- l. 33 -1-><p class='noindent'><span class='cmr-12x-x-120'>Level 1. Introduction to Computer Architecture</span> -->
-<!-- </p><!-1- l. 35 -1-><p class='noindent'><span class='cmr-12x-x-120'>Ali Khudiyev</span>
+<!-- </p><!-1- l. 33 -1-><p class='noindent'><span class='cmr-17'>A Student’s Computer Architecture Book I</span> -->
+<!-- </p><!-1- l. 34 -1-><p class='noindent'><span class='cmr-12x-x-120'>Level 1. Introduction to Computer Architecture</span> -->
+<!-- </p><!-1- l. 36 -1-><p class='noindent'><span class='cmr-12x-x-120'>Ali Khudiyev</span> -->
                                                                           
 
                                                                           
                                                                           
 
                                                                           
-</p> -->
-
+<!-- </p> -->
    <h2 class='likechapterHead' id='contents'><a id='x1-1000'></a>Contents</h2>
    <div class='tableofcontents'>
    <span class='chapterToc'>1 <a href='#the-essence-of-computing' id='QQ2-1-2'>The Essence of Computing</a></span>
@@ -89,7 +87,11 @@ categories: courses self-study computer-architecture draft book
 <br />   <span class='sectionToc'>6.4 <a href='#arithmetic-logic-unit-alu' id='QQ2-1-100'>Arithmetic Logic Unit (ALU)</a></span>
 <br />   <span class='sectionToc'>6.5 <a href='#random-access-memory-ram' id='QQ2-1-101'>Random Access Memory (RAM)</a></span>
 <br />   <span class='sectionToc'>6.6 <a href='#the-dx-computer' id='QQ2-1-102'>The DX8 Computer</a></span>
-<br />   <span class='chapterToc'>7 <a href='#epilogue' id='QQ2-1-108'>Epilogue</a></span>
+<br />   <span class='subsectionToc'>6.6.1 <a href='#singlecycle-multicycle-pipelined-design' id='QQ2-1-103'>Single-cycle, Multi-cycle, Pipelined Design</a></span>
+<br />   <span class='subsectionToc'>6.6.2 <a href='#stepper' id='QQ2-1-106'>Stepper</a></span>
+<br />   <span class='subsectionToc'>6.6.3 <a href='#controller' id='QQ2-1-110'>Controller</a></span>
+<br />   <span class='subsectionToc'>6.6.4 <a href='#putting-everything-together' id='QQ2-1-116'>Putting everything together!</a></span>
+<br />   <span class='chapterToc'>7 <a href='#epilogue' id='QQ2-1-118'>Epilogue</a></span>
    </div>
                                                                           
 
@@ -97,13 +99,13 @@ categories: courses self-study computer-architecture draft book
                                                                           
 
                                                                           
-<!-- l. 40 --><p class='indent'>
+<!-- l. 41 --><p class='indent'>
                                                                           
 
                                                                           
 </p>
    <h2 class='chapterHead' id='the-essence-of-computing'><span class='titlemark'>Chapter 1</span><br /><a id='x1-20001'></a>The Essence of Computing</h2>
-<!-- l. 41 --><p class='noindent'>You may have heard of Babbage’s machine. Yes, Charles Babbage’s Analytical
+<!-- l. 42 --><p class='noindent'>You may have heard of Babbage’s machine. Yes, Charles Babbage’s Analytical
 Engine. Well, there was actually his Difference Engine, too, for automated
 polynomial calculations. Many consider his machine(s) very first computing
 devices created by human species. However, I would say that the history of
@@ -143,17 +145,17 @@ itself.
                                                                           
 
                                                                           
-<div class='minipage'><!-- l. 46 --><p class='noindent'><img alt='PIC' height='131' src='/assets/courses/comp-arch/figures/other/lebombo_bone.jpeg' width='131' />
+<div class='minipage'><!-- l. 47 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/lebombo_bone.jpeg' width='50%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 1.1: </span><span class='content'>Lebonbo bone dating
-back to around 35,000 BCE.</span></figcaption><!-- tex4ht:label?: x1-2001r1  -->      </div> <div class='minipage'><img alt='PIC' height='131' src='/assets/courses/comp-arch/figures/other/babbage_machine.jpeg' width='131' />
+back to around 35,000 BCE.</span></figcaption><!-- tex4ht:label?: x1-2001r1  -->      </div> <div class='minipage'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/babbage_machine.jpeg' width='50%' />
 <figcaption class='caption'><span class='id'>Figure 1.2:   </span><span class='content'>Charles   Babbage’s
 machine dating back to 1800s.</span></figcaption><!-- tex4ht:label?: x1-2002r2  -->     </div>
                                                                           
 
                                                                           
    </figure>
-<!-- l. 57 --><p class='indent'>   Surely you may think that we have come a long way. Right now, you
+<!-- l. 58 --><p class='indent'>   Surely you may think that we have come a long way. Right now, you
 may be reading this from your personal computer (PC), or your phone,
 or even from your smart watch. Just imagine how crazy this would be
 for people living back in the days… They would probably declare you
@@ -164,7 +166,7 @@ to realize the long history of computing and push it even further than
 where it is standing currently. Doing that is surely a hard task, but if you
 dedicate yourself enough, you may achieve something significant in your
 lifespan.
-</p><!-- l. 59 --><p class='indent'>   This book is for the beginners who got curious about computers and wondered
+</p><!-- l. 60 --><p class='indent'>   This book is for the beginners who got curious about computers and wondered
 how they really work at some point in their lives. If you are one of those
 people trying to get a good grasp of the things that happen inside your
 computer, I hope that this book will be a friendly mentor that will help you
@@ -180,10 +182,10 @@ more confidence in building your own – your truly personal computer
    
 </p>
    <h3 class='sectionHead' id='outline-of-the-book'><span class='titlemark'>1.1   </span> <a id='x1-30001.1'></a>Outline of the book</h3>
-<!-- l. 62 --><p class='noindent'>”So, what does it take to build a computer?” you may ask. Well, it takes
+<!-- l. 63 --><p class='noindent'>”So, what does it take to build a computer?” you may ask. Well, it takes
 readding the first <span class='mathjax-inline'>\(\approx 70\)</span> pages of this book to understand the fundamentals
 first:
-</p><!-- l. 64 --><p class='indent'>
+</p><!-- l. 65 --><p class='indent'>
       </p><ol class='enumerate1'>
                                                                           
 
@@ -202,9 +204,9 @@ first:
 <li class='enumerate' id='x1-3008x4'><span class='cmbx-12'>Sequential Logic </span>– this chapter will generalize from the previous types
       of circuits you know and build more complex circuitry that are very
       foundational in building many components of a computer;</li></ol>
-<!-- l. 71 --><p class='indent'>   Then it takes reading the rest <span class='mathjax-inline'>\(\approx 15\)</span> pages to put everything together and finally
+<!-- l. 72 --><p class='indent'>   Then it takes reading the rest <span class='mathjax-inline'>\(\approx 15\)</span> pages to put everything together and finally
 build a custom 8-bit computer:
-</p><!-- l. 73 --><p class='indent'>
+</p><!-- l. 74 --><p class='indent'>
       </p><ol class='enumerate1'>
 <li class='enumerate' id='x1-3010x1'><span class='cmbx-12'>Let’s Build a Computer! </span>– finally, this chapter will walk you through
       the “putting everything together” part, and by the end of it, you will
@@ -217,7 +219,7 @@ build a custom 8-bit computer:
       will then be cheered for understanding so much stuff that you didn’t
       know before and for having the knowledge and courage now to build a
       computer by yourself if you wanted to do it.</li></ol>
-<!-- l. 78 --><p class='indent'>   What are you waiting for? Let’s get to it!
+<!-- l. 79 --><p class='indent'>   What are you waiting for? Let’s get to it!
                                                                           
 
                                                                           
@@ -225,7 +227,7 @@ build a custom 8-bit computer:
    <h2 class='chapterHead' id='foundations-boolean-algebra'><span class='titlemark'>Chapter 2</span><br /><a id='x1-40002'></a>Foundations &amp; Boolean Algebra</h2>
    
    <h3 class='sectionHead' id='numeral-systems'><span class='titlemark'>2.1   </span> <a id='x1-50002.1'></a>Numeral Systems</h3>
-<!-- l. 82 --><p class='noindent'>Counting is an important and unavoidable part of human life. It is so unavoidable
+<!-- l. 83 --><p class='noindent'>Counting is an important and unavoidable part of human life. It is so unavoidable
 that people have invented multiple different ways of counting things. We put all of
 these different ways of counting under the name of <span class='cmti-12'>numeral systems</span>. Let me
 describe a few of numeral systems. First of all, there is additive numeral systems
@@ -239,7 +241,7 @@ decimal is 100 + 20 + 3 whereas 321 in decimal is 1 + 20 + 300). Since
 positional systems have been more useful to work with in almost all areas of
 mathematics and digital logic design, we are going to focus on them from now
 on.
-</p><!-- l. 84 --><p class='indent'>   You see, there are also different positional numeral systems. The difference
+</p><!-- l. 85 --><p class='indent'>   You see, there are also different positional numeral systems. The difference
 among positional numeral systems comes from the radix or the base used. The
 radix (or the base) is the number of elementary symbols that all the numbers of
 the numeral system are made of. These elementary symbols are also known as the
@@ -249,7 +251,7 @@ magnitude of the number, each digit in a decimal number is first multiplied
 by the power of 10 according to the position in which the underlying
 digit appears within the number and then the results are added, i.e.,
 <span class='mathjax-inline'>\(\overline {d_n, d_{n-1}, \dots , d_0}_{10} = 10^n \cdot d_n + 10^{n-1} \cdot d_{n-1} + \dots + 10^0 \cdot d_0\)</span>.
-</p><!-- l. 86 --><p class='indent'>   Let’s now talk about other radices. There is this numeral systems known as
+</p><!-- l. 87 --><p class='indent'>   Let’s now talk about other radices. There is this numeral systems known as
 <span class='cmbx-12'>hexadecimal</span>, <span class='cmbx-12'>octal</span>, and <span class='cmbx-12'>binary</span>. The base used in hexadecimal is 16 (i.e.,
 the digits from 0 to 15, inclusively), the base used in octal is 8 (i.e., the
 digits from 0 to 7, inclusively), and the base used in binary is 2 (i.e.,
@@ -263,7 +265,7 @@ systems:
    <div class='mathjax-env mathjax-align*'>\begin{align*} \overline {h_n h_{n-1} \dots h_0}_{16} &amp;= 16^n \cdot h_n + 16^{n-1} \cdot h_{n-1} + \dots + h_0 \\ \overline {o_n o_{n-1} \dots o_0}_{8} &amp;= 8^n \cdot o_n + 8^{n-1} \cdot o_{n-1} + \dots + o_0 \\ \overline {b_n b_{n-1} \dots b_0}_{2} &amp;= 2^n \cdot b_n + 2^{n-1} \cdot b_{n-1} + \dots + b_0 \end{align*}</div>
    
    <h3 class='sectionHead' id='boolean-algebra'><span class='titlemark'>2.2   </span> <a id='x1-60002.2'></a>Boolean Algebra</h3>
-<!-- l. 95 --><p class='noindent'>You already probably know what algebra is about. It is about working with
+<!-- l. 96 --><p class='noindent'>You already probably know what algebra is about. It is about working with
 expressions that may have numbers, unknowns (or variables), and operators (such
 as addition, subtraction, multiplication, division, and so on). The algebra that you
 may have learned in high school is a general kind of algebra than the one we are
@@ -288,7 +290,7 @@ algebra.
 </p>
    <h4 class='subsectionHead' id='laws'><span class='titlemark'>2.2.1   </span> <a id='x1-70002.2.1'></a>Laws</h4>
    <div class='newtheorem'>
-<!-- l. 98 --><p class='noindent'><span class='head'>
+<!-- l. 99 --><p class='noindent'><span class='head'>
 <a id='x1-7001r1'></a>
 <span class='cmbx-12'>Law 2.1 </span>(Commutativity)<span class='cmbx-12'>.</span>  </span><span class='cmti-12'>The order of operands does not affect the result.</span>
                                                                           
@@ -297,28 +299,28 @@ algebra.
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} a + b &amp;= b + a \\ a \cdot b &amp;= b \cdot a \end{align*}</div>
    </div>
-<!-- l. 107 --><p class='indent'>
+<!-- l. 108 --><p class='indent'>
 </p>
    <div class='newtheorem'>
-<!-- l. 109 --><p class='noindent'><span class='head'>
+<!-- l. 110 --><p class='noindent'><span class='head'>
 <a id='x1-7002r2'></a>
 <span class='cmbx-12'>Law 2.2 </span>(Associativity)<span class='cmbx-12'>.</span>  </span><span class='cmti-12'>The grouping of operands does not affect the result.</span>
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} (a + b) + c &amp;= a + (b + c) \\ (a \cdot b) \cdot c &amp;= a \cdot (b \cdot c) \end{align*}</div>
    </div>
-<!-- l. 118 --><p class='indent'>
+<!-- l. 119 --><p class='indent'>
 </p>
    <div class='newtheorem'>
-<!-- l. 120 --><p class='noindent'><span class='head'>
+<!-- l. 121 --><p class='noindent'><span class='head'>
 <a id='x1-7003r3'></a>
 <span class='cmbx-12'>Law 2.3 </span>(Distributivity)<span class='cmbx-12'>.</span>  </span><span class='cmti-12'>Operations can be factored or expanded.</span>
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} a \cdot (b + c) &amp;= a \cdot b + a \cdot c \\ a + (b \cdot c) &amp;= (a + b) \cdot (a + c) \end{align*}</div>
    </div>
-<!-- l. 129 --><p class='indent'>
+<!-- l. 130 --><p class='indent'>
 </p>
    <div class='newtheorem'>
-<!-- l. 131 --><p class='noindent'><span class='head'>
+<!-- l. 132 --><p class='noindent'><span class='head'>
 <a id='x1-7004r4'></a>
 <span class='cmbx-12'>Law 2.4 </span>(Identity)<span class='cmbx-12'>.</span>  </span><span class='cmti-12'>0  is  additive  identity  –  it  means  that  </span><span class='cmbxti-10x-x-120'>adding  with
 zero </span><span class='cmti-12'>does not give us a different result than the other operand added. 1 is
@@ -330,10 +332,10 @@ us a different result than the other multiplicant multiplied.</span>
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} a + 0 = a \\ a \cdot 1 = a \end{align*}</div>
    </div>
-<!-- l. 140 --><p class='indent'>
+<!-- l. 141 --><p class='indent'>
 </p>
    <div class='newtheorem'>
-<!-- l. 142 --><p class='noindent'><span class='head'>
+<!-- l. 143 --><p class='noindent'><span class='head'>
 <a id='x1-7005r5'></a>
 <span class='cmbx-12'>Law 2.5 </span>(Idempotent)<span class='cmbx-12'>.</span>  </span><span class='cmti-12'>A different result cannot be obtained by adding or
 multiplying the same operand with itself. (Just remember that the possible
@@ -342,20 +344,20 @@ and 1 + 1 = 1 </span><span class='mathjax-inline'>\(\cdot \) </span><span class=
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} a + a = a \\ a \cdot a = a \end{align*}</div>
    </div>
-<!-- l. 151 --><p class='indent'>
+<!-- l. 152 --><p class='indent'>
 </p>
    <div class='newtheorem'>
-<!-- l. 153 --><p class='noindent'><span class='head'>
+<!-- l. 154 --><p class='noindent'><span class='head'>
 <a id='x1-7006r6'></a>
 <span class='cmbx-12'>Law 2.6 </span>(Complement)<span class='cmbx-12'>.</span>  </span><span class='cmti-12'>Addition with a complement always results in 1.
 Multiplying with a complement always results in 0.</span>
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} a + a' = 1 \\ a \cdot a' = 0 \end{align*}</div>
    </div>
-<!-- l. 162 --><p class='indent'>
+<!-- l. 163 --><p class='indent'>
 </p>
    <div class='newtheorem'>
-<!-- l. 164 --><p class='noindent'><span class='head'>
+<!-- l. 165 --><p class='noindent'><span class='head'>
 <a id='x1-7007r7'></a>
                                                                           
 
@@ -365,12 +367,12 @@ Multiplying with a complement always results in 0.</span>
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} a + 1 = 1 \\ a \cdot 0 = 0 \end{align*}</div>
    </div>
-<!-- l. 173 --><p class='indent'>
+<!-- l. 174 --><p class='indent'>
    
 </p>
    <h4 class='subsectionHead' id='theorems'><span class='titlemark'>2.2.2   </span> <a id='x1-80002.2.2'></a>Theorems</h4>
    <div class='newtheorem'>
-<!-- l. 176 --><p class='noindent'><span class='head'>
+<!-- l. 177 --><p class='noindent'><span class='head'>
 <a id='x1-8001r1'></a>
 <span class='cmbx-12'>Theorem 2.1 </span>(De Morgan)<span class='cmbx-12'>.</span>  </span><span class='cmti-12'>Complement of a sum is equal to the product
 of the individual complements, and complement of a product is equal to the
@@ -378,10 +380,10 @@ sum of the individual complements.</span>
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} (a + b)' &amp;= a' \cdot b' \\ (a \cdot b)' &amp;= a' + b' \end{align*}</div>
    </div>
-<!-- l. 185 --><p class='indent'>
+<!-- l. 186 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 188 --><p class='indent'>   <span class='head'>
+<!-- l. 189 --><p class='indent'>   <span class='head'>
 <span class='cmti-12'>Proof.</span> </span>Let’s proceed with <span class='cmbx-12'>proof by exhaustion </span>where we will compute the
 left-hand side (LHS) and right-hand side (RHS) of the equalities by going
 through all the possible <span class='mathjax-inline'>\(a\)</span> and <span class='mathjax-inline'>\(b\)</span> choices from the set <span class='mathjax-inline'>\(\{0, 1\}\)</span>.
@@ -390,103 +392,103 @@ through all the possible <span class='mathjax-inline'>\(a\)</span> and <span cla
                                                                           
 
                                                                           
-<!-- l. 190 --><p class='indent'>   </p><figure class='float'> <!-- tex4ht:inline --><div class='tabular'> <table class='tabular' id='TBL-1'><colgroup id='TBL-1-1g'><col id='TBL-1-1' /><col id='TBL-1-2' /></colgroup><colgroup id='TBL-1-3g'><col id='TBL-1-3' /></colgroup><colgroup id='TBL-1-4g'><col id='TBL-1-4' /></colgroup><tr id='TBL-1-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-1-1-1' style='white-space:nowrap; text-align:center;'> a  </td><td class='td11' id='TBL-1-1-2' style='white-space:nowrap; text-align:center;'> b  </td><td class='td11' id='TBL-1-1-3' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\((a+b)'\)</span> </td><td class='td11' id='TBL-1-1-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(a' \cdot b'\)</span> </td></tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td><td></td></tr><tr id='TBL-1-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-1-2-1' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-1-2-2' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-1-2-3' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\((0 + 0)' = 0' = 1\)</span> </td> <td class='td11' id='TBL-1-2-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0' \cdot 0' = 1 \cdot 1 = 1\)</span></td>
+<!-- l. 191 --><p class='indent'>   </p><figure class='float'> <!-- tex4ht:inline --><div class='tabular'> <table class='tabular' id='TBL-1'><colgroup id='TBL-1-1g'><col id='TBL-1-1' /><col id='TBL-1-2' /></colgroup><colgroup id='TBL-1-3g'><col id='TBL-1-3' /></colgroup><colgroup id='TBL-1-4g'><col id='TBL-1-4' /></colgroup><tr id='TBL-1-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-1-1-1' style='white-space:nowrap; text-align:center;'> a  </td><td class='td11' id='TBL-1-1-2' style='white-space:nowrap; text-align:center;'> b  </td><td class='td11' id='TBL-1-1-3' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\((a+b)'\)</span> </td><td class='td11' id='TBL-1-1-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(a' \cdot b'\)</span> </td></tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td><td></td></tr><tr id='TBL-1-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-1-2-1' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-1-2-2' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-1-2-3' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\((0 + 0)' = 0' = 1\)</span> </td> <td class='td11' id='TBL-1-2-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0' \cdot 0' = 1 \cdot 1 = 1\)</span></td>
 </tr><tr id='TBL-1-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-1-3-1' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-1-3-2' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-1-3-3' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\((0 + 1)' = 1' = 0\)</span> </td><td class='td11' id='TBL-1-3-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0' \cdot 1' = 1 \cdot 0 = 0\)</span> </td></tr><tr id='TBL-1-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-1-4-1' style='white-space:nowrap; text-align:center;'> 1 </td> <td class='td11' id='TBL-1-4-2' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-1-4-3' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\((1 + 0)' = 1' = 0\)</span> </td> <td class='td11' id='TBL-1-4-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(1' \cdot 0' = 0 \cdot 1 = 0\)</span></td>
 </tr><tr id='TBL-1-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-1-5-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-1-5-2' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-1-5-3' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\((1 + 1)' = 1' = 0\)</span> </td><td class='td11' id='TBL-1-5-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(1' \cdot 1' = 0 \cdot 0 = 0\)</span> </td></tr></table>                                             </div>
 </figure>
    </div>
-<!-- l. 204 --><p class='indent'>   Since the third column (LHS of De Morgan equation) and the fourth column
+<!-- l. 205 --><p class='indent'>   Since the third column (LHS of De Morgan equation) and the fourth column
 (RHS of De Morgan equation) match with each other at every row, we conclude
 that the theorem is proven to be correct.                                            □
 </p>
    </div>
    <div class='newtheorem'>
-<!-- l. 207 --><p class='noindent'><span class='head'>
+<!-- l. 208 --><p class='noindent'><span class='head'>
 <a id='x1-8002r2'></a>
 <span class='cmbx-12'>Theorem 2.2 </span>(Absorbtion)<span class='cmbx-12'>.</span>  </span></p><div class='mathjax-env mathjax-align*'>\begin{align*} a + a \cdot b &amp;= a \\ a \cdot (a + b) &amp;= a \end{align*}</div>
    </div>
-<!-- l. 214 --><p class='indent'>
+<!-- l. 215 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 217 --><p class='indent'>   <span class='head'>
+<!-- l. 218 --><p class='indent'>   <span class='head'>
 <span class='cmti-12'>Proof.</span> </span>By using proof by exhaustion,
 </p>
    <div class='table'>
-<!-- l. 219 --><p class='indent'>   </p><figure class='float'> <!-- tex4ht:inline --><div class='tabular'> <table class='tabular' id='TBL-2'><colgroup id='TBL-2-1g'><col id='TBL-2-1' /><col id='TBL-2-2' /></colgroup><colgroup id='TBL-2-3g'><col id='TBL-2-3' /></colgroup><colgroup id='TBL-2-4g'><col id='TBL-2-4' /></colgroup><colgroup id='TBL-2-5g'><col id='TBL-2-5' /></colgroup><tr id='TBL-2-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-1-1' style='white-space:nowrap; text-align:center;'> a  </td><td class='td11' id='TBL-2-1-2' style='white-space:nowrap; text-align:center;'> b  </td><td class='td11' id='TBL-2-1-3' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(a + a \cdot b\)</span> </td><td class='td11' id='TBL-2-1-4' style='white-space:nowrap; text-align:center;'> a  </td><td class='td11' id='TBL-2-1-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(a \cdot (a + b)\)</span> </td></tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-2-1' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-2-2-2' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-2-2-3' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 + 0 \cdot 0 = 0\)</span> </td> <td class='td11' id='TBL-2-2-4' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-2-2-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 \cdot (0 + 0) = 0\)</span></td>
+<!-- l. 220 --><p class='indent'>   </p><figure class='float'> <!-- tex4ht:inline --><div class='tabular'> <table class='tabular' id='TBL-2'><colgroup id='TBL-2-1g'><col id='TBL-2-1' /><col id='TBL-2-2' /></colgroup><colgroup id='TBL-2-3g'><col id='TBL-2-3' /></colgroup><colgroup id='TBL-2-4g'><col id='TBL-2-4' /></colgroup><colgroup id='TBL-2-5g'><col id='TBL-2-5' /></colgroup><tr id='TBL-2-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-1-1' style='white-space:nowrap; text-align:center;'> a  </td><td class='td11' id='TBL-2-1-2' style='white-space:nowrap; text-align:center;'> b  </td><td class='td11' id='TBL-2-1-3' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(a + a \cdot b\)</span> </td><td class='td11' id='TBL-2-1-4' style='white-space:nowrap; text-align:center;'> a  </td><td class='td11' id='TBL-2-1-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(a \cdot (a + b)\)</span> </td></tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td><td></td><td></td></tr><tr id='TBL-2-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-2-1' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-2-2-2' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-2-2-3' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 + 0 \cdot 0 = 0\)</span> </td> <td class='td11' id='TBL-2-2-4' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-2-2-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 \cdot (0 + 0) = 0\)</span></td>
 </tr><tr id='TBL-2-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-3-1' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-2-3-2' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-2-3-3' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 + 0 \cdot 1 = 0 + 0 = 0\)</span> </td><td class='td11' id='TBL-2-3-4' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-2-3-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 \cdot (0 + 1) = 0 \cdot 1 = 0\)</span> </td></tr><tr id='TBL-2-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-4-1' style='white-space:nowrap; text-align:center;'> 1 </td> <td class='td11' id='TBL-2-4-2' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-2-4-3' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(1 + 1 \cdot 0 = 1 + 0 = 1\)</span> </td> <td class='td11' id='TBL-2-4-4' style='white-space:nowrap; text-align:center;'> 1 </td> <td class='td11' id='TBL-2-4-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(1 \cdot (1 + 0) = 1 \cdot 1 = 1\)</span></td>
 </tr><tr id='TBL-2-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-5-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-2-5-2' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-2-5-3' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(1 + 1 \cdot 1 = 1\)</span> </td><td class='td11' id='TBL-2-5-4' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-2-5-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(1 \cdot (1 + 1) = 1\)</span> </td></tr></table>                                        </div>
 </figure>
    </div>
-<!-- l. 233 --><p class='indent'>   Therefore, the theorem has been proven.                                        □
+<!-- l. 234 --><p class='indent'>   Therefore, the theorem has been proven.                                        □
 </p>
    </div>
    <div class='newtheorem'>
-<!-- l. 236 --><p class='noindent'><span class='head'>
+<!-- l. 237 --><p class='noindent'><span class='head'>
 <a id='x1-8003r3'></a>
                                                                           
 
                                                                           
 <span class='cmbx-12'>Theorem 2.3 </span>(Consensus)<span class='cmbx-12'>.</span>  </span></p><div class='mathjax-env mathjax-align*'>\begin{align*} a \cdot b + a' \cdot c + b \cdot c = a \cdot b + a' \cdot c \end{align*}</div>
    </div>
-<!-- l. 242 --><p class='indent'>
+<!-- l. 243 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 245 --><p class='indent'>   <span class='head'>
+<!-- l. 246 --><p class='indent'>   <span class='head'>
 <span class='cmti-12'>Proof.</span> </span>By using proof by exhaustion,
 </p>
    <div class='table'>
-<!-- l. 247 --><p class='indent'>   </p><figure class='float'> <!-- tex4ht:inline --><div class='tabular'> <table class='tabular' id='TBL-3'><colgroup id='TBL-3-1g'><col id='TBL-3-1' /><col id='TBL-3-2' /><col id='TBL-3-3' /></colgroup><colgroup id='TBL-3-4g'><col id='TBL-3-4' /></colgroup><colgroup id='TBL-3-5g'><col id='TBL-3-5' /></colgroup><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td><td></td><td></td></tr><tr id='TBL-3-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-1-1' style='white-space:nowrap; text-align:center;'> a  </td><td class='td11' id='TBL-3-1-2' style='white-space:nowrap; text-align:center;'> b  </td><td class='td11' id='TBL-3-1-3' style='white-space:nowrap; text-align:center;'> c  </td><td class='td11' id='TBL-3-1-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(a \cdot b + a' \cdot c + b \cdot c\)</span> </td><td class='td11' id='TBL-3-1-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(a \cdot b + a' \cdot c\)</span> </td></tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td><td></td><td></td></tr><tr id='TBL-3-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-2-1' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-3-2-2' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-3-2-3' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-3-2-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 \cdot 0 + 0' \cdot 0 + 0 \cdot 0 = 0\)</span> </td> <td class='td11' id='TBL-3-2-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 \cdot 0 + 0' \cdot 0 = 0\)</span></td>
+<!-- l. 248 --><p class='indent'>   </p><figure class='float'> <!-- tex4ht:inline --><div class='tabular'> <table class='tabular' id='TBL-3'><colgroup id='TBL-3-1g'><col id='TBL-3-1' /><col id='TBL-3-2' /><col id='TBL-3-3' /></colgroup><colgroup id='TBL-3-4g'><col id='TBL-3-4' /></colgroup><colgroup id='TBL-3-5g'><col id='TBL-3-5' /></colgroup><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td><td></td><td></td></tr><tr id='TBL-3-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-1-1' style='white-space:nowrap; text-align:center;'> a  </td><td class='td11' id='TBL-3-1-2' style='white-space:nowrap; text-align:center;'> b  </td><td class='td11' id='TBL-3-1-3' style='white-space:nowrap; text-align:center;'> c  </td><td class='td11' id='TBL-3-1-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(a \cdot b + a' \cdot c + b \cdot c\)</span> </td><td class='td11' id='TBL-3-1-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(a \cdot b + a' \cdot c\)</span> </td></tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td><td></td><td></td></tr><tr id='TBL-3-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-2-1' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-3-2-2' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-3-2-3' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-3-2-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 \cdot 0 + 0' \cdot 0 + 0 \cdot 0 = 0\)</span> </td> <td class='td11' id='TBL-3-2-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 \cdot 0 + 0' \cdot 0 = 0\)</span></td>
 </tr><tr id='TBL-3-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-3-1' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-3-3-2' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-3-3-3' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-3-3-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 \cdot 0 + 0' \cdot 1 + 0 \cdot 1 = 1\)</span> </td><td class='td11' id='TBL-3-3-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 \cdot 0 + 0' \cdot 1 = 0\)</span> </td></tr><tr id='TBL-3-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-4-1' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-3-4-2' style='white-space:nowrap; text-align:center;'> 1 </td> <td class='td11' id='TBL-3-4-3' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-3-4-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 \cdot 1 + 0' \cdot 0 + 1 \cdot 0 = 0\)</span> </td> <td class='td11' id='TBL-3-4-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 \cdot 1 + 0' \cdot 0 = 0\)</span></td>
 </tr><tr id='TBL-3-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-5-1' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-3-5-2' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-3-5-3' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-3-5-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 \cdot 1 + 0' \cdot 1 + 1 \cdot 1 = 1\)</span> </td><td class='td11' id='TBL-3-5-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(0 \cdot 1 + 0' \cdot 1 = 1\)</span> </td></tr><tr id='TBL-3-6-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-6-1' style='white-space:nowrap; text-align:center;'> 1 </td> <td class='td11' id='TBL-3-6-2' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-3-6-3' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-3-6-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(1 \cdot 0 + 1' \cdot 0 + 0 \cdot 0 = 0\)</span> </td> <td class='td11' id='TBL-3-6-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(1 \cdot 0 + 1' \cdot 0 = 0\)</span></td>
 </tr><tr id='TBL-3-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-7-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-3-7-2' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-3-7-3' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-3-7-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(1 \cdot 0 + 1' \cdot 1 + 0 \cdot 1 = 0\)</span> </td><td class='td11' id='TBL-3-7-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(1 \cdot 0 + 1' \cdot 1 = 0\)</span> </td></tr><tr id='TBL-3-8-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-8-1' style='white-space:nowrap; text-align:center;'> 1 </td> <td class='td11' id='TBL-3-8-2' style='white-space:nowrap; text-align:center;'> 1 </td> <td class='td11' id='TBL-3-8-3' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-3-8-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(1 \cdot 1 + 1' \cdot 0 + 1 \cdot 0 = 1\)</span> </td> <td class='td11' id='TBL-3-8-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(1 \cdot 1 + 1' \cdot 0 = 1\)</span></td>
 </tr><tr id='TBL-3-9-' style='vertical-align:baseline;'><td class='td11' id='TBL-3-9-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-3-9-2' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-3-9-3' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-3-9-4' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(1 \cdot 1 + 1' \cdot 1 + 1 \cdot 1 = 1\)</span> </td><td class='td11' id='TBL-3-9-5' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(1 \cdot 1 + 1' \cdot 1 = 1\)</span> </td></tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td><td></td><td></td></tr></table>                                        </div>
 </figure>
    </div>
-<!-- l. 267 --><p class='indent'>   Therefore, the theorem has been proven.                                        □
+<!-- l. 268 --><p class='indent'>   Therefore, the theorem has been proven.                                        □
 </p>
    </div>
    <div class='newtheorem'>
-<!-- l. 270 --><p class='noindent'><span class='head'>
+<!-- l. 271 --><p class='noindent'><span class='head'>
 <a id='x1-8004r4'></a>
 <span class='cmbx-12'>Theorem 2.4 </span>(Transposition)<span class='cmbx-12'>.</span>  </span></p><div class='mathjax-env mathjax-align*'>\begin{align*} (a + b) \cdot (a' + c) = a \cdot c + a' \cdot b \end{align*}</div>
    </div>
-<!-- l. 276 --><p class='indent'>
+<!-- l. 277 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 279 --><p class='indent'>   <span class='head'>
+<!-- l. 280 --><p class='indent'>   <span class='head'>
                                                                           
 
                                                                           
 <span class='cmti-12'>Proof.</span> </span>By using the distributivity, commutativity, and complement laws,
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} (a + b) \cdot (a' + c) &amp;= (a + b) \cdot a' + (a + b) \cdot c = \\ &amp;= a' \cdot (a + b) + c \cdot (a + b) = \\ &amp;= a' \cdot a + a' \cdot b + c \cdot a + c \cdot b = \\ &amp;= 0 + a' \cdot b + a \cdot c + c \cdot b = \\ &amp;= a \cdot c + a' \cdot b + b \cdot c. \end{align*}</div>
-<!-- l. 289 --><p class='indent'>   By case analysis on <span class='mathjax-inline'>\(b \cdot c\)</span>,
-</p><!-- l. 291 --><p class='indent'>   <span class='cmbx-12'>Case 1: </span><span class='mathjax-inline'>\(b \cdot c = 0\)</span> leads the original expression of the theorem to be equal to
+<!-- l. 290 --><p class='indent'>   By case analysis on <span class='mathjax-inline'>\(b \cdot c\)</span>,
+</p><!-- l. 292 --><p class='indent'>   <span class='cmbx-12'>Case 1: </span><span class='mathjax-inline'>\(b \cdot c = 0\)</span> leads the original expression of the theorem to be equal to
 <span class='mathjax-inline'>\(a \cdot c + a' \cdot b + 0 = a \cdot c + a' \cdot b\)</span>. <span class='cmbx-12'>Case 2: </span><span class='mathjax-inline'>\(b \cdot c = 1\)</span> leads the original expression to be evaluated to <span class='mathjax-inline'>\(a \cdot c + a' \cdot b + 1 = 1\)</span>. However,
 since <span class='mathjax-inline'>\(b \cdot c = 1\)</span> also implies that <span class='mathjax-inline'>\(b = c = 1\)</span>, the previous form in case 1, <span class='mathjax-inline'>\(a \cdot c + a' \cdot b = a \cdot 1 + a' \cdot 1 = a + a'\)</span> also evaluates to
 1.
-</p><!-- l. 294 --><p class='indent'>   From the both cases above, the original expression results in the same boolean
+</p><!-- l. 295 --><p class='indent'>   From the both cases above, the original expression results in the same boolean
 values yielded from the expression <span class='mathjax-inline'>\(a \cdot c + a' \cdot b\)</span>. Therefore, the theorem has been
 proven.                                                                                        □
 </p>
    </div>
    <div class='newtheorem'>
-<!-- l. 297 --><p class='noindent'><span class='head'>
+<!-- l. 298 --><p class='noindent'><span class='head'>
 <a id='x1-8005r5'></a>
 <span class='cmbx-12'>Theorem 2.5 </span>(Involution)<span class='cmbx-12'>.</span>  </span></p><div class='mathjax-env mathjax-align*'>\begin{align*} (a')' = a \end{align*}</div>
    </div>
-<!-- l. 303 --><p class='indent'>
+<!-- l. 304 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 306 --><p class='indent'>   <span class='head'>
+<!-- l. 307 --><p class='indent'>   <span class='head'>
 <span class='cmti-12'>Proof.</span> </span>By using proof by exhaustion,
 </p>
    <div class='table'>
-<!-- l. 308 --><p class='indent'>   </p><figure class='float'> <!-- tex4ht:inline --><div class='tabular'> <table class='tabular' id='TBL-4'><colgroup id='TBL-4-1g'><col id='TBL-4-1' /></colgroup><colgroup id='TBL-4-2g'><col id='TBL-4-2' /></colgroup><tr id='TBL-4-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-4-1-1' style='white-space:nowrap; text-align:center;'> a  </td><td class='td11' id='TBL-4-1-2' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\((a')'\)</span> </td></tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td></tr><tr id='TBL-4-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-4-2-1' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-4-2-2' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\((0')' = 1' = 0\)</span></td>
+<!-- l. 309 --><p class='indent'>   </p><figure class='float'> <!-- tex4ht:inline --><div class='tabular'> <table class='tabular' id='TBL-4'><colgroup id='TBL-4-1g'><col id='TBL-4-1' /></colgroup><colgroup id='TBL-4-2g'><col id='TBL-4-2' /></colgroup><tr id='TBL-4-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-4-1-1' style='white-space:nowrap; text-align:center;'> a  </td><td class='td11' id='TBL-4-1-2' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\((a')'\)</span> </td></tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td></tr><tr id='TBL-4-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-4-2-1' style='white-space:nowrap; text-align:center;'> 0 </td> <td class='td11' id='TBL-4-2-2' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\((0')' = 1' = 0\)</span></td>
 </tr><tr id='TBL-4-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-4-3-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-4-3-2' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\((1')' = 0' = 1\)</span> </td></tr></table>                                                      </div>
 </figure>
    </div>
-<!-- l. 320 --><p class='indent'>   Therefore, the theorem has been proven.                                        □
+<!-- l. 321 --><p class='indent'>   Therefore, the theorem has been proven.                                        □
                                                                           
 
                                                                           
@@ -494,7 +496,7 @@ proven.                                                                         
    </div>
    
    <h3 class='sectionHead' id='boolean-functions'><span class='titlemark'>2.3   </span> <a id='x1-90002.3'></a>Boolean Functions</h3>
-<!-- l. 324 --><p class='noindent'>A boolean function is a regular mathematical function whose domain is the
+<!-- l. 325 --><p class='noindent'>A boolean function is a regular mathematical function whose domain is the
 Boolean space <span class='mathjax-inline'>\(\{0, 1\}\)</span> and uses only Boolean operations upon the elements of the
 domain. Another way of looking at it is, anything that takes one or more 0/1
 inputs and gives one 0/1 output is a boolean function. So, according to this view,
@@ -508,7 +510,7 @@ end of the day, this table defines the outputs of ternary function <span class='
                                                                           
 
                                                                           
-<!-- l. 326 --><p class='indent' id='truth-table-for-boolean-function-fx-y-z-xy-z'>   <a id='x1-9001r1'></a></p><figure class='float'>
+<!-- l. 327 --><p class='indent' id='truth-table-for-boolean-function-fx-y-z-xy-z'>   <a id='x1-9001r1'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -526,7 +528,7 @@ end of the day, this table defines the outputs of ternary function <span class='
                                                                           
    </figure>
    </div>
-<!-- l. 345 --><p class='indent'>   The table <a href='#truth-table-for-boolean-function-fx-y-z-xy-z'>2.1<!-- tex4ht:ref: tab:truth-table-example  --></a> is a representation of a boolean function. It is an exhaustive
+<!-- l. 346 --><p class='indent'>   The table <a href='#truth-table-for-boolean-function-fx-y-z-xy-z'>2.1<!-- tex4ht:ref: tab:truth-table-example  --></a> is a representation of a boolean function. It is an exhaustive
 lookup table essentially, and we call such representation <span class='cmbx-12'>truth table </span>of a boolean
 function. To state a couple of facts about truth tables, (1) this representation
 is tabular and not algebraic, (2) it is declarative (i.e., the table states
@@ -547,14 +549,14 @@ functions.
    
 </p>
    <h4 class='subsectionHead' id='canonical-representations'><span class='titlemark'>2.3.1   </span> <a id='x1-100002.3.1'></a>Canonical Representations</h4>
-<!-- l. 348 --><p class='noindent'>Let’s take a look at our beloved truth table <a href='#truth-table-for-boolean-function-fx-y-z-xy-z'>2.1<!-- tex4ht:ref: tab:truth-table-example  --></a> for the ternary function <span class='mathjax-inline'>\(f : x, y , z \mapsto 0/1\)</span>. There
+<!-- l. 349 --><p class='noindent'>Let’s take a look at our beloved truth table <a href='#truth-table-for-boolean-function-fx-y-z-xy-z'>2.1<!-- tex4ht:ref: tab:truth-table-example  --></a> for the ternary function <span class='mathjax-inline'>\(f : x, y , z \mapsto 0/1\)</span>. There
 are two standartized (canonical) way of representing truth tables: (1) <span class='cmbx-12'>sum of
 products (SoP) </span>and (2) <span class='cmbx-12'>product of sums (PoS)</span>. Let’s see what they are all
 about…
    
 </p>
    <h5 class='subsubsectionHead' id='sum-of-products-sop'><a id='x1-11000'></a>Sum of Products (SoP)</h5>
-<!-- l. 351 --><p class='noindent'>Sum of products approach to constructing a representation for a given boolean
+<!-- l. 352 --><p class='noindent'>Sum of products approach to constructing a representation for a given boolean
 function is all about building a detection mechanism for the inputs for which the
 function outputs 1. Such detection mechanism can be built out of multiple simpler
                                                                           
@@ -571,11 +573,11 @@ three subconditions – <span class='mathjax-inline'>\(x' = \begin {cases} 1, \t
 how to construct a mechanism/function to detect individual rows, it is
 time to compose these smaller detectors to represent our final function
 <span class='mathjax-inline'>\(f\)</span>.
-</p><!-- l. 365 --><p class='indent'>   The logic for constructing the detector for the rows for which our function
+</p><!-- l. 366 --><p class='indent'>   The logic for constructing the detector for the rows for which our function
 outputs 1 is as follows: we define
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} f(\text {input}) = \begin {cases} 1, \text {\makecell {if input is given on \\ the \textbf {second row} OR \\ the \textbf {fourth row} OR \\ the \textbf {sixth row} OR \\ the \textbf {seventh row} OR \\ the \textbf {eighth row} \\ of the truth table}} \\ 0, \text {otherwise} \end {cases}. \end{align*}</div>
-<!-- l. 375 --><p class='indent'>   Therefore, we can combine 5 detectors to construct a representation for <span class='mathjax-inline'>\(f\)</span> as
+<!-- l. 376 --><p class='indent'>   Therefore, we can combine 5 detectors to construct a representation for <span class='mathjax-inline'>\(f\)</span> as
 follows: <span class='mathjax-inline'>\(f(x, y, z) = r_2(x, y, z) + r_4(x, y, z) + r_6(x, y, z) + r_7(x, y, z) + r_8(x, y, z)\)</span>. In other words, we may write <span class='mathjax-inline'>\(f(x, y, z) = \sum m(1, 3, 5, 6, 7)\)</span> – sum of <span class='cmbx-12'>minterms </span>(products).
 </p>
    <figure class='figure' id='x1-11001r1'><span id='andor-circuit-for-fx-y-z-m-'></span> 
@@ -587,14 +589,14 @@ follows: <span class='mathjax-inline'>\(f(x, y, z) = r_2(x, y, z) + r_4(x, y, z)
                                                                           
 
                                                                           
-<!-- l. 379 --><p class='noindent'><img alt='PIC' height='234' src='/assets/courses/comp-arch/figures/c2s3_sop_example.png' width='234' />
+<!-- l. 380 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c2s3_sop_example.png' width='50%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 2.1: </span><span class='content'>AND-OR circuit for <span class='mathjax-inline'>\(f(x, y, z) = \sum m(1, 3, 5, 6, 7)\)</span>.</span></figcaption><!-- tex4ht:label?: x1-11001r1  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 384 --><p class='indent'>   The diagram above illustrates visual representation of the construction of our
+<!-- l. 385 --><p class='indent'>   The diagram above illustrates visual representation of the construction of our
 boolean function <span class='mathjax-inline'>\(f\)</span> by using ANDs, ORs, and NOTs. To explain the diagram, the
 inputs <span class='mathjax-inline'>\(x\)</span>, <span class='mathjax-inline'>\(y\)</span>, and <span class='mathjax-inline'>\(z\)</span> are shown on the leftmost side. Then each of them are
 connected to a triangle and another triangle with a circle on its tip: a regular
@@ -613,7 +615,7 @@ from 5 AND gates on its left side and outputs to a wire connected to
 a circle labeled “f” on its right is called <span class='cmbx-12'>OR </span>gate. It basically adds all
 of its inputs and outputs the result as the final value of our function
 <span class='mathjax-inline'>\(f\)</span>.
-</p><!-- l. 386 --><p class='indent'>   Notice that how we have sometimes used complements of variables as an input
+</p><!-- l. 387 --><p class='indent'>   Notice that how we have sometimes used complements of variables as an input
 to AND gate because we cannot really represent “(x = 0) AND (y = 0) AND (z =
 1)” by connecting x, y, z to an AND gate on the top: that would have meant that
 the AND gate outputs 1 when it observes “(x = 1) AND (y = 1) AND (z = 1)”
@@ -631,7 +633,7 @@ works.
                                                                           
 
                                                                           
-<!-- l. 389 --><p class='noindent'>As opposed to the SoP representation, product-of-sums (PoS) is about
+<!-- l. 390 --><p class='noindent'>As opposed to the SoP representation, product-of-sums (PoS) is about
 constructing detection mechanism that recognizes inputs for which the
 output is 0 in the truth table. With the same logic used in PoS, we could
 construct three such boolean functions that output 1 only when their
@@ -640,17 +642,17 @@ are such three functions: <span class='mathjax-inline'>\(r_0(x, y, z) = x'y'z'\)
 follows:
 </p>
    <div class='mathjax-block'>\[ f(\text {input}) = \begin {cases} 0, \text {\makecell {if input appears on \\ the \textbf {first row} OR \\ the \textbf {third row} OR \\ the \textbf {fifth row}}} \\ 1, \text {otherwise} \end {cases} \]</div>
-<!-- l. 397 --><p class='indent'>   To implement this definition of <span class='mathjax-inline'>\(f\)</span>, we could first try to detect whether the input
+<!-- l. 398 --><p class='indent'>   To implement this definition of <span class='mathjax-inline'>\(f\)</span>, we could first try to detect whether the input
 appears on one of the rows that make <span class='mathjax-inline'>\(f\)</span>’s output 0 by combining three previously
 built detectors by summing them (SoP): <span class='mathjax-inline'>\(r_0(x, y, z) + r_2(x, y, z) + r_4(x, y, z)\)</span>. Now this SoP formula has the following
 definition:
 </p>
    <div class='mathjax-block'>\[ r_0(\text {input}) + r_2(\text {input}) + r_4(\text {input}) = \begin {cases} 1, \text {\makecell {if input appears on \\ the \textbf {first row} OR \\ the \textbf {third row} OR \\ the \textbf {fifth row}}} \\ 0, \text {otherwise} \end {cases} \]</div>
-<!-- l. 406 --><p class='indent'>   Realize how this definition is the complete opposite of the <span class='mathjax-inline'>\(f\)</span>’s definition.
+<!-- l. 407 --><p class='indent'>   Realize how this definition is the complete opposite of the <span class='mathjax-inline'>\(f\)</span>’s definition.
 Therefore, we could just conclude that
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} f(x, y, z) &amp;= \left (r_0(x, y, z) + r_2(x, y, z) + r_4(x, y, z)\right )' = \\ &amp;= \left (r_0(x, y, z)\right )' \cdot \left (r_2(x, y, z)\right )' \cdot \left (r_4(x, y, z)\right )' = \\ &amp;= (x + y + z)(x + y' + z)(x' + y + z) \end{align*}</div>
-<!-- l. 414 --><p class='indent'>   The PoS formula for our function is also written as <span class='mathjax-inline'>\(f(x, y, z) = \prod M(0, 2, 4)\)</span> in short – product of
+<!-- l. 415 --><p class='indent'>   The PoS formula for our function is also written as <span class='mathjax-inline'>\(f(x, y, z) = \prod M(0, 2, 4)\)</span> in short – product of
 <span class='cmbx-12'>Maxterms </span>(sums).
 </p>
    <figure class='figure' id='x1-12001r2'><span id='orand-circuit-for-fx-y-z-m-'></span> 
@@ -662,7 +664,7 @@ Therefore, we could just conclude that
                                                                           
 
                                                                           
-<!-- l. 418 --><p class='noindent'><img alt='PIC' height='234' src='/assets/courses/comp-arch/figures/c2s3_pos_example.png' width='234' />
+<!-- l. 419 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c2s3_pos_example.png' width='50%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 2.2: </span><span class='content'>OR-AND circuit for <span class='mathjax-inline'>\(f(x, y, z) = \prod M(0, 2, 4)\)</span>.</span></figcaption><!-- tex4ht:label?: x1-12001r2  -->
                                                                           
@@ -671,7 +673,7 @@ Therefore, we could just conclude that
    </figure>
    
    <h4 class='subsectionHead' id='boolean-function-simplification-with-karnaugh-maps'><span class='titlemark'>2.3.2   </span> <a id='x1-130002.3.2'></a>Boolean Function Simplification with Karnaugh Maps</h4>
-<!-- l. 425 --><p class='noindent'>We want the circuits to be minimal and compact, because the less redundant logic
+<!-- l. 426 --><p class='noindent'>We want the circuits to be minimal and compact, because the less redundant logic
 (gates) we use in our circuit, the more speed we gain in the propogation of input
 signals (0s and 1s) in the circuit. Here is one simple example: suppose you build a
 circuit out of three NOT gates as follows:
@@ -684,20 +686,20 @@ circuit out of three NOT gates as follows:
                                                                           
 
                                                                           
-<!-- l. 429 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/c2s2_not_not_not_x.png' width='272' />
+<!-- l. 430 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c2s2_not_not_not_x.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 434 --><p class='indent'>   If you represent this circuit as a boolean function <span class='mathjax-inline'>\(f(x) = x'''\)</span>, you can quickly deduce
+<!-- l. 435 --><p class='indent'>   If you represent this circuit as a boolean function <span class='mathjax-inline'>\(f(x) = x'''\)</span>, you can quickly deduce
 that <span class='mathjax-inline'>\(f(x) = x'\)</span> (recall that <span class='mathjax-inline'>\(x'' = x\)</span>). Although two representations are semantically the same (they
 give you the same final output in real life), one is practically slower and more
 resource-demanding than the other. The first representation <span class='mathjax-inline'>\(f(x) = x'''\)</span> requires buying 3
 NOT gates from the store (not budget friendly) and runs slower than <span class='mathjax-inline'>\(f(x) = x'\)</span>, which only
 requires buying a single NOT gate. All this is to say that <span class='cmbx-12'>minimization of
 boolean logic </span>is useful and good.
-</p><!-- l. 436 --><p class='indent'>   You may wonder if there are other techniques to minimize a given
+</p><!-- l. 437 --><p class='indent'>   You may wonder if there are other techniques to minimize a given
 boolean function. There are indeed other techniques beyond the use of
 boolean algebra laws and theorems (e.g., <span class='mathjax-inline'>\(x''=x\)</span>, <span class='mathjax-inline'>\(x+1=1\)</span>, <span class='mathjax-inline'>\(x \cdot x = x\)</span>, etc.), and one of them is
 by using so-called Karnaugh maps or K-maps. A K-map is essentially a
@@ -715,16 +717,16 @@ outputs:
                                                                           
 
                                                                           
-<!-- l. 439 --><p class='indent'>   </p><figure class='float'>
+<!-- l. 440 --><p class='indent'>   </p><figure class='float'>
                                                                           
 
                                                                           
-<div class='tabular'> <table class='tabular' id='TBL-6'><colgroup id='TBL-6-1g'><col id='TBL-6-1' /></colgroup><colgroup id='TBL-6-2g'><col id='TBL-6-2' /></colgroup><colgroup id='TBL-6-3g'><col id='TBL-6-3' /></colgroup><tr id='TBL-6-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-1-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 442 --><p class='noindent'><span class='mathjax-inline'>\(\vcenter {\hbox {\diagbox@pict }}\)</span>      </p></td><td class='td11' colspan='2' id='TBL-6-1-2' style='white-space:nowrap; text-align:center;'>  <div class='multicolumn' style='white-space:nowrap; text-align:center;'>0          1</div></td></tr><tr class='cline'><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-6-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-3-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 444 --><p class='noindent'>00       </p></td><td class='td11' id='TBL-6-3-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 444 --><p class='noindent'>
-      </p></td><td class='td11' id='TBL-6-3-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 445 --><p class='noindent'>
-      </p></td></tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-6-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-5-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 446 --><p class='noindent'>01       </p></td><td class='td11' id='TBL-6-5-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 446 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-6-5-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 447 --><p class='noindent'>
+<div class='tabular'> <table class='tabular' id='TBL-6'><colgroup id='TBL-6-1g'><col id='TBL-6-1' /></colgroup><colgroup id='TBL-6-2g'><col id='TBL-6-2' /></colgroup><colgroup id='TBL-6-3g'><col id='TBL-6-3' /></colgroup><tr id='TBL-6-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-1-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 443 --><p class='noindent'><span class='mathjax-inline'>\(\vcenter {\hbox {\diagbox@pict }}\)</span>      </p></td><td class='td11' colspan='2' id='TBL-6-1-2' style='white-space:nowrap; text-align:center;'>  <div class='multicolumn' style='white-space:nowrap; text-align:center;'>0          1</div></td></tr><tr class='cline'><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-6-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-3-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 445 --><p class='noindent'>00       </p></td><td class='td11' id='TBL-6-3-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 445 --><p class='noindent'>
+      </p></td><td class='td11' id='TBL-6-3-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 446 --><p class='noindent'>
+      </p></td></tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-6-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-5-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 447 --><p class='noindent'>01       </p></td><td class='td11' id='TBL-6-5-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 447 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-6-5-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 448 --><p class='noindent'>
       </p></td>
-</tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-6-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-7-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 448 --><p class='noindent'>11       </p></td><td class='td11' id='TBL-6-7-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 448 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-6-7-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 448 --><p class='noindent'>0        </p></td>
-</tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-6-9-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-9-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 450 --><p class='noindent'>10       </p></td><td class='td11' id='TBL-6-9-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 450 --><p class='noindent'>1        </p></td><td class='td11' id='TBL-6-9-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 451 --><p class='noindent'>
+</tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-6-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-7-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 449 --><p class='noindent'>11       </p></td><td class='td11' id='TBL-6-7-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 449 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-6-7-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 449 --><p class='noindent'>0        </p></td>
+</tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-6-9-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-9-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 451 --><p class='noindent'>10       </p></td><td class='td11' id='TBL-6-9-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 451 --><p class='noindent'>1        </p></td><td class='td11' id='TBL-6-9-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 452 --><p class='noindent'>
       </p></td>
 </tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr></table>                                                                </div>
                                                                           
@@ -732,7 +734,7 @@ outputs:
                                                                           
    </figure>
    </div>
-<!-- l. 458 --><p class='indent'>   Now, we fill the rest of the empty cells of this grid. Notice that how
+<!-- l. 459 --><p class='indent'>   Now, we fill the rest of the empty cells of this grid. Notice that how
 rows are indexed with location/inputs 00, 01, 11, 10 and not 00, 01, 10,
 11. This is because we want the neighbouring locations/inputs to be as
 similar to one another as possible. If you look carefully, going from 00 to 01
@@ -753,20 +755,20 @@ ordering.
                                                                           
 
                                                                           
-<!-- l. 461 --><p class='indent'>   </p><figure class='float'>
+<!-- l. 462 --><p class='indent'>   </p><figure class='float'>
                                                                           
 
                                                                           
-<div class='tabular'> <table class='tabular' id='TBL-9'><colgroup id='TBL-9-1g'><col id='TBL-9-1' /></colgroup><colgroup id='TBL-9-2g'><col id='TBL-9-2' /></colgroup><colgroup id='TBL-9-3g'><col id='TBL-9-3' /></colgroup><tr id='TBL-9-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-1-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 464 --><p class='noindent'><span class='mathjax-inline'>\(\vcenter {\hbox {\diagbox@pict }}\)</span>      </p></td><td class='td11' colspan='2' id='TBL-9-1-2' style='white-space:nowrap; text-align:center;'>  <div class='multicolumn' style='white-space:nowrap; text-align:center;'>0          1</div></td></tr><tr class='cline'><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-9-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-3-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 466 --><p class='noindent'>00       </p></td><td class='td11' id='TBL-9-3-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 466 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-9-3-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 466 --><p class='noindent'>1        </p></td></tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-9-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-5-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 468 --><p class='noindent'>01       </p></td><td class='td11' id='TBL-9-5-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 468 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-9-5-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 468 --><p class='noindent'>1        </p></td>
-</tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-9-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-7-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 470 --><p class='noindent'>11       </p></td><td class='td11' id='TBL-9-7-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 470 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-9-7-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 470 --><p class='noindent'>0        </p></td>
-</tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-9-9-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-9-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 472 --><p class='noindent'>10       </p></td><td class='td11' id='TBL-9-9-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 472 --><p class='noindent'>1        </p></td><td class='td11' id='TBL-9-9-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 472 --><p class='noindent'>1        </p></td>
+<div class='tabular'> <table class='tabular' id='TBL-9'><colgroup id='TBL-9-1g'><col id='TBL-9-1' /></colgroup><colgroup id='TBL-9-2g'><col id='TBL-9-2' /></colgroup><colgroup id='TBL-9-3g'><col id='TBL-9-3' /></colgroup><tr id='TBL-9-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-1-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 465 --><p class='noindent'><span class='mathjax-inline'>\(\vcenter {\hbox {\diagbox@pict }}\)</span>      </p></td><td class='td11' colspan='2' id='TBL-9-1-2' style='white-space:nowrap; text-align:center;'>  <div class='multicolumn' style='white-space:nowrap; text-align:center;'>0          1</div></td></tr><tr class='cline'><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-9-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-3-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 467 --><p class='noindent'>00       </p></td><td class='td11' id='TBL-9-3-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 467 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-9-3-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 467 --><p class='noindent'>1        </p></td></tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-9-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-5-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 469 --><p class='noindent'>01       </p></td><td class='td11' id='TBL-9-5-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 469 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-9-5-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 469 --><p class='noindent'>1        </p></td>
+</tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-9-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-7-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 471 --><p class='noindent'>11       </p></td><td class='td11' id='TBL-9-7-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 471 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-9-7-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 471 --><p class='noindent'>0        </p></td>
+</tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-9-9-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-9-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 473 --><p class='noindent'>10       </p></td><td class='td11' id='TBL-9-9-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 473 --><p class='noindent'>1        </p></td><td class='td11' id='TBL-9-9-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 473 --><p class='noindent'>1        </p></td>
 </tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr></table>                                                                </div>
                                                                           
 
                                                                           
    </figure>
    </div>
-<!-- l. 480 --><p class='indent'>   What now, you ask? The last step after filling the grid is to look for <span class='cmbx-12'>prime
+<!-- l. 481 --><p class='indent'>   What now, you ask? The last step after filling the grid is to look for <span class='cmbx-12'>prime
 implicants </span>– <span class='cmti-12'>a rectangular selection of </span><span class='mathjax-inline'>\(2^{i \in \mathbb {N}}\) </span><span class='cmti-12'>number of cells filled with 1s only</span>. Notice
 that the K-map grid wraps around both horizontally and vertically, so
 a rectangular selection wrapping over horizontally or vertically is also
@@ -776,21 +778,21 @@ valid.
                                                                           
 
                                                                           
-<!-- l. 483 --><p class='indent'>   </p><figure class='float'>
+<!-- l. 484 --><p class='indent'>   </p><figure class='float'>
                                                                           
 
                                                                           
-<div class='tabular'> <table class='tabular' id='TBL-12'><colgroup id='TBL-12-1g'><col id='TBL-12-1' /></colgroup><colgroup id='TBL-12-2g'><col id='TBL-12-2' /></colgroup><colgroup id='TBL-12-3g'><col id='TBL-12-3' /></colgroup><tr id='TBL-12-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-1-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 486 --><p class='noindent'><span class='mathjax-inline'>\(\vcenter {\hbox {\diagbox@pict }}\)</span>      </p></td><td class='td11' colspan='2' id='TBL-12-1-2' style='white-space:nowrap; text-align:center;'>  <div class='multicolumn' style='white-space:nowrap; text-align:center;'>0          1</div></td></tr><tr class='cline'><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-12-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-3-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 488 --><p class='noindent'>00       </p></td><td class='td11' id='TBL-12-3-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 488 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-12-3-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 488 --><p class='noindent'>1        </p></td>
-</tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-12-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-5-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 490 --><p class='noindent'>01       </p></td><td class='td11' id='TBL-12-5-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 490 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-12-5-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 490 --><p class='noindent'>1        </p></td>
-</tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-12-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-7-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 492 --><p class='noindent'>11       </p></td><td class='td11' id='TBL-12-7-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 492 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-12-7-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 492 --><p class='noindent'>0        </p></td>
-</tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-12-9-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-9-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 494 --><p class='noindent'>10       </p></td><td class='td11' id='TBL-12-9-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 494 --><p class='noindent'>1        </p></td><td class='td11' id='TBL-12-9-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 494 --><p class='noindent'>1        </p></td>
+<div class='tabular'> <table class='tabular' id='TBL-12'><colgroup id='TBL-12-1g'><col id='TBL-12-1' /></colgroup><colgroup id='TBL-12-2g'><col id='TBL-12-2' /></colgroup><colgroup id='TBL-12-3g'><col id='TBL-12-3' /></colgroup><tr id='TBL-12-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-1-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 487 --><p class='noindent'><span class='mathjax-inline'>\(\vcenter {\hbox {\diagbox@pict }}\)</span>      </p></td><td class='td11' colspan='2' id='TBL-12-1-2' style='white-space:nowrap; text-align:center;'>  <div class='multicolumn' style='white-space:nowrap; text-align:center;'>0          1</div></td></tr><tr class='cline'><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-12-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-3-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 489 --><p class='noindent'>00       </p></td><td class='td11' id='TBL-12-3-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 489 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-12-3-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 489 --><p class='noindent'>1        </p></td>
+</tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-12-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-5-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 491 --><p class='noindent'>01       </p></td><td class='td11' id='TBL-12-5-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 491 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-12-5-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 491 --><p class='noindent'>1        </p></td>
+</tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-12-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-7-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 493 --><p class='noindent'>11       </p></td><td class='td11' id='TBL-12-7-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 493 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-12-7-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 493 --><p class='noindent'>0        </p></td>
+</tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-12-9-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-9-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 495 --><p class='noindent'>10       </p></td><td class='td11' id='TBL-12-9-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 495 --><p class='noindent'>1        </p></td><td class='td11' id='TBL-12-9-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 495 --><p class='noindent'>1        </p></td>
 </tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr></table>                                                                </div>
                                                                           
 
                                                                           
    </figure>
    </div>
-<!-- l. 502 --><p class='indent'>   While we do our group selections, we always try to make the largest groups of
+<!-- l. 503 --><p class='indent'>   While we do our group selections, we always try to make the largest groups of
 size <span class='mathjax-inline'>\(2^i\)</span> possible. Groups may possible overlap and there is no problem with that.
 In fact, sometimes we deliberately pick overlapping groups to maximize
 their sizes as much as possible. The higher <span class='mathjax-inline'>\(2^i\)</span> number of 1s we have in our
@@ -811,7 +813,7 @@ product is <span class='mathjax-inline'>\(xy\)</span>. Finally, the minimized re
                                                                           
 </p>
    <h2 class='chapterHead' id='logic-gates-circuits'><span class='titlemark'>Chapter 3</span><br /><a id='x1-140003'></a>Logic Gates &amp; Circuits</h2>
-<!-- l. 507 --><p class='noindent'>A <span class='cmbx-12'>logic gate </span>is a piece of hardware that computes one of basic functions from the
+<!-- l. 508 --><p class='noindent'>A <span class='cmbx-12'>logic gate </span>is a piece of hardware that computes one of basic functions from the
 boolean logic algebra such as <span class='cmti-12'>boolean addition</span>, or <span class='cmti-12'>boolean multiplication</span>, or,
 <span class='cmti-12'>boolean negation</span>, or some simple combination of these. Hardware people use these
 logic gates to construct circuits. First, we’ll see what logic gates there are and
@@ -822,7 +824,7 @@ components.
    
 </p>
    <h3 class='sectionHead' id='not-and-or-xor-nor-xnor'><span class='titlemark'>3.1   </span> <a id='x1-150003.1'></a>NOT, AND, OR, XOR, NOR, XNOR</h3>
-<!-- l. 511 --><p class='noindent'>The first logic gate is called the <span class='cmbx-12'>NOT </span>gate. NOT gate is to compute a unary
+<!-- l. 512 --><p class='noindent'>The first logic gate is called the <span class='cmbx-12'>NOT </span>gate. NOT gate is to compute a unary
 boolean negation function, <span class='mathjax-inline'>\(\operatorname {NOT}(x) := x'\)</span>. Note that we may use <span class='mathjax-inline'>\(\overline {x}\)</span> or <span class='mathjax-inline'>\(\lnot x\)</span> in exchange with <span class='mathjax-inline'>\(x'\)</span> from
 time to time; all of these notations mean the same thing in this book.
 The truth table and visual representation for the NOT gate are given
@@ -838,12 +840,12 @@ below:
                                                                           
 <div class='minipage'><div class='tabular'> <table class='tabular' id='TBL-15'><colgroup id='TBL-15-1g'><col id='TBL-15-1' /></colgroup><colgroup id='TBL-15-2g'><col id='TBL-15-2' /></colgroup><tr id='TBL-15-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-15-1-1' style='white-space:nowrap; text-align:center;'> x  </td><td class='td11' id='TBL-15-1-2' style='white-space:nowrap; text-align:center;'> <span class='mathjax-inline'>\(\operatorname {NOT}(x) := x' = \overline {x} = \lnot x\)</span> </td></tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td></tr><tr id='TBL-15-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-15-2-1' style='white-space:nowrap; text-align:center;'> 0 </td><td class='td11' id='TBL-15-2-2' style='white-space:nowrap; text-align:center;'> 1</td>
 </tr><tr id='TBL-15-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-15-3-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-15-3-2' style='white-space:nowrap; text-align:center;'> 0  </td>
-</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td></tr></table>                       </div></div>               <div class='minipage'><img alt='PIC' height='124' src='/assets/courses/comp-arch/figures/c3s1_not_gate.png' width='124' />                                   </div>
+</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td></tr></table>                       </div></div>               <div class='minipage'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c3s1_not_gate.png' width='50%' />                                   </div>
                                                                           
 
                                                                           
    </figure>
-<!-- l. 530 --><p class='indent'>   The second logic gate is the <span class='cmbx-12'>AND </span>gate. The AND gate is used to compute
+<!-- l. 531 --><p class='indent'>   The second logic gate is the <span class='cmbx-12'>AND </span>gate. The AND gate is used to compute
 binary multiplication in boolean algebra, <span class='mathjax-inline'>\(\operatorname {AND}(x, y) := x \cdot y\)</span> or <span class='mathjax-inline'>\(xy\)</span> in short. Here’s its truth table on
 the left and its diagramatic representation on the right:
 </p>
@@ -859,12 +861,12 @@ the left and its diagramatic representation on the right:
 </tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr><tr id='TBL-16-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-16-2-1' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-16-2-2' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-16-2-3' style='white-space:nowrap; text-align:center;'> 0  </td></tr><tr id='TBL-16-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-16-3-1' style='white-space:nowrap; text-align:center;'> 0 </td><td class='td11' id='TBL-16-3-2' style='white-space:nowrap; text-align:center;'> 1 </td><td class='td11' id='TBL-16-3-3' style='white-space:nowrap; text-align:center;'> 0</td>
 </tr><tr id='TBL-16-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-16-4-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-16-4-2' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-16-4-3' style='white-space:nowrap; text-align:center;'> 0  </td>
 </tr><tr id='TBL-16-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-16-5-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-16-5-2' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-16-5-3' style='white-space:nowrap; text-align:center;'> 1  </td>
-</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr></table>                       </div></div>               <div class='minipage'><img alt='PIC' height='124' src='/assets/courses/comp-arch/figures/c3s1_and_gate.png' width='124' />                                   </div>
+</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr></table>                       </div></div>               <div class='minipage'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c3s1_and_gate.png' width='50%' />                                   </div>
                                                                           
 
                                                                           
    </figure>
-<!-- l. 551 --><p class='indent'>   <span class='cmbx-12'>OR </span>is another logic gate that computes binary addition in boolean algebra, <span class='mathjax-inline'>\(\operatorname {OR}(x, y) := x + y\)</span>.
+<!-- l. 552 --><p class='indent'>   <span class='cmbx-12'>OR </span>is another logic gate that computes binary addition in boolean algebra, <span class='mathjax-inline'>\(\operatorname {OR}(x, y) := x + y\)</span>.
 Its truth table and diagramatic representation is given below:
 </p>
    <figure class='figure'> 
@@ -879,12 +881,12 @@ Its truth table and diagramatic representation is given below:
 </tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr><tr id='TBL-17-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-17-2-1' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-17-2-2' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-17-2-3' style='white-space:nowrap; text-align:center;'> 0  </td></tr><tr id='TBL-17-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-17-3-1' style='white-space:nowrap; text-align:center;'> 0 </td><td class='td11' id='TBL-17-3-2' style='white-space:nowrap; text-align:center;'> 1 </td><td class='td11' id='TBL-17-3-3' style='white-space:nowrap; text-align:center;'> 1</td>
 </tr><tr id='TBL-17-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-17-4-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-17-4-2' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-17-4-3' style='white-space:nowrap; text-align:center;'> 1  </td>
 </tr><tr id='TBL-17-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-17-5-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-17-5-2' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-17-5-3' style='white-space:nowrap; text-align:center;'> 1  </td>
-</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr></table>                       </div></div>               <div class='minipage'><img alt='PIC' height='124' src='/assets/courses/comp-arch/figures/c3s1_or_gate.png' width='124' />                                   </div>
+</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr></table>                       </div></div>               <div class='minipage'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c3s1_or_gate.png' width='50%' />                                   </div>
                                                                           
 
                                                                           
    </figure>
-<!-- l. 574 --><p class='indent'>   Believe me when I say this: we can already built a lot by using the
+<!-- l. 575 --><p class='indent'>   Believe me when I say this: we can already built a lot by using the
 NOT gate and the AND gate. By a lot, I actually mean everything that
 can be built by using all the logic gates described in this chapter. Yes,
 these two gates combined are really <span class='cmti-12'>universally </span>powerful. But this is the
@@ -909,12 +911,12 @@ circuittry:
 </tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr><tr id='TBL-18-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-18-2-1' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-18-2-2' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-18-2-3' style='white-space:nowrap; text-align:center;'> 1  </td></tr><tr id='TBL-18-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-18-3-1' style='white-space:nowrap; text-align:center;'> 0 </td><td class='td11' id='TBL-18-3-2' style='white-space:nowrap; text-align:center;'> 0 </td><td class='td11' id='TBL-18-3-3' style='white-space:nowrap; text-align:center;'> 1</td>
 </tr><tr id='TBL-18-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-18-4-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-18-4-2' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-18-4-3' style='white-space:nowrap; text-align:center;'> 1  </td>
 </tr><tr id='TBL-18-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-18-5-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-18-5-2' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-18-5-3' style='white-space:nowrap; text-align:center;'> 0  </td>
-</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr></table>                       </div></div>               <div class='minipage'><img alt='PIC' height='124' src='/assets/courses/comp-arch/figures/c3s1_nand_gate.png' width='124' />                                   </div>
+</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr></table>                       </div></div>               <div class='minipage'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c3s1_nand_gate.png' width='50%' />                                   </div>
                                                                           
 
                                                                           
    </figure>
-<!-- l. 599 --><p class='indent'>   Now, it is time to explore other logic gates that are essentially composition of
+<!-- l. 600 --><p class='indent'>   Now, it is time to explore other logic gates that are essentially composition of
 the ones that we have seen already. The first one we are going to see is the <span class='cmbx-12'>NOR</span>
 gate that first ORs (addition in boolean algebra) two inputs or operands and then
 NOTs (negation in boolean algebration) the result. Its name is the abbreviation
@@ -934,12 +936,12 @@ representation:
 </tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr><tr id='TBL-19-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-19-2-1' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-19-2-2' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-19-2-3' style='white-space:nowrap; text-align:center;'> 1  </td></tr><tr id='TBL-19-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-19-3-1' style='white-space:nowrap; text-align:center;'> 0 </td><td class='td11' id='TBL-19-3-2' style='white-space:nowrap; text-align:center;'> 1 </td><td class='td11' id='TBL-19-3-3' style='white-space:nowrap; text-align:center;'> 0</td>
 </tr><tr id='TBL-19-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-19-4-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-19-4-2' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-19-4-3' style='white-space:nowrap; text-align:center;'> 0  </td>
 </tr><tr id='TBL-19-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-19-5-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-19-5-2' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-19-5-3' style='white-space:nowrap; text-align:center;'> 0  </td>
-</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr></table>                       </div></div>               <div class='minipage'><img alt='PIC' height='124' src='/assets/courses/comp-arch/figures/c3s1_nor_gate.png' width='124' />                                   </div>
+</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr></table>                       </div></div>               <div class='minipage'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c3s1_nor_gate.png' width='50%' />                                   </div>
                                                                           
 
                                                                           
    </figure>
-<!-- l. 621 --><p class='indent'>   Another type of “OR-ing” two numbers is by using <span class='cmbx-12'>XOR </span>or <span class='cmbx-12'>eXclusive OR</span>.
+<!-- l. 622 --><p class='indent'>   Another type of “OR-ing” two numbers is by using <span class='cmbx-12'>XOR </span>or <span class='cmbx-12'>eXclusive OR</span>.
 While how the OR gate functions can be translated into the word “or” in English
 directly, and NOR gate’s behavior can be described by using the words “not or”
 in English, XOR’s behavior can be translated to “either…or…” wording. XOR is a
@@ -959,12 +961,12 @@ and diagramatic representation:
 </tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr><tr id='TBL-20-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-20-2-1' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-20-2-2' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-20-2-3' style='white-space:nowrap; text-align:center;'> 0  </td></tr><tr id='TBL-20-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-20-3-1' style='white-space:nowrap; text-align:center;'> 0 </td><td class='td11' id='TBL-20-3-2' style='white-space:nowrap; text-align:center;'> 1 </td><td class='td11' id='TBL-20-3-3' style='white-space:nowrap; text-align:center;'> 1</td>
 </tr><tr id='TBL-20-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-20-4-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-20-4-2' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-20-4-3' style='white-space:nowrap; text-align:center;'> 1  </td>
 </tr><tr id='TBL-20-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-20-5-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-20-5-2' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-20-5-3' style='white-space:nowrap; text-align:center;'> 0  </td>
-</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr></table>                       </div></div>               <div class='minipage'><img alt='PIC' height='124' src='/assets/courses/comp-arch/figures/c3s1_xor_gate.png' width='124' />                                   </div>
+</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr></table>                       </div></div>               <div class='minipage'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c3s1_xor_gate.png' width='50%' />                                   </div>
                                                                           
 
                                                                           
    </figure>
-<!-- l. 643 --><p class='indent'>   Lastly, we have the <span class='cmbx-12'>XNOR </span>gate that computes “NOT XOR” of two given
+<!-- l. 644 --><p class='indent'>   Lastly, we have the <span class='cmbx-12'>XNOR </span>gate that computes “NOT XOR” of two given
 numbers, <span class='mathjax-inline'>\(\operatorname {XNOR}(x, y) := xy + x'y'\)</span>. Here’s its truth table and diagramatic representation:
 </p>
    <figure class='figure'> 
@@ -979,12 +981,12 @@ numbers, <span class='mathjax-inline'>\(\operatorname {XNOR}(x, y) := xy + x'y'\
 </tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr><tr id='TBL-21-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-21-2-1' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-21-2-2' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-21-2-3' style='white-space:nowrap; text-align:center;'> 1  </td></tr><tr id='TBL-21-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-21-3-1' style='white-space:nowrap; text-align:center;'> 0 </td><td class='td11' id='TBL-21-3-2' style='white-space:nowrap; text-align:center;'> 1 </td><td class='td11' id='TBL-21-3-3' style='white-space:nowrap; text-align:center;'> 0</td>
 </tr><tr id='TBL-21-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-21-4-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-21-4-2' style='white-space:nowrap; text-align:center;'> 0  </td><td class='td11' id='TBL-21-4-3' style='white-space:nowrap; text-align:center;'> 0  </td>
 </tr><tr id='TBL-21-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-21-5-1' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-21-5-2' style='white-space:nowrap; text-align:center;'> 1  </td><td class='td11' id='TBL-21-5-3' style='white-space:nowrap; text-align:center;'> 1  </td>
-</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr></table>                       </div></div>               <div class='minipage'><img alt='PIC' height='124' src='/assets/courses/comp-arch/figures/c3s1_xnor_gate.png' width='124' />                                   </div>
+</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr></table>                       </div></div>               <div class='minipage'><img alt='PIC' width='50%' src='/assets/courses/comp-arch/figures/c3s1_xnor_gate.png' />                                   </div>
                                                                           
 
                                                                           
    </figure>
-<!-- l. 667 --><p class='indent'>   These are all the logic gates that we are going to use to build more complex
+<!-- l. 668 --><p class='indent'>   These are all the logic gates that we are going to use to build more complex
 circuitry later on. In fact, we are mostly going to use NOT, AND, and OR gates.
 The others won’t be used much in this book, but it is still good to know about
 them. Now, let’s see the <span class='cmbx-12'>universality </span>claims about some of these gates as I
@@ -992,12 +994,12 @@ promised earlier.
    
 </p>
    <h3 class='sectionHead' id='universal-logic-gates'><span class='titlemark'>3.2   </span> <a id='x1-160003.2'></a>Universal Logic Gates</h3>
-<!-- l. 670 --><p class='noindent'>We need to ask the following question before we begin: What does it mean for a
+<!-- l. 671 --><p class='noindent'>We need to ask the following question before we begin: What does it mean for a
 set of logic gates to be universal all together? The answer is the definition of
 universality, and here is how it is defined:
 </p>
    <div class='newtheorem'>
-<!-- l. 672 --><p class='noindent'><span class='head'>
+<!-- l. 673 --><p class='noindent'><span class='head'>
 <a id='x1-16001r1'></a>
 <span class='cmbx-12'>Definition 3.1 </span>(Universality of a set of logic gates)<span class='cmbx-12'>.</span>  </span>A set of logic gates <span class='mathjax-inline'>\(\{G_1, G_2, \dots , G_n\}\)</span> is
 <span class='cmbx-12'>universal                                   </span>if                                        and
@@ -1005,8 +1007,8 @@ only if any boolean function can be constructed/implemented only by using
 the logic gates within this set.
 </p>
    </div>
-<!-- l. 675 --><p class='indent'>
-</p><!-- l. 677 --><p class='indent'>   We have already learned about the SoP canonical representation for all
+<!-- l. 676 --><p class='indent'>
+</p><!-- l. 678 --><p class='indent'>   We have already learned about the SoP canonical representation for all
 boolean functions in the previous chapter. Well, it is already obvious that SoP or
 Sum-of-Products representation uses <span class='cmbx-12'>Sum </span>and <span class='cmbx-12'>Product </span>among the <span class='cmbx-12'>literals </span>to
 represent a boolean function. Lastly, a literal can be an input variable or its
@@ -1020,15 +1022,15 @@ construction of complement or negated variable). Therefore, the set <span class=
                                                                           
 </p>
    <div class='newtheorem'>
-<!-- l. 679 --><p class='noindent'><span class='head'>
+<!-- l. 680 --><p class='noindent'><span class='head'>
 <a id='x1-16002r1'></a>
 <span class='cmbx-12'>Theorem 3.1.</span>  </span><span class='mathjax-inline'>\(\{\operatorname {NOT}, \operatorname {AND}\}\) </span><span class='cmti-12'>is universal.</span>
 </p>
    </div>
-<!-- l. 681 --><p class='indent'>
+<!-- l. 682 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 684 --><p class='indent'>   <span class='head'>
+<!-- l. 685 --><p class='indent'>   <span class='head'>
 <span class='cmti-12'>Proof.</span> </span>To prove that <span class='mathjax-inline'>\(\{\operatorname {NOT}, \operatorname {AND}\}\)</span> is a universal set we need to prove that the NAND
 gate can be used to construct all the gates from another universal set, such
 as the set <span class='mathjax-inline'>\(\{\operatorname {NOT}, \operatorname {AND}, \operatorname {OR}\}\)</span> that we saw earlier. We already have the NOT and AND gates
@@ -1038,12 +1040,12 @@ by using only NOT and AND gates from our candidate set. Let’s proceed to
 the construction.
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} \operatorname {OR}(x, y) &amp;= x + y \\ &amp;= (xy)' \quad \text {De Morgan's law} \\ &amp;= \operatorname {NOT}\left (\operatorname {AND}(x, y)\right ) \end{align*}</div>
-<!-- l. 692 --><p class='indent'>   Since only NOT and AND gates can be used to construct all the gates in a
+<!-- l. 693 --><p class='indent'>   Since only NOT and AND gates can be used to construct all the gates in a
 universal set <span class='mathjax-inline'>\(\{\operatorname {NOT}, \operatorname {AND}, \operatorname {OR}\}\)</span> that we already know of, <span class='mathjax-inline'>\(\{\operatorname {NOT}, \operatorname {AND}\}\)</span> is universal.                              □
 </p>
    </div>
    <div class='newtheorem'>
-<!-- l. 695 --><p class='noindent'><span class='head'>
+<!-- l. 696 --><p class='noindent'><span class='head'>
 <a id='x1-16003r2'></a>
 <span class='cmbx-12'>Theorem 3.2.</span>  </span><span class='mathjax-inline'>\(\{\operatorname {NAND}\}\) </span><span class='cmti-12'>is universal.</span>
                                                                           
@@ -1051,34 +1053,34 @@ universal set <span class='mathjax-inline'>\(\{\operatorname {NOT}, \operatornam
                                                                           
 </p>
    </div>
-<!-- l. 698 --><p class='indent'>
+<!-- l. 699 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 701 --><p class='indent'>   <span class='head'>
+<!-- l. 702 --><p class='indent'>   <span class='head'>
 <span class='cmti-12'>Proof.</span> </span>To prove that <span class='mathjax-inline'>\(\{\operatorname {NAND}\}\)</span> is a universal set we need to prove that the NAND
 gate can be used to construct all the gates from another universal set, such
 as the set <span class='mathjax-inline'>\(\{\operatorname {NOT}, \operatorname {AND}\}\)</span> that we saw earlier. Let’s proceed to the constructions.
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} \operatorname {NOT}(x) &amp;= x' = \\ &amp;= \operatorname {NAND}(x, x) = (x \cdot x)' = x' \end{align*}</div>
    <div class='mathjax-env mathjax-align*'>\begin{align*} \operatorname {AND}(x, y) &amp;= xy = \\ &amp;= \operatorname {NAND}(\operatorname {NAND}(x, y), \operatorname {NAND}(x, y)) = \operatorname {NAND}\left ((xy)', (xy)'\right ) = \\ &amp;= \operatorname {NOT}\left ((xy)'\right ) = xy \end{align*}</div>
-<!-- l. 715 --><p class='indent'>   Therefore, the NAND gate by itself is a universal gate.                     □
+<!-- l. 716 --><p class='indent'>   Therefore, the NAND gate by itself is a universal gate.                     □
 </p>
    </div>
    <div class='newtheorem'>
-<!-- l. 718 --><p class='noindent'><span class='head'>
+<!-- l. 719 --><p class='noindent'><span class='head'>
 <a id='x1-16004r3'></a>
 <span class='cmbx-12'>Theorem 3.3.</span>  </span><span class='mathjax-inline'>\(\{\operatorname {NOR}\}\) </span><span class='cmti-12'>is universal.</span>
 </p>
    </div>
-<!-- l. 720 --><p class='indent'>
+<!-- l. 721 --><p class='indent'>
 </p>
    <div class='proof'>
-<!-- l. 723 --><p class='indent'>   <span class='head'>
+<!-- l. 724 --><p class='indent'>   <span class='head'>
 <span class='cmti-12'>Proof.</span> </span>We will build the NAND gate only by using NOR gate(s) to prove
 the universality of NOR.
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} \operatorname {NAND}(x, y) &amp;= \operatorname {NOR}(xy, xy) = \\ &amp;= \operatorname {NOR}\left ( \operatorname {NOR}(x', y'), \operatorname {NOR}(x', y') \right ) = \\ &amp;= \operatorname {NOR}\left ( \operatorname {NOR}\left ( \operatorname {NOR}(x, x), \operatorname {NOR}(y, y) \right ), \operatorname {NOR}\left ( \operatorname {NOR}(x, x), \operatorname {NOR}(y, y) \right ) \right ) \end{align*}</div>
-<!-- l. 741 --><p class='indent'>   Therefore, NOR gate is a universal gate by itself.                             □
+<!-- l. 742 --><p class='indent'>   Therefore, NOR gate is a universal gate by itself.                             □
                                                                           
 
                                                                           
@@ -1087,13 +1089,13 @@ the universality of NOR.
                                                                           
 
                                                                           
-<!-- l. 744 --><p class='indent'>
+<!-- l. 745 --><p class='indent'>
                                                                           
 
                                                                           
 </p>
    <h2 class='chapterHead' id='combinational-logic'><span class='titlemark'>Chapter 4</span><br /><a id='x1-170004'></a>Combinational Logic</h2>
-<!-- l. 745 --><p class='noindent'>This chapter makes use of boolean circuits/functions with no “memory” of the
+<!-- l. 746 --><p class='noindent'>This chapter makes use of boolean circuits/functions with no “memory” of the
 past, which is known as <span class='cmbx-12'>combinational circuits</span>. Combinational circuit is a
 circuit whose output(s) is determined only based on the explicitly given inputs. In
 other words, the output of a combinational circuit always stays the same as the
@@ -1112,7 +1114,7 @@ functions.
    
 </p>
    <h3 class='sectionHead' id='foundational-combinational-circuits'><span class='titlemark'>4.1   </span> <a id='x1-180004.1'></a>Foundational Combinational Circuits</h3>
-<!-- l. 748 --><p class='noindent'>This section introduces several combinational circuits that are used quite often
+<!-- l. 749 --><p class='noindent'>This section introduces several combinational circuits that are used quite often
 while building a typical general-purpose and programmable computer. By general
 purpose, we mean that any computable function can be programmed into the
 computer. That is essentially our goal: making a computer to compute our
@@ -1122,7 +1124,7 @@ combinational building blocks of computers.
    
 </p>
    <h4 class='subsectionHead' id='multiplexer-mux'><span class='titlemark'>4.1.1   </span> <a id='x1-190004.1.1'></a>Multiplexer (MUX)</h4>
-<!-- l. 751 --><p class='noindent'>What is a multiplexer? It is a circuit that acts like a switch… like a railroad switch
+<!-- l. 752 --><p class='noindent'>What is a multiplexer? It is a circuit that acts like a switch… like a railroad switch
 lever. You know the one that decides which train gets to continue with the main
 railway.
                                                                           
@@ -1138,14 +1140,14 @@ railway.
                                                                           
 
                                                                           
-<!-- l. 755 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/other/railroad_switch.jpg' width='272' />
+<!-- l. 756 --><p class='noindent'><img alt='PIC' src='/assets/courses/comp-arch/figures/other/railroad_switch.jpg' width='50%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 4.1: </span><span class='content'>Railroad switch</span></figcaption><!-- tex4ht:label?: x1-19001r1  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 760 --><p class='indent'>   To be more concrete with the multiplexers’ use case, imagine that we have two
+<!-- l. 761 --><p class='indent'>   To be more concrete with the multiplexers’ use case, imagine that we have two
 independent cirucits that do some useful calculations for us. For example,
 let one circuit take two 1-bit inputs (<span class='mathjax-inline'>\(x_1\)</span> and <span class='mathjax-inline'>\(x_2\)</span>) and compute their logical
 AND (<span class='mathjax-inline'>\(x_1 \land x_2\)</span>), and let the other circuit take the same 1-bit inputs (<span class='mathjax-inline'>\(x_1\)</span> and <span class='mathjax-inline'>\(x_2\)</span>) and
@@ -1157,7 +1159,7 @@ would like to create a circuit that computes the following mathematical
 function:
 </p>
    <div class='mathjax-block'>\[ f(x_1, x_2, \texttt {computeOR}_{\in \{0, 1\}} = \begin {cases} x_1 \land x_2, \text {if } \texttt {computerOR} = 0 \\ x_1 \lor x_2, \text {if } \texttt {computerOR} = 1 \\ \end {cases} \]</div>
-<!-- l. 770 --><p class='indent'>   So, if <span class='cmtt-12'>computeOR </span>is 0, we want to get the output of AND gate, and if
+<!-- l. 771 --><p class='indent'>   So, if <span class='cmtt-12'>computeOR </span>is 0, we want to get the output of AND gate, and if
 <span class='cmtt-12'>computeOR </span>is 1, we want to get the output of OR gate. Here is how our unfinished
 circuit looks right now:
 </p>
@@ -1170,14 +1172,14 @@ circuit looks right now:
                                                                           
 
                                                                           
-<!-- l. 774 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/other/mux_intro.png' width='272' />
+<!-- l. 775 --><p class='noindent'><img alt='PIC' src='/assets/courses/comp-arch/figures/other/mux_intro.png' width='50%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 4.2: </span><span class='content'>Trying to compute <span class='mathjax-inline'>\(f(x_1, x_2, \texttt {computeOR}\)</span> function.</span></figcaption><!-- tex4ht:label?: x1-19002r2  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 779 --><p class='indent'>   A carefull reader should have felt that something if off about the picture
+<!-- l. 780 --><p class='indent'>   A carefull reader should have felt that something if off about the picture
 shown above: There is no <span class='cmtt-12'>computeOR </span>input, which was one of the arguments to
 our function <span class='mathjax-inline'>\(f\)</span>. So, let’s add that also to our circuit, and now it looks like
 this:
@@ -1191,19 +1193,19 @@ this:
                                                                           
 
                                                                           
-<!-- l. 783 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/other/mux_intro2.png' width='272' />
+<!-- l. 784 --><p class='noindent'><img alt='PIC' src='/assets/courses/comp-arch/figures/other/mux_intro2.png' width='50%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 4.3: </span><span class='content'>Trying to compute <span class='mathjax-inline'>\(f(x_1, x_2, \texttt {computeOR}\)</span> function.</span></figcaption><!-- tex4ht:label?: x1-19003r3  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 788 --><p class='indent'>   How do we find out a way to connect AND’s and OR’s outputs to the main
+<!-- l. 789 --><p class='indent'>   How do we find out a way to connect AND’s and OR’s outputs to the main
 output wire (connected to <span class='mathjax-inline'>\(y\)</span>)? To solve this problem, we use a multiplexer or MUX.
 Here’s how a simple MUX behaves mathematically:
 </p>
    <div class='mathjax-block'>\[ \operatorname {MUX}(x_1, x_2, s) = \begin {cases} x_1, \text {if } s = 0 \\ x_2, \text {if } s = 1 \\ \end {cases} \]</div>
-<!-- l. 798 --><p class='indent'>   Knowing how MUX behaves mathematically allows us to represent our
+<!-- l. 799 --><p class='indent'>   Knowing how MUX behaves mathematically allows us to represent our
 previous function by using a single MUX as follows: <span class='mathjax-inline'>\(f(x_1, x_2, \texttt {computeOR}) = \operatorname {MUX}(x_1 x_2, x_1 + x_2, \texttt {computeOR})\)</span>. Figure shown below shows
 what such a MUX looks like on the left side.
 </p>
@@ -1215,12 +1217,12 @@ what such a MUX looks like on the left side.
                                                                           
 
                                                                           
-<div class='minipage'><!-- l. 803 --><p class='noindent'><img alt='PIC' height='109' src='/assets/courses/comp-arch/figures/c4s1_mux.png' width='109' />                          </p></div> <div class='minipage'><img alt='PIC' height='133' src='/assets/courses/comp-arch/figures/c4s1_mux_impl.png' width='133' />                                            </div>
+<div class='minipage'><!-- l. 804 --><p class='noindent'><img alt='PIC' src='/assets/courses/comp-arch/figures/c4s1_mux.png' width='50%' />                          </p></div> <div class='minipage'><img alt='PIC' src='/assets/courses/comp-arch/figures/c4s1_mux_impl.png' width='50%' />                                            </div>
                                                                           
 
                                                                           
    </figure>
-<!-- l. 813 --><p class='indent'>   But MUX can be made out of a bunch of AND, OR, NOT gates.
+<!-- l. 814 --><p class='indent'>   But MUX can be made out of a bunch of AND, OR, NOT gates.
 All we have to do is to figure out the truth table of the MUX and then
 find a boolean function for it. This way, we can build the circuit that
 computes this boolean function. This is what MUX’s truth table looks
@@ -1230,7 +1232,7 @@ like:
                                                                           
 
                                                                           
-<!-- l. 816 --><p class='indent' id='truth-table-for-x-mux'>   <a id='x1-19004r1'></a></p><figure class='float'>
+<!-- l. 817 --><p class='indent' id='truth-table-for-x-mux'>   <a id='x1-19004r1'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -1248,16 +1250,16 @@ like:
                                                                           
    </figure>
    </div>
-<!-- l. 835 --><p class='indent'>   By using the canonical SoP representation, we could easily deduce that <span class='mathjax-inline'>\(\operatorname {MUX}(x_1, x_2, s) = x_1' x_2 s + x_1 x_2' s' + x_1 x_2 s' + x_1 x_2 s\)</span>.
+<!-- l. 836 --><p class='indent'>   By using the canonical SoP representation, we could easily deduce that <span class='mathjax-inline'>\(\operatorname {MUX}(x_1, x_2, s) = x_1' x_2 s + x_1 x_2' s' + x_1 x_2 s' + x_1 x_2 s\)</span>.
 Either by using laws/theorems from boolean algebra that we have learnt or the
 K-map, we could simply this function further. Let’s try simple algebraic
 manipulation and see if it takes us somewhere:
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} \operatorname {MUX}(x_1, x_2, s) &amp;= x_1' x_2 s + x_1 x_2' s' + x_1 x_2 s' + x_1 s_2 s = \\ &amp;= x_1' x_2 s + x_1 x_2' s' + x_1 x_2 (s' + s) \\ &amp;= x_1' x_2 s + x_1 x_2' s' + x_1 x_2 \\ &amp;= x_1' x_2 s + x_1 (x_2' s' + x_2) \\ &amp;= x_1' x_2 s + x_1 (s' + x_2) \\ &amp;= x_1' x_2 s + x_1 s' + x_1 x_2 \\ &amp;= x_1 s' + x_2 (x_1 + x_1' s) \\ &amp;= x_1 s' + x_2 (x_1 + s) \\ &amp;= x_1 s' + x_2 s + x_1 x_2 \\ &amp;= x_1 s' + x_2 s \\ \end{align*}</div>
-<!-- l. 850 --><p class='indent'>   The last reduction was done by following the case analysis below:
+<!-- l. 851 --><p class='indent'>   The last reduction was done by following the case analysis below:
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} \text {case 1. } &amp; x_1 x_2 = 0 \\ &amp; \operatorname {MUX}(x_1, x_2, s) = x_1 s' + x_2 s \\ \text {case 2. } &amp; x_1 x_2 = 1 \implies \begin {cases} \operatorname {MUX}(x_1, x_2, s) = 1 \\ x_1 = 1 \text { and } x_2 = 1 \end {cases} \\ &amp; \operatorname {MUX}(x_1, x_2, s) = x_1 s' + x_2 s = s' + s = 1 \end{align*}</div>
-<!-- l. 863 --><p class='indent'>   Since we now know that <span class='mathjax-inline'>\(\operatorname {MUX}(x_1, x_2, s) = x_1 s' + x_2 s\)</span>, it is easy to understand the MUX’s circuit
+<!-- l. 864 --><p class='indent'>   Since we now know that <span class='mathjax-inline'>\(\operatorname {MUX}(x_1, x_2, s) = x_1 s' + x_2 s\)</span>, it is easy to understand the MUX’s circuit
 implemented by using a bunch of AND, OR, NOT gates, as depicted on the
 figure given previously. Finally, here is what our infamous <span class='mathjax-inline'>\(f(x_1, x_2, \texttt {computeOR})\)</span> function looks
 like:
@@ -1270,13 +1272,13 @@ like:
                                                                           
 
                                                                           
-<!-- l. 867 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/other/mux_2x1_intro_impl.png' width='272' />
+<!-- l. 868 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/mux_2x1_intro_impl.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 872 --><p class='indent'>   The last thing about the MUX is how many potential inputs there are, only
+<!-- l. 873 --><p class='indent'>   The last thing about the MUX is how many potential inputs there are, only
 one of which to be forwareded to the final output wire. Up until now, we
 have only seen MUX with two potential inputs that can be forwarded
 depending on the <span class='cmbx-12'>select </span>bit <span class='mathjax-inline'>\(s\)</span>. We are going to call the MUX we have seen
@@ -1297,19 +1299,19 @@ below:
                                                                           
 
                                                                           
-<!-- l. 876 --><p class='noindent'><img alt='PIC' height='214' src='/assets/courses/comp-arch/figures/other/mux_4x1_impl.png' width='214' />
+<!-- l. 877 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/mux_4x1_impl.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 881 --><p class='indent'>   The truth table for this 4x1 MUX is given below:
+<!-- l. 882 --><p class='indent'>   The truth table for this 4x1 MUX is given below:
 </p>
    <div class='table'>
                                                                           
 
                                                                           
-<!-- l. 883 --><p class='indent' id='truth-table-for-x-mux1'>   <a id='x1-19005r2'></a></p><figure class='float'>
+<!-- l. 884 --><p class='indent' id='truth-table-for-x-mux1'>   <a id='x1-19005r2'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -1324,14 +1326,14 @@ below:
                                                                           
    </figure>
    </div>
-<!-- l. 899 --><p class='indent'>   So, use your imagination and try to build 3x1 MUX (also write out its truth
+<!-- l. 900 --><p class='indent'>   So, use your imagination and try to build 3x1 MUX (also write out its truth
 table for clear understanding), and 8x1 MUX. It is an easy pattern to build any
 <span class='mathjax-inline'>\(2^n\)</span>x1 MUX (for any <span class='mathjax-inline'>\(n \in \mathbb {N^+}\)</span>) once you get the intuition; this is also where it becomes
 obvious that a <span class='mathjax-inline'>\(2^n\)</span>x1 MUX must have <span class='mathjax-inline'>\(n\)</span> select bits.
    
 </p>
    <h4 class='subsectionHead' id='demultiplexer-demux'><span class='titlemark'>4.1.2   </span> <a id='x1-200004.1.2'></a>Demultiplexer (DEMUX)</h4>
-<!-- l. 902 --><p class='noindent'>We know what MUX is and what it is useful for. It is re-routes only one of its
+<!-- l. 903 --><p class='noindent'>We know what MUX is and what it is useful for. It is re-routes only one of its
 many inputs to the final output wire. Now, what if we have only one input
 that needs to be routed to only one of many output wires? As 2x1 MUX
 routes one of 2 inputs to the single output, a 1x2 DEMUX routes single
@@ -1346,12 +1348,12 @@ now.
                                                                           
 
                                                                           
-<div class='minipage'><!-- l. 907 --><p class='noindent'><img alt='PIC' height='109' src='/assets/courses/comp-arch/figures/c4s1_demux.png' width='109' />                          </p></div> <div class='minipage'><img alt='PIC' height='133' src='/assets/courses/comp-arch/figures/c4s1_demux_impl.png' width='133' />                                            </div>
+<div class='minipage'><!-- l. 908 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c4s1_demux.png' width='50%' />                          </p></div> <div class='minipage'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c4s1_demux_impl.png' width='50%' />                                            </div>
                                                                           
 
                                                                           
    </figure>
-<!-- l. 917 --><p class='indent'>   The circuit element for 1x2 DEMUX is depicted on the left side of the picture
+<!-- l. 918 --><p class='indent'>   The circuit element for 1x2 DEMUX is depicted on the left side of the picture
 given above. If you do not understand why 1x2 DEMUX implementation shown
 on the right side of the same picture works, keep reading; and if you do
 understand it, you can skip to the next section.
@@ -1364,19 +1366,19 @@ understand it, you can skip to the next section.
                                                                           
 
                                                                           
-<!-- l. 921 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/other/demux_intro.png' width='272' />
+<!-- l. 922 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/demux_intro.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 926 --><p class='indent'>   Well, let’s first write out the truth table:
+<!-- l. 927 --><p class='indent'>   Well, let’s first write out the truth table:
 </p>
    <div class='table'>
                                                                           
 
                                                                           
-<!-- l. 929 --><p class='indent' id='truth-table-for-x-demux'>   <a id='x1-20001r3'></a></p><figure class='float'>
+<!-- l. 930 --><p class='indent' id='truth-table-for-x-demux'>   <a id='x1-20001r3'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -1391,13 +1393,13 @@ understand it, you can skip to the next section.
                                                                           
    </figure>
    </div>
-<!-- l. 944 --><p class='indent'>   In other words,
+<!-- l. 945 --><p class='indent'>   In other words,
 </p>
    <div class='table'>
                                                                           
 
                                                                           
-<!-- l. 947 --><p class='indent' id='compact-truth-table-for-x-demux'>   <a id='x1-20002r4'></a></p><figure class='float'>
+<!-- l. 948 --><p class='indent' id='compact-truth-table-for-x-demux'>   <a id='x1-20002r4'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -1410,7 +1412,7 @@ understand it, you can skip to the next section.
                                                                           
    </figure>
    </div>
-<!-- l. 960 --><p class='indent'>   By looking at these truth tables, we can conclude that <span class='mathjax-inline'>\(y_1 = x s'\)</span> and <span class='mathjax-inline'>\(y_2 = x s\)</span>. Therefore, the
+<!-- l. 961 --><p class='indent'>   By looking at these truth tables, we can conclude that <span class='mathjax-inline'>\(y_1 = x s'\)</span> and <span class='mathjax-inline'>\(y_2 = x s\)</span>. Therefore, the
 implementation shown below shoud make sense now.
 </p>
    <figure class='figure'> 
@@ -1421,19 +1423,19 @@ implementation shown below shoud make sense now.
                                                                           
 
                                                                           
-<!-- l. 964 --><p class='noindent'><img alt='PIC' height='195' src='/assets/courses/comp-arch/figures/other/demux_1x2_intro_impl.png' width='195' />
+<!-- l. 965 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/demux_1x2_intro_impl.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 969 --><p class='indent'>   It should be straight forward to see how 1xN DEMUX can be built by using a
+<!-- l. 970 --><p class='indent'>   It should be straight forward to see how 1xN DEMUX can be built by using a
 bunch of 1x2 DEMUXs. In addition, it should also be obvious by now that a 1xN
 DEMUX must have <span class='mathjax-inline'>\(log_2 N\)</span> select bits.
    
 </p>
    <h4 class='subsectionHead' id='encoder'><span class='titlemark'>4.1.3   </span> <a id='x1-210004.1.3'></a>Encoder</h4>
-<!-- l. 972 --><p class='noindent'>Imagine you have a number 3, which you would like to represent in binary.
+<!-- l. 973 --><p class='noindent'>Imagine you have a number 3, which you would like to represent in binary.
 Obviously, a common way would be <span class='mathjax-inline'>\(3_{10} = 11_{2}\)</span> or 0011 by using 4 bits. There is another way
 to represent 3 by using bits: it’s called <span class='cmbx-12'>one-hot encoding </span>and here is how it
 works:
@@ -1442,7 +1444,7 @@ works:
                                                                           
 
                                                                           
-<!-- l. 974 --><p class='indent'>   </p><figure class='float'>
+<!-- l. 975 --><p class='indent'>   </p><figure class='float'>
                                                                           
 
                                                                           
@@ -1456,14 +1458,14 @@ works:
                                                                           
    </figure>
    </div>
-<!-- l. 990 --><p class='indent'>   In n-bit one-hot encoding representation of numbers, a number is
+<!-- l. 991 --><p class='indent'>   In n-bit one-hot encoding representation of numbers, a number is
 represented by only one turned on (hot bit) and n-1 bits turned off (cold bits).
 That’s why it is called one-hot encoding and not two-hot encoding. To
 represent number <span class='mathjax-inline'>\(x\)</span> by using one-hot encoding, the hot bit must be at
 index <span class='mathjax-inline'>\(x\)</span> bits left to the rightmost bit in the one-hot representation. For
 example, 7 is represented as “0010000000” in 10-bit one-hot encoding
 system.
-</p><!-- l. 992 --><p class='indent'>   A <span class='mathjax-inline'>\(2^N\)</span><span class='cmbx-12'>xN encoder </span>is essentially a converter from <span class='mathjax-inline'>\(2^N\)</span>-bit one-hot encodings to <span class='mathjax-inline'>\(N\)</span>-bit
+</p><!-- l. 993 --><p class='indent'>   A <span class='mathjax-inline'>\(2^N\)</span><span class='cmbx-12'>xN encoder </span>is essentially a converter from <span class='mathjax-inline'>\(2^N\)</span>-bit one-hot encodings to <span class='mathjax-inline'>\(N\)</span>-bit
 binary numbers. Implementing 2x1 encoder is straight forward. This is how a
 typical 4x2 encoder could be implemented naively:
 </p>
@@ -1475,13 +1477,13 @@ typical 4x2 encoder could be implemented naively:
                                                                           
 
                                                                           
-<!-- l. 996 --><p class='noindent'><img alt='PIC' height='195' src='/assets/courses/comp-arch/figures/c4s1_naive_encoder_impl.png' width='195' />
+<!-- l. 997 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c4s1_naive_encoder_impl.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 1001 --><p class='indent'>   It is a naive implementation in some sense because even though all input bits
+<!-- l. 1002 --><p class='indent'>   It is a naive implementation in some sense because even though all input bits
 can be 0 and the output would still be 00, which is not the correct conversion, we
 have no way of knowing that 0000 input was actually invalid in the first
 place.
@@ -1494,13 +1496,13 @@ place.
                                                                           
 
                                                                           
-<!-- l. 1005 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/c4s1_encoder_impl.png' width='272' />
+<!-- l. 1006 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c4s1_encoder_impl.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 1010 --><p class='indent'>   The implementation above still have a problem: it will output 11 for all of the
+<!-- l. 1011 --><p class='indent'>   The implementation above still have a problem: it will output 11 for all of the
 following inputs: input 1000, input 1001, input 1010, input 1011, input 1100, and
 so on. Now, this behevior is not something that was in a typical encoder’s truth
 table. That’s why there is another type of encoder that formally accepts this
@@ -1514,13 +1516,13 @@ behavior.
                                                                           
 
                                                                           
-<!-- l. 1014 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/c4s1_priority_encoder_impl.png' width='272' />
+<!-- l. 1015 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c4s1_priority_encoder_impl.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 1019 --><p class='indent'>   The implementation shown above is called <span class='cmbx-12'>priority encoder </span>because it
+<!-- l. 1020 --><p class='indent'>   The implementation shown above is called <span class='cmbx-12'>priority encoder </span>because it
 eliminates the previous problem by converting one-hot encoding to its binary
 number representation only by using the <span class='cmti-12'>most significant hot bit</span>. Therefore, even
 if there are multiple hot bits in the input, it will assume that only the hot MSB
@@ -1529,7 +1531,7 @@ representation.
    
 </p>
    <h4 class='subsectionHead' id='decoder'><span class='titlemark'>4.1.4   </span> <a id='x1-220004.1.4'></a>Decoder</h4>
-<!-- l. 1022 --><p class='noindent'>We know what a <span class='mathjax-inline'>\(2^N\)</span>xN encoder is and how it works. It translates one-hot
+<!-- l. 1023 --><p class='noindent'>We know what a <span class='mathjax-inline'>\(2^N\)</span>xN encoder is and how it works. It translates one-hot
 encodded representation into a binary representation. What if we wanted to
 go in the opposite direction, that is, translating a binary representation
 into one-hot encoded representation? This is exactly what a Nx<span class='mathjax-inline'>\(2^N\) </span><span class='cmbx-12'>decoder</span>
@@ -1543,13 +1545,13 @@ does.
                                                                           
 
                                                                           
-<!-- l. 1026 --><p class='noindent'><img alt='PIC' height='234' src='/assets/courses/comp-arch/figures/c4s1_decoder_impl.png' width='234' />
+<!-- l. 1027 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c4s1_decoder_impl.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 1031 --><p class='indent'>   A picture given above is an implementation for a 2x4 decoder. Implementing a
+<!-- l. 1032 --><p class='indent'>   A picture given above is an implementation for a 2x4 decoder. Implementing a
 Nx<span class='mathjax-inline'>\(2^N\)</span> decoder is more straight forward than implementing a <span class='mathjax-inline'>\(2^N\)</span>xN encoder because all
 we have to do is to come up with a single product term for each output of the
 decoder. For 2x4 decoder, 4 boolean functions can be inferred from the truth table
@@ -1575,12 +1577,12 @@ decoder.</span></figcaption><!-- tex4ht:label?: x1-22001r4  -->                 
 
                                                                           
    </figure>
-<!-- l. 1059 --><p class='indent'>   Each <span class='mathjax-inline'>\(y_i\)</span> is represented in terms of a single product term because there is only
+<!-- l. 1060 --><p class='indent'>   Each <span class='mathjax-inline'>\(y_i\)</span> is represented in terms of a single product term because there is only
 one row where each <span class='mathjax-inline'>\(y_i = 1\)</span>.
    
 </p>
    <h3 class='sectionHead' id='timing'><span class='titlemark'>4.2   </span> <a id='x1-230004.2'></a>Timing</h3>
-<!-- l. 1062 --><p class='noindent'>When we work with boolean logic there is essentially no notion of time in our
+<!-- l. 1063 --><p class='noindent'>When we work with boolean logic there is essentially no notion of time in our
 calculus. It means that we do not take into account the flow of time as we
 compute boolean functions on paper. It is because there is no meaning to talk
 about how much second it took us to compute boolean function <span class='mathjax-inline'>\(f(x, y, z) = xy' + x'yz + z'\)</span>. It is because
@@ -1602,14 +1604,14 @@ works…
                                                                           
 
                                                                           
-<!-- l. 1066 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/other/timing_intro.png' width='272' />
+<!-- l. 1067 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/timing_intro.png' width='50%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 4.5: </span><span class='content'>Circuit for <span class='mathjax-inline'>\(f(x, y, z) = xy' + x'yz + z'\)</span>.</span></figcaption><!-- tex4ht:label?: x1-23001r5  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1071 --><p class='indent'>   The circuit above is the implementation of the function <span class='mathjax-inline'>\(f\)</span>. Now, suppose that
+<!-- l. 1072 --><p class='indent'>   The circuit above is the implementation of the function <span class='mathjax-inline'>\(f\)</span>. Now, suppose that
 we would like to compute <span class='mathjax-inline'>\(f(1, 1, 0)\)</span> first: so, we need to constantly feed the electrical
 signals <span class='mathjax-inline'>\(5V\)</span>, <span class='mathjax-inline'>\(5V\)</span>, and <span class='mathjax-inline'>\(0V\)</span>, respectively. As long as we keep feeding these signals to the circuit
 the answer is going to come out as <span class='mathjax-inline'>\(5V\)</span>, which is equivalent to the boolean value of 1.
@@ -1617,7 +1619,7 @@ Then, the next second we change the voltages accross the input channels so the
 the input now represents <span class='mathjax-inline'>\(x=0\)</span>, <span class='mathjax-inline'>\(y=1\)</span>, and <span class='mathjax-inline'>\(z=1\)</span>. What do we expect to see at the output?
 Obviously, still <span class='mathjax-inline'>\(5V\)</span> or boolean 1. Is it going to appear immediatly, though? No, not
 at all. Let’s see why.
-</p><!-- l. 1073 --><p class='indent'>   It takes some time for the electricity to travel accross wire. The longer the
+</p><!-- l. 1074 --><p class='indent'>   It takes some time for the electricity to travel accross wire. The longer the
 wire, the more time it needs to reach the destination. This is called a <span class='cmbx-12'>delay</span>. I
 think, this is pretty intuitive thing to think about. For simplicity, let’s assume
 that for the electricity to flow past the wires and transistors inside each logic gate
@@ -1633,7 +1635,7 @@ alone:
       </li>
 <li class='enumerate' id='x1-23007x3'>It was only after the first ?ns, that the circuit’s output must have
       stabilized at boolean value 1.</li></ol>
-<!-- l. 1081 --><p class='indent'>   Here is the timing diagram to illustrate this process more clearly:
+<!-- l. 1082 --><p class='indent'>   Here is the timing diagram to illustrate this process more clearly:
 </p>
    <figure class='figure' id='x1-23008r6'><span id='timing-diagram-for-the-function-f'></span> 
 
@@ -1644,13 +1646,13 @@ alone:
                                                                           
 
                                                                           
-<div class='minipage'><!-- l. 1086 --><p class='noindent'><img alt='PIC' height='185' src='/assets/courses/comp-arch/figures/other/timing_intro2.png' width='185' />                                </p></div> <div class='minipage'><img alt='PIC' height='185' src='/assets/courses/comp-arch/figures/other/timing_intro2_diagram.png' width='185' />                                           </div>
+<div class='minipage'><!-- l. 1087 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/timing_intro2.png' width='95%' />                                </p></div> <div class='minipage'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/timing_intro2_diagram.png' width='95%' />                                           </div>
 <figcaption class='caption'><span class='id'>Figure 4.6: </span><span class='content'>Timing diagram for the function <span class='mathjax-inline'>\(f\)</span>.</span></figcaption><!-- tex4ht:label?: x1-23008r6  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1096 --><p class='indent'>   Now, you may get the intuition why timing is important for circuitry. It is
+<!-- l. 1097 --><p class='indent'>   Now, you may get the intuition why timing is important for circuitry. It is
 because the circuitry does not have a way to be silent until it finished the
 calculations completely. Instead, it always outputs something: 0 or 1 (this is not
 completely true, but for the sake of simplicity let’s assume that it is for a moment;
@@ -1661,7 +1663,7 @@ oscillating behavior of circuits is called a <span class='cmbx-12'>glitch</span>
 glitches, we need to know how much we should wait for the circuit’s output to
 stabilize so that we do not probe the output wire while the circuit is still glitching
 potentially.
-</p><!-- l. 1098 --><p class='indent'>   Here I am going to talk about only two types of delays: (1) propagation delay
+</p><!-- l. 1099 --><p class='indent'>   Here I am going to talk about only two types of delays: (1) propagation delay
 and (2) contamination delay. <span class='cmbx-12'>Propagation delay </span>is the maximum amount of
 time that electicity needs to travel from input to output. In our example, the
 propagation delay is <span class='mathjax-inline'>\(\text {(AND)} = \)</span>ns <span class='cmbx-12'>Contamination delay </span>is the minimum amount of time
@@ -1679,7 +1681,7 @@ respectively:
                                                                           
 
                                                                           
-<!-- l. 1102 --><p class='noindent'><img alt='PIC' height='331' src='/assets/courses/comp-arch/figures/other/timing_intro3.png' width='331' />
+<!-- l. 1103 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/timing_intro3.png' width='85%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 4.7: </span><span class='content'>The red path for propagation delay, green path for contamination
 delay</span></figcaption><!-- tex4ht:label?: x1-23009r7  -->
@@ -1687,20 +1689,20 @@ delay</span></figcaption><!-- tex4ht:label?: x1-23009r7  -->
 
                                                                           
    </figure>
-<!-- l. 1107 --><p class='indent'>   The notion of delays will become more important as we move forward in the
+<!-- l. 1108 --><p class='indent'>   The notion of delays will become more important as we move forward in the
 book toward building a real functional computer from scratch<span class='mathjax-inline'>\({}^*\)</span>.
                                                                           
 
                                                                           
 </p>
    <h2 class='chapterHead' id='sequential-logic'><span class='titlemark'>Chapter 5</span><br /><a id='x1-240005'></a>Sequential Logic</h2>
-<!-- l. 1110 --><p class='noindent'>We have learned about the combinational logic: it is a logic to compute output
+<!-- l. 1111 --><p class='noindent'>We have learned about the combinational logic: it is a logic to compute output
 only by using current inputs without taking into account knowledge of
 the past. In contrast, <span class='cmbx-12'>Sequential logic </span>is a logic that also (may) takes
 the knowledge of the past into account as well while computing the final
 output. In this sense, it is more general kind of logic than the combinational
 logic.
-</p><!-- l. 1112 --><p class='indent'>   Essential sequential circuits for building a computer are:
+</p><!-- l. 1113 --><p class='indent'>   Essential sequential circuits for building a computer are:
       </p><ol class='enumerate1'>
 <li class='enumerate' id='x1-24002x1'>Clock
       </li>
@@ -1708,7 +1710,7 @@ logic.
       </li>
 <li class='enumerate' id='x1-24006x3'>Counter</li></ol>
    
-<!-- l. 1120 --><p class='noindent'><span class='paragraphHead' id='synchronous-and-asynchronous-circuits'><a id='x1-25000'></a><span class='cmbx-12'>Synchronous and Asynchronous circuits.</span></span>
+<!-- l. 1121 --><p class='noindent'><span class='paragraphHead' id='synchronous-and-asynchronous-circuits'><a id='x1-25000'></a><span class='cmbx-12'>Synchronous and Asynchronous circuits.</span></span>
    There are two subtypes of sequential circuits: (1) <span class='cmti-12'>synchronous </span>and
 (2) <span class='cmti-12'>asynchronous </span>circuit. Their definitions and differences between them
 will become more obvious as you learn about the notion of <span class='cmti-12'>clock </span>and
@@ -1719,7 +1721,7 @@ will become more obvious as you learn about the notion of <span class='cmti-12'>
                                                                           
 
                                                                           
-<!-- l. 1124 --><p class='noindent'>Not all processes are combinational inherently. It means that there are processes
+<!-- l. 1125 --><p class='noindent'>Not all processes are combinational inherently. It means that there are processes
 that require taking into account some information from the past while computing
 an output. For example, you can never use solely combinational logic to decide
 whether a turnstile would have allowed a person to pass through or hold them by
@@ -1751,14 +1753,14 @@ say:
                                                                           
 
                                                                           
-<!-- l. 1128 --><p class='noindent'><img alt='PIC' height='331' src='/assets/courses/comp-arch/figures/other/turnstile_state_diagram.png' width='331' />
+<!-- l. 1129 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/turnstile_state_diagram.png' width='50%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.1: </span><span class='content'>State diagram for a 2-state turnstile.</span></figcaption><!-- tex4ht:label?: x1-26001r1  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1133 --><p class='indent'>   The two circles shown on the diagram above represent the two distinct (and
+<!-- l. 1134 --><p class='indent'>   The two circles shown on the diagram above represent the two distinct (and
 <span class='cmti-12'>hidden </span>since we do not know whether the turnstile is unlocked or locked just by
 looking at it without any past knowledge) states of the turnstile: <span class='cmti-12'>locked </span>or
 <span class='cmti-12'>unlocked</span>. The arrows between the states are called <span class='cmbx-12'>state transitions</span>; they
@@ -1780,7 +1782,7 @@ active state in the diagram throughout time. Note that having multiple
 states are different than having multiple actions because actions need to
 be provided explicitly while the states are tracked automatically by the
 circuit.
-</p><!-- l. 1135 --><p class='indent'>   Understanding the notion of states are really important, so I will give another
+</p><!-- l. 1136 --><p class='indent'>   Understanding the notion of states are really important, so I will give another
 intuitive example. Imagine you wanted to build a box with 2 buttons, On and Off.
 Each button is connected to the circuit inside the box through their own wires.
 Pressing each button would send an electric (high or 1) signal to the circuit inside
@@ -1797,20 +1799,20 @@ released.
                                                                           
 
                                                                           
-<!-- l. 1139 --><p class='noindent'><img alt='PIC' height='386' src='/assets/courses/comp-arch/figures/other/mystic_box.png' width='386' />
+<!-- l. 1140 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/mystic_box.png' width='95%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.2: </span><span class='content'>A mystical box with the wisdom of the past.</span></figcaption><!-- tex4ht:label?: x1-26002r2  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1144 --><p class='indent'>   This is how you would like the box to operate:
+<!-- l. 1145 --><p class='indent'>   This is how you would like the box to operate:
 </p>
    <div class='table'>
                                                                           
 
                                                                           
-<!-- l. 1146 --><p class='indent' id='analysis-of-the-mystic-boxs-behavior'>   <a id='x1-26003r1'></a></p><figure class='float'>
+<!-- l. 1147 --><p class='indent' id='analysis-of-the-mystic-boxs-behavior'>   <a id='x1-26003r1'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -1828,7 +1830,7 @@ released.
                                                                           
    </figure>
    </div>
-<!-- l. 1171 --><p class='indent'>   When a button is released, it no longer sends the high signal (input bit 1) to
+<!-- l. 1172 --><p class='indent'>   When a button is released, it no longer sends the high signal (input bit 1) to
 the circuit, and therefore, its input becomes low (input bit 0). Taking no
 action after releasing a button also performs the same thing since both
 buttons are in a released state or “0 state”. Since any combinational logic is
@@ -1842,7 +1844,7 @@ below:
                                                                           
 
                                                                           
-<!-- l. 1173 --><p class='indent' id='limitation-of-any-combinational-circuit-compared-to-the-mystical-box'>   <a id='x1-26004r2'></a></p><figure class='float'>
+<!-- l. 1174 --><p class='indent' id='limitation-of-any-combinational-circuit-compared-to-the-mystical-box'>   <a id='x1-26004r2'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -1861,7 +1863,7 @@ box.</span></figcaption><!-- tex4ht:label?: x1-26004r2  -->
                                                                           
    </figure>
    </div>
-<!-- l. 1198 --><p class='indent'>   The <span class='cmti-12'>“On” pressed </span>action represents input (1, 0) and the <span class='cmti-12'>“Off” pressed </span>action
+<!-- l. 1199 --><p class='indent'>   The <span class='cmti-12'>“On” pressed </span>action represents input (1, 0) and the <span class='cmti-12'>“Off” pressed </span>action
 represents input (0, 1); <span class='cmti-12'>“On” released</span>, <span class='cmti-12'>“Off” released</span>, <span class='cmti-12'>(no action) </span>actions
 represent input (0, 0), and we do not allow pressing both buttons simultaneously,
 making (1, 1) input impossible. Since releasing each button, as well as performing
@@ -1875,7 +1877,7 @@ then time steps 1, 2, 3, 8 would not produce the expected behavior of
 this mystical box that we wanted to build; and if we say let <span class='cmbx-12'>X </span>be the
 <span class='cmbx-12'>Green </span>light, then time steps 5, 6, 11 would not match with the expected
 behavior.
-</p><!-- l. 1200 --><p class='indent'>   By going through the two examples provided above, one can understand the
+</p><!-- l. 1201 --><p class='indent'>   By going through the two examples provided above, one can understand the
 problem: using combinational logic for certain types of tasks is just not
 going to cut it! We need something more powerful, and that is obviously
 <span class='cmbx-12'>sequential logic</span>. <span class='cmbx-12'>Finite state machine </span>or (FSM) is a machine that performs
@@ -1887,7 +1889,7 @@ example.
    
 </p>
    <h4 class='subsectionHead' id='moore-and-mealy-fsms'><span class='titlemark'>5.1.1   </span> <a id='x1-270005.1.1'></a>Moore and Mealy FSMs</h4>
-<!-- l. 1203 --><p class='noindent'>There are two main types of FSMs as mentioned previously. Both types (Moore
+<!-- l. 1204 --><p class='noindent'>There are two main types of FSMs as mentioned previously. Both types (Moore
 and Mealy) of FSMs are pretty much the same: they use nodes to represent states
 and arrows to represent transitions between the states. The main difference
 between them is how they output something. Moore FSMs output a value from
@@ -1906,14 +1908,14 @@ Let’s see what this really means.
                                                                           
 
                                                                           
-<!-- l. 1207 --><p class='noindent'><img alt='PIC' height='312' src='/assets/courses/comp-arch/figures/other/mystic_box_moore.png' width='312' />
+<!-- l. 1208 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/mystic_box_moore.png' width='50%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.3: </span><span class='content'>Moore FSM for the mystic box.</span></figcaption><!-- tex4ht:label?: x1-27001r3  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1212 --><p class='indent'>   The state diagram shown above is a Moore FSM for our mystical box example.
+<!-- l. 1213 --><p class='indent'>   The state diagram shown above is a Moore FSM for our mystical box example.
 Each node contains two pieces of information in it: (1) state’s name and (2)
 output value. Since this is a Moore machine, output values are written inside the
 states with the following convention: [STATE NAME] / [<span class='cmbx-12'>STATE OUTPUT</span>].
@@ -1938,14 +1940,14 @@ machine.
                                                                           
 
                                                                           
-<!-- l. 1216 --><p class='noindent'><img alt='PIC' height='312' src='/assets/courses/comp-arch/figures/other/mystic_box_mealy.png' width='312' />
+<!-- l. 1217 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/mystic_box_mealy.png' width='50%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.4: </span><span class='content'>Mealy FSM for the mystic box.</span></figcaption><!-- tex4ht:label?: x1-27002r4  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1221 --><p class='indent'>   The state diagram above is the Mealy version of our mystic box. The only
+<!-- l. 1222 --><p class='indent'>   The state diagram above is the Mealy version of our mystic box. The only
 difference is that it is not the states that output “Green” or “Red”, but
 rather the transitions/arrows. In the Mealy FSM representation, if the
 currently active state is the “Red state” and the input is (1, 0) – “On”
@@ -1963,7 +1965,7 @@ practice.
    
 </p>
    <h4 class='subsectionHead' id='fsm-simplification'><span class='titlemark'>5.1.2   </span> <a id='x1-280005.1.2'></a>FSM Simplification</h4>
-<!-- l. 1224 --><p class='noindent'>For simplifying FSMs, we will use tabular representation instead of the
+<!-- l. 1225 --><p class='noindent'>For simplifying FSMs, we will use tabular representation instead of the
 diagramatic ones given as examples previously. Let’s consider the following Moore
 FSM below:
 </p>
@@ -1971,7 +1973,7 @@ FSM below:
                                                                           
 
                                                                           
-<!-- l. 1226 --><p class='indent' id='tabular-representation-for-a-moore-fsm'>   <a id='x1-28001r3'></a></p><figure class='float'>
+<!-- l. 1227 --><p class='indent' id='tabular-representation-for-a-moore-fsm'>   <a id='x1-28001r3'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -2001,7 +2003,7 @@ e</div>     </td><td class='td11' id='TBL-30-10-2' style='white-space:nowrap; te
                                                                           
    </figure>
    </div>
-<!-- l. 1253 --><p class='indent'>   Here are the rules to simplify Moore machine:
+<!-- l. 1254 --><p class='indent'>   Here are the rules to simplify Moore machine:
       </p><ol class='enumerate1'>
 <li class='enumerate' id='x1-28003x1'>Find two states <span class='cmbx-12'>p </span>and <span class='cmbx-12'>q </span>such that <span class='cmbx-12'>output of p = output of q</span>, and
       <span class='cmbx-12'>p </span><span class='mathjax-inline'>\(\xrightarrow {x}\) </span><span class='cmbx-12'>s </span>and <span class='cmbx-12'>q </span><span class='mathjax-inline'>\(\xrightarrow {x}\) </span><span class='cmbx-12'>s </span>for all (x, s) pairs.
@@ -2011,7 +2013,7 @@ e</div>     </td><td class='td11' id='TBL-30-10-2' style='white-space:nowrap; te
       </li>
 <li class='enumerate' id='x1-28007x3'>Repeat the same process from start until no two equivalent states are
       found.</li></ol>
-<!-- l. 1261 --><p class='indent'>   Let’s now try to simplify the Moore FSM. The first thing you may notice that
+<!-- l. 1262 --><p class='indent'>   Let’s now try to simplify the Moore FSM. The first thing you may notice that
 the states <span class='cmbx-12'>a</span>, <span class='cmbx-12'>c</span>, and <span class='cmbx-12'>e </span>have the same output value, which is 1. However, only <span class='cmbx-12'>a</span>
 and <span class='cmbx-12'>c </span>transitions to <span class='cmbx-12'>b </span>on input 0 and <span class='cmbx-12'>c </span>on input 1. Therefore, these two
 states are (semantically) equivalent. Let’s remove the third row from
@@ -2022,7 +2024,7 @@ below:
                                                                           
 
                                                                           
-<!-- l. 1263 --><p class='indent' id='tabular-representation-for-a-moore-fsm-after-one-step-of-simplification'>   <a id='x1-28008r4'></a></p><figure class='float'>
+<!-- l. 1264 --><p class='indent' id='tabular-representation-for-a-moore-fsm-after-one-step-of-simplification'>   <a id='x1-28008r4'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -2049,7 +2051,7 @@ simplification.</span></figcaption><!-- tex4ht:label?: x1-28008r4  -->
                                                                           
    </figure>
    </div>
-<!-- l. 1287 --><p class='indent'>   From the table above you may notice that the states <span class='cmbx-12'>a</span>, <span class='cmbx-12'>d</span>, and <span class='cmbx-12'>e </span>transition to
+<!-- l. 1288 --><p class='indent'>   From the table above you may notice that the states <span class='cmbx-12'>a</span>, <span class='cmbx-12'>d</span>, and <span class='cmbx-12'>e </span>transition to
 <span class='cmbx-12'>b </span>on input 0 and to <span class='cmbx-12'>a </span>on input 1. However, only <span class='cmbx-12'>a </span>and <span class='cmbx-12'>e </span>output the same value,
 which is 1. Therefore, these two states are equivalent. Finally, the simplified
 Moore FSM, which still has the same input-output behavior, is given on the table
@@ -2059,7 +2061,7 @@ below:
                                                                           
 
                                                                           
-<!-- l. 1289 --><p class='indent' id='simplified-moore-fsm'>   <a id='x1-28009r5'></a></p><figure class='float'>
+<!-- l. 1290 --><p class='indent' id='simplified-moore-fsm'>   <a id='x1-28009r5'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -2082,14 +2084,14 @@ d</div>     </td><td class='td11' id='TBL-32-6-2' style='white-space:nowrap; tex
                                                                           
    </figure>
    </div>
-<!-- l. 1310 --><p class='indent'>   Now, let’s consider the following Mealy FSM below (different than previous
+<!-- l. 1311 --><p class='indent'>   Now, let’s consider the following Mealy FSM below (different than previous
 Moore machine):
 </p>
    <div class='table'>
                                                                           
 
                                                                           
-<!-- l. 1312 --><p class='indent' id='tabular-representation-for-a-mealy-fsm'>   <a id='x1-28010r6'></a></p><figure class='float'>
+<!-- l. 1313 --><p class='indent' id='tabular-representation-for-a-mealy-fsm'>   <a id='x1-28010r6'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -2114,7 +2116,7 @@ e</div>     </td><td class='td11' id='TBL-33-10-2' style='white-space:nowrap; te
                                                                           
    </figure>
    </div>
-<!-- l. 1334 --><p class='indent'>   Here are the rules to simplify Mealy machine:
+<!-- l. 1335 --><p class='indent'>   Here are the rules to simplify Mealy machine:
       </p><ol class='enumerate1'>
 <li class='enumerate' id='x1-28012x1'>Find two states <span class='cmbx-12'>p </span>and <span class='cmbx-12'>q </span>such that <span class='cmbx-12'>p </span><span class='mathjax-inline'>\(\xrightarrow {x/y}\) </span><span class='cmbx-12'>s </span>and <span class='cmbx-12'>q </span><span class='mathjax-inline'>\(\xrightarrow {x/y}\) </span><span class='cmbx-12'>s </span>for all (x, s, y) pairs.
       </li>
@@ -2123,7 +2125,7 @@ e</div>     </td><td class='td11' id='TBL-33-10-2' style='white-space:nowrap; te
       </li>
 <li class='enumerate' id='x1-28016x3'>Repeat the same process from start until no two equivalent states are
       found.</li></ol>
-<!-- l. 1342 --><p class='indent'>   Let’s start simplifying. Look at the states <span class='cmbx-12'>a </span>and <span class='cmbx-12'>c</span>. Both of them have the
+<!-- l. 1343 --><p class='indent'>   Let’s start simplifying. Look at the states <span class='cmbx-12'>a </span>and <span class='cmbx-12'>c</span>. Both of them have the
 same (0, b, 1) and (1, c, 1) pairs. Since they are equivalent, let’s remove the state
 <span class='cmbx-12'>c </span>and replace all of its other occurences in the table with <span class='cmbx-12'>a</span>. Now we get the table
 shown below:
@@ -2132,7 +2134,7 @@ shown below:
                                                                           
 
                                                                           
-<!-- l. 1344 --><p class='indent' id='tabular-representation-for-a-mealy-fsm-after-one-step-of-simplification'>   <a id='x1-28017r7'></a></p><figure class='float'>
+<!-- l. 1345 --><p class='indent' id='tabular-representation-for-a-mealy-fsm-after-one-step-of-simplification'>   <a id='x1-28017r7'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -2155,14 +2157,14 @@ simplification.</span></figcaption><!-- tex4ht:label?: x1-28017r7  -->
                                                                           
    </figure>
    </div>
-<!-- l. 1364 --><p class='indent'>   Let’s now look at the states <span class='cmbx-12'>d </span>and <span class='cmbx-12'>e</span>. They have the same (0, e, 0) and (1, a, 1)
+<!-- l. 1365 --><p class='indent'>   Let’s now look at the states <span class='cmbx-12'>d </span>and <span class='cmbx-12'>e</span>. They have the same (0, e, 0) and (1, a, 1)
 pairs. So, let’s replace the state <span class='cmbx-12'>e </span>with the state <span class='cmbx-12'>d</span>.
 </p>
    <div class='table'>
                                                                           
 
                                                                           
-<!-- l. 1366 --><p class='indent' id='simplified-mealy-fsm'>   <a id='x1-28018r8'></a></p><figure class='float'>
+<!-- l. 1367 --><p class='indent' id='simplified-mealy-fsm'>   <a id='x1-28018r8'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -2182,7 +2184,7 @@ d</div>     </td><td class='td11' id='TBL-35-6-2' style='white-space:nowrap; tex
                                                                           
    </figure>
    </div>
-<!-- l. 1384 --><p class='indent'>   The table given above is the final compressed and simplified version of our
+<!-- l. 1385 --><p class='indent'>   The table given above is the final compressed and simplified version of our
 original Mealy FSM. Both FSMs (original one and the minimized one) have the
 same input-output behavior for all possible input sequences. This is important for
 ensuring that the reductions and simplifications we do in an FSM do not alter its
@@ -2190,7 +2192,7 @@ behavior semantically.
    
 </p>
    <h3 class='sectionHead' id='clock'><span class='titlemark'>5.2   </span> <a id='x1-290005.2'></a>Clock</h3>
-<!-- l. 1387 --><p class='noindent'>This section will be about something that we all use in our everyday lives. It
+<!-- l. 1388 --><p class='noindent'>This section will be about something that we all use in our everyday lives. It
 orchestrates all of us, all at once. It is called <span class='cmbx-12'>clock</span>. Clock is also an important
 part of the computer architecture: it orchastrates the different components within
 the computer. However, a clock inside a computer looks very different than the
@@ -2205,14 +2207,14 @@ clock we have used to use.
                                                                           
 
                                                                           
-<!-- l. 1391 --><p class='noindent'><img alt='PIC' height='214' src='/assets/courses/comp-arch/figures/other/good_old_clock.jpeg' width='214' />
+<!-- l. 1392 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/good_old_clock.jpeg' width='50%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.5: </span><span class='content'>Good old clock that we all love.</span></figcaption><!-- tex4ht:label?: x1-29001r5  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1396 --><p class='indent'>   Humans use 12-hour or 24-hour format clocks. For example, in 12-hour wall
+<!-- l. 1397 --><p class='indent'>   Humans use 12-hour or 24-hour format clocks. For example, in 12-hour wall
 clock, there are 12 numbers from 1 to 12, and the clock head spins “clockwise”
 from 1 to 12 and then starts from 1, hypothetically in a never ending infinite
 loop… Computers use 2-hour format, instead: the clock has two numbers 0 and 1;
@@ -2229,7 +2231,7 @@ architecture looks like this:
                                                                           
 
                                                                           
-<!-- l. 1400 --><p class='noindent'><img alt='PIC' height='175' src='/assets/courses/comp-arch/figures/other/clock_intro_impl.png' width='175' />
+<!-- l. 1401 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/clock_intro_impl.png' width='50%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.6: </span><span class='content'>Simple clock implementation by using an odd number of NOT
 gates.</span></figcaption><!-- tex4ht:label?: x1-29002r6  -->
@@ -2237,7 +2239,7 @@ gates.</span></figcaption><!-- tex4ht:label?: x1-29002r6  -->
 
                                                                           
    </figure>
-<!-- l. 1405 --><p class='indent'>   Simple and easy, right? I hope it automatically makes sense for the reader why
+<!-- l. 1406 --><p class='indent'>   Simple and easy, right? I hope it automatically makes sense for the reader why
 having a single self-wired NOT gate gives us what we want. It gives us the
 oscillating OFF-ON-OFF-ON-OFF-ON-… signal. Here is what its timing diagram
 looks like:
@@ -2251,19 +2253,19 @@ looks like:
                                                                           
 
                                                                           
-<!-- l. 1409 --><p class='noindent'><img alt='PIC' height='370' src='/assets/courses/comp-arch/figures/other/clock_intro.png' width='370' />
+<!-- l. 1410 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/clock_intro.png' width='85%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.7: </span><span class='content'>Timing diagram for clock.</span></figcaption><!-- tex4ht:label?: x1-29003r7  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1414 --><p class='indent'>   This particular timing diagram given above illustrates the oscillations of a 1
+<!-- l. 1415 --><p class='indent'>   This particular timing diagram given above illustrates the oscillations of a 1
 <span class='mathjax-inline'>\(\mu \)</span>Hz (<span class='cmbx-12'>frequency</span>) clock, meaning that the <span class='cmbx-12'>clock period </span>is 10 <span class='mathjax-inline'>\(\mu \)</span>s.
    
 </p>
    <h3 class='sectionHead' id='memory'><span class='titlemark'>5.3   </span> <a id='x1-300005.3'></a>Memory</h3>
-<!-- l. 1417 --><p class='noindent'>Up until now you have learned about building digital circuits that output some
+<!-- l. 1418 --><p class='noindent'>Up until now you have learned about building digital circuits that output some
 boolean value given an n-bit input. What if we wanted to store the output of a
 circuit inside somewhere so that we can look it up later when we need it? Well,
 you guessed it right: it is for this purpose that we need to build a memory
@@ -2291,7 +2293,7 @@ to
                                                                           
       </li>
       <li class='itemize'>retains its previous output when the input is (0, 0).</li></ul>
-<!-- l. 1425 --><p class='indent'>   So, we may naturally agree on the convention that the input signal
+<!-- l. 1426 --><p class='indent'>   So, we may naturally agree on the convention that the input signal
 semantically represents (memorize-1, memorize-0): (1, 0) means the circuit must
 memrize and remember boolean value 1, (0, 1) means the circuit must memorize
 and preserve boolean value 0, and (0, 0) means nothing new needs to be
@@ -2306,7 +2308,7 @@ hypothetical circuit would behave over the valid inputs (0, 0), (0, 1), (1,
                                                                           
 
                                                                           
-<!-- l. 1427 --><p class='indent' id='truth-table-for-a-simple-memory-circuit'>   <a id='x1-30001r9'></a></p><figure class='float'>
+<!-- l. 1428 --><p class='indent' id='truth-table-for-a-simple-memory-circuit'>   <a id='x1-30001r9'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -2320,7 +2322,7 @@ hypothetical circuit would behave over the valid inputs (0, 0), (0, 1), (1,
                                                                           
    </figure>
    </div>
-<!-- l. 1439 --><p class='indent'>   But wait! This looks like the mystic box’s behavior from the first section where
+<!-- l. 1440 --><p class='indent'>   But wait! This looks like the mystic box’s behavior from the first section where
 FSMs were introduced. It turns out that this is exactly the behavior of that
 mystic box with two buttons; except that here “On” button stands for
 “memorize-1” and “Off” button stands for “memorize-0”, and “Green” output is
@@ -2336,7 +2338,7 @@ box:
                                                                           
 
                                                                           
-<!-- l. 1441 --><p class='indent' id='truth-table-for-the-simple-memory-circuit'>   <a id='x1-30002r10'></a></p><figure class='float'>
+<!-- l. 1442 --><p class='indent' id='truth-table-for-the-simple-memory-circuit'>   <a id='x1-30002r10'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -2352,7 +2354,7 @@ box:
                                                                           
    </figure>
    </div>
-<!-- l. 1457 --><p class='indent'>   From the truth table above we can clearly see that the output of this circuit,
+<!-- l. 1458 --><p class='indent'>   From the truth table above we can clearly see that the output of this circuit,
 which seems to possess one-bit memory, the output <span class='mathjax-inline'>\(\mathbf {Q_{t+1}}\)</span> may be equal to the output
 value from the past <span class='mathjax-inline'>\(\mathbf {Q_t}\)</span> when the input is (0, 0). This implies that the circuit cannot
 be purely combinational because at certain moment in the future, say <span class='mathjax-inline'>\(t+100\)</span>, the input
@@ -2364,7 +2366,7 @@ latch</span>.
    
 </p>
    <h4 class='subsectionHead' id='sr-latch'><span class='titlemark'>5.3.1   </span> <a id='x1-310005.3.1'></a>SR Latch</h4>
-<!-- l. 1460 --><p class='noindent'>Set-Reset or SR latch is what the mystic box from the first section of this chapter
+<!-- l. 1461 --><p class='noindent'>Set-Reset or SR latch is what the mystic box from the first section of this chapter
 represented informally. You have seen how this behavior exactly matches with the
 behavior of a very simple 1-bit memory component that can update its memory
 upon receiving certain inputs ((0, 1) and (1, 0)) and preserve the old 1-bit value
@@ -2383,13 +2385,13 @@ respectively.
                                                                           
 
                                                                           
-<!-- l. 1464 --><p class='noindent'><img alt='PIC' height='234' src='/assets/courses/comp-arch/figures/c5s2_sr_latch_impl.png' width='234' />
+<!-- l. 1465 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c5s2_sr_latch_impl.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 1469 --><p class='indent'>   It turns out that it is really simple to build a sequential circuit for
+<!-- l. 1470 --><p class='indent'>   It turns out that it is really simple to build a sequential circuit for
 SR latch. The circuit is given on the diagram above. It essentially has
 two NAND gates and two NOT gates (one for each input bit <span class='cmbx-12'>S</span>et and
 <span class='cmbx-12'>R</span>eset). The NAND gate on top outputs the thing that’s kept on the
@@ -2403,7 +2405,7 @@ circuit.
                                                                           
 
                                                                           
-<!-- l. 1471 --><p class='indent' id='extended-truth-table-for-sr-latch'>   <a id='x1-31001r11'></a></p><figure class='float'>
+<!-- l. 1472 --><p class='indent' id='extended-truth-table-for-sr-latch'>   <a id='x1-31001r11'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -2422,7 +2424,7 @@ circuit.
                                                                           
    </figure>
    </div>
-<!-- l. 1492 --><p class='indent'>   Let’s go through a couple of the rows from the truth table. Suppose the input
+<!-- l. 1493 --><p class='indent'>   Let’s go through a couple of the rows from the truth table. Suppose the input
 is (<span class='mathjax-inline'>\(S=1\)</span>, <span class='mathjax-inline'>\(R=0\)</span>) and the previously memorized value is <span class='mathjax-inline'>\(Q_t = 0\)</span>. Then, we can compute <span class='mathjax-inline'>\(\mathbf {Q_{t+1}}\)</span> for the next
 time step as follows:
 </p>
@@ -2434,13 +2436,13 @@ time step as follows:
                                                                           
 
                                                                           
-<!-- l. 1496 --><p class='noindent'><img alt='PIC' height='351' src='/assets/courses/comp-arch/figures/other/sr-latch-set.png' width='350' />
+<!-- l. 1497 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/sr-latch-set.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 1501 --><p class='indent'>   Now, suppose that the input is (0, 0) and we have previously update the latch
+<!-- l. 1502 --><p class='indent'>   Now, suppose that the input is (0, 0) and we have previously update the latch
 to store 1. Then this is what happens in the next time step:
 </p>
    <figure class='figure'> 
@@ -2451,13 +2453,13 @@ to store 1. Then this is what happens in the next time step:
                                                                           
 
                                                                           
-<!-- l. 1505 --><p class='noindent'><img alt='PIC' height='351' src='/assets/courses/comp-arch/figures/other/sr-latch-hold.png' width='350' />
+<!-- l. 1506 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/sr-latch-hold.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 1510 --><p class='indent'>   If you go through all of the possible inputs from listed in the truth table, you
+<!-- l. 1511 --><p class='indent'>   If you go through all of the possible inputs from listed in the truth table, you
 will verify the outputs mentioned. By doing this you will also see that the <span class='mathjax-inline'>\(\mathbf {Q_{t+1}}\)</span> and <span class='mathjax-inline'>\(\mathbf {Q'_{t+1}}\)</span>
 become 1 when the input is (1, 1) and therefore, leads to metastability when the
 input suddenly switches to (0, 0). When <span class='mathjax-inline'>\(S_{t-1} = R_{t-1} = 1\)</span> and then <span class='mathjax-inline'>\(S_t = R_t = 0\)</span>, it depends on the speed in
@@ -2470,7 +2472,7 @@ also 1, providing the (1, 1) input is not a reliable way of storing boolean valu
    
 </p>
    <h4 class='subsectionHead' id='d-latch'><span class='titlemark'>5.3.2   </span> <a id='x1-320005.3.2'></a>D Latch</h4>
-<!-- l. 1513 --><p class='noindent'>You have learned about the SR latch, which is a very basic but essential memory
+<!-- l. 1514 --><p class='noindent'>You have learned about the SR latch, which is a very basic but essential memory
 component. Now, we are going to use this basic building block to build more
 complex but also useful piece of memory circuitry. This one is called <span class='cmbx-12'>D latch </span>and
 here is how it works: we provide two-bit input <span class='cmbx-12'>(data, enable) </span>to the D latch, and
@@ -2483,7 +2485,7 @@ below:
                                                                           
 
                                                                           
-<!-- l. 1515 --><p class='indent' id='truth-table-for-d-latch'>   <a id='x1-32001r12'></a></p><figure class='float'>
+<!-- l. 1516 --><p class='indent' id='truth-table-for-d-latch'>   <a id='x1-32001r12'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -2498,7 +2500,7 @@ below:
                                                                           
    </figure>
    </div>
-<!-- l. 1531 --><p class='indent'>   Since we do not want to start from scratch, we would like to use the SR latch
+<!-- l. 1532 --><p class='indent'>   Since we do not want to start from scratch, we would like to use the SR latch
 to build the D latch. Now, the question is how can we decide what inputs should
 be provided to an SR latch so that it acts like the D latch? To answer this
 question, let’s imagine the following scenario first. Suppose that you tell
@@ -2518,13 +2520,13 @@ lying.
                                                                           
 
                                                                           
-<!-- l. 1535 --><p class='noindent'><img alt='PIC' height='370' src='/assets/courses/comp-arch/figures/other/d-latch-interface.png' width='370' />
+<!-- l. 1536 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/d-latch-interface.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 1540 --><p class='indent'>   You (the guy in the middle) will act like the interface for the SR latch in your
+<!-- l. 1541 --><p class='indent'>   You (the guy in the middle) will act like the interface for the SR latch in your
 pocket, and through this interface I (the guy on the left) will get the impression
 that I am actually working with a D latch. So, a D latch is essentially You + SR
 latch in your pocket. Let’s see the complete truth table for the SR latch
@@ -2534,7 +2536,7 @@ interface:
                                                                           
 
                                                                           
-<!-- l. 1542 --><p class='indent'>   </p><figure class='float'>
+<!-- l. 1543 --><p class='indent'>   </p><figure class='float'>
                                                                           
 
                                                                           
@@ -2549,7 +2551,7 @@ interface:
                                                                           
    </figure>
    </div>
-<!-- l. 1560 --><p class='indent'>   From the truth table above you could derive the following boolean functions
+<!-- l. 1561 --><p class='indent'>   From the truth table above you could derive the following boolean functions
 for S and R inputs to the SR latch: <span class='mathjax-inline'>\(S(D, E) = DE\)</span> and <span class='mathjax-inline'>\(R(D, E) = D'E\)</span>. Building this circuit that outputs S and
 R values given D and E values essentially replaces you (the guy in the middle
 acting as an interface for the SR latch) and allows us to build the D latch circuit.
@@ -2564,13 +2566,13 @@ gates:
                                                                           
 
                                                                           
-<!-- l. 1564 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/c5s2_d_latch_impl.png' width='272' />
+<!-- l. 1565 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c5s2_d_latch_impl.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 1569 --><p class='indent'>   One last thing to note is that there is not invalid inputs when we
+<!-- l. 1570 --><p class='indent'>   One last thing to note is that there is not invalid inputs when we
 use a D latch. Each input is valid and has a particular meaning. This is
 really nice if you want to avoid any uncertainties in your boolean logic
 when it gets complex. It is especially useful to prove things about the
@@ -2579,7 +2581,7 @@ sideways.
    
 </p>
    <h4 class='subsectionHead' id='d-flipflop'><span class='titlemark'>5.3.3   </span> <a id='x1-330005.3.3'></a>D Flip-Flop</h4>
-<!-- l. 1572 --><p class='noindent'>You have seen how the D latch works: as long as the <span class='cmti-12'>enable </span>input is high, the
+<!-- l. 1573 --><p class='noindent'>You have seen how the D latch works: as long as the <span class='cmti-12'>enable </span>input is high, the
 latch becomes transparent, i.e., <span class='mathjax-inline'>\(Q_{t+1} = D\)</span>. To make it opaque, we have to turn off the
 <span class='cmti-12'>enable </span>bit after setting the correct <span class='cmti-12'>data </span>bit. Here is how a proper functioning of a
 D latch would look like in real life:
@@ -2593,14 +2595,14 @@ D latch would look like in real life:
                                                                           
 
                                                                           
-<!-- l. 1576 --><p class='noindent'><img alt='PIC' height='370' src='/assets/courses/comp-arch/figures/other/timing_d_latch.png' width='370' />
+<!-- l. 1577 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/timing_d_latch.png' width='95%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.8: </span><span class='content'>Timing diagram for operating D latch.</span></figcaption><!-- tex4ht:label?: x1-33001r8  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1581 --><p class='indent'>   If we hook the raw clock output to the <span class='cmti-12'>enable </span>bit of a D latch, then the setup
+<!-- l. 1582 --><p class='indent'>   If we hook the raw clock output to the <span class='cmti-12'>enable </span>bit of a D latch, then the setup
 and hold times would be violated. What’s proven to be useful in practice is to
 latch a new value once in every clock rising or positive clock edge. The memory
 components that react to the edge (i.e., transitioning from LOW to HIGH or
@@ -2617,14 +2619,14 @@ flip-flop:
                                                                           
 
                                                                           
-<!-- l. 1585 --><p class='noindent'><img alt='PIC' height='370' src='/assets/courses/comp-arch/figures/other/timing_d_flipflop.png' width='370' />
+<!-- l. 1586 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/timing_d_flipflop.png' width='95%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.9: </span><span class='content'>Timing diagram for D flip flop.</span></figcaption><!-- tex4ht:label?: x1-33002r9  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1590 --><p class='indent'>   A D flip flop can be implemented by using two ordinary D latches and a NOT
+<!-- l. 1591 --><p class='indent'>   A D flip flop can be implemented by using two ordinary D latches and a NOT
 gate as follows:
 </p>
    <figure class='figure'> 
@@ -2635,13 +2637,13 @@ gate as follows:
                                                                           
 
                                                                           
-<!-- l. 1594 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/c5s2_d_flipflop_impl.png' width='272' />
+<!-- l. 1595 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c5s2_d_flipflop_impl.png' width='70%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 1599 --><p class='indent'>   Let the circuit diagram above sink in for a moment. There are 2 D latches: the
+<!-- l. 1600 --><p class='indent'>   Let the circuit diagram above sink in for a moment. There are 2 D latches: the
 one connected to the data signal D is called <span class='cmti-12'>master latch </span>and the one connected
 to the output of the master latch is called <span class='cmti-12'>slave latch</span>. The idea is as follows: since
 this is a positive-edge triggered D flipflop, when the clock is low – the master
@@ -2665,14 +2667,14 @@ practice:
                                                                           
 
                                                                           
-<!-- l. 1603 --><p class='noindent'><img alt='PIC' height='386' src='/assets/courses/comp-arch/figures/other/timing_master_slave_latch.png' width='386' />
+<!-- l. 1604 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/timing_master_slave_latch.png' width='95%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.10: </span><span class='content'>Timing diagram for master and slaves latches in D flip flop.</span></figcaption><!-- tex4ht:label?: x1-33003r10  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1608 --><p class='indent'>   Now, let’s add a cherry on top of the cake by building an <span class='cmti-12'>asynchronously
+<!-- l. 1609 --><p class='indent'>   Now, let’s add a cherry on top of the cake by building an <span class='cmti-12'>asynchronously
 resettable D flip flop</span>. Resettable means we can reset the memory (set the Q value
 to 0), and asynchronously resettable means this operation will reset the memory
 regardless of the clock – whether it is high or low or transitioning from
@@ -2687,19 +2689,19 @@ edge).
                                                                           
 
                                                                           
-<!-- l. 1612 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/c5s2_async_d_flipflop_impl.png' width='272' />
+<!-- l. 1613 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c5s2_async_d_flipflop_impl.png' width='70%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 1617 --><p class='indent'>   Here’s the truth table for asynchronously resettable D flipflop:
+<!-- l. 1618 --><p class='indent'>   Here’s the truth table for asynchronously resettable D flipflop:
 </p>
    <div class='table'>
                                                                           
 
                                                                           
-<!-- l. 1619 --><p class='indent' id='truth-table-for-asynchronously-resettable-d-flip-flop'>   <a id='x1-33004r13'></a></p><figure class='float'>
+<!-- l. 1620 --><p class='indent' id='truth-table-for-asynchronously-resettable-d-flip-flop'>   <a id='x1-33004r13'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -2717,7 +2719,7 @@ R=0</div>   </td><td class='td11' id='TBL-44-2-2' style='white-space:nowrap; tex
    </div>
    
    <h4 class='subsectionHead' id='t-flipflop'><span class='titlemark'>5.3.4   </span> <a id='x1-340005.3.4'></a>T Flip-Flop</h4>
-<!-- l. 1638 --><p class='noindent'>Another simple flip flop that is commonly used in <span class='cmti-12'>counter </span>design is <span class='cmbx-12'>T flip flop</span>.
+<!-- l. 1639 --><p class='noindent'>Another simple flip flop that is commonly used in <span class='cmti-12'>counter </span>design is <span class='cmbx-12'>T flip flop</span>.
 We have not seen counters yet, but we will in the section 5.4.
 </p>
    <figure class='figure'> 
@@ -2728,7 +2730,7 @@ We have not seen counters yet, but we will in the section 5.4.
                                                                           
 
                                                                           
-<!-- l. 1642 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/c5s2_t_flipflop_impl.png' width='272' />
+<!-- l. 1643 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c5s2_t_flipflop_impl.png' width='50%' />
                                                                           
 
                                                                           
@@ -2742,7 +2744,7 @@ We have not seen counters yet, but we will in the section 5.4.
                                                                           
 
                                                                           
-<!-- l. 1649 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/c5s2_async_t_flipflop_impl.png' width='272' />
+<!-- l. 1650 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c5s2_async_t_flipflop_impl.png' width='50%' />
                                                                           
 
                                                                           
@@ -2750,13 +2752,13 @@ We have not seen counters yet, but we will in the section 5.4.
    </figure>
    
    <h4 class='subsectionHead' id='jk-flipflop'><span class='titlemark'>5.3.5   </span> <a id='x1-350005.3.5'></a>JK Flip-Flop</h4>
-<!-- l. 1655 --><p class='noindent'>JK flip flop is another memory unit that has the following truth table:
+<!-- l. 1656 --><p class='noindent'>JK flip flop is another memory unit that has the following truth table:
 </p>
    <div class='table'>
                                                                           
 
                                                                           
-<!-- l. 1657 --><p class='indent' id='truth-table-for-jk-flipflop'>   <a id='x1-35001r14'></a></p><figure class='float'>
+<!-- l. 1658 --><p class='indent' id='truth-table-for-jk-flipflop'>   <a id='x1-35001r14'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -2772,7 +2774,7 @@ We have not seen counters yet, but we will in the section 5.4.
                                                                           
    </figure>
    </div>
-<!-- l. 1675 --><p class='indent'>   Here is how a JK flip flop can be implemented by using a D flip flop and a 4x1
+<!-- l. 1676 --><p class='indent'>   Here is how a JK flip flop can be implemented by using a D flip flop and a 4x1
 MUX:
 </p>
    <figure class='figure'> 
@@ -2783,7 +2785,7 @@ MUX:
                                                                           
 
                                                                           
-<!-- l. 1679 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/c5s2_async_jk_flipflop_impl.png' width='272' />
+<!-- l. 1680 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c5s2_async_jk_flipflop_impl.png' width='50%' />
                                                                           
 
                                                                           
@@ -2791,7 +2793,7 @@ MUX:
    </figure>
    
    <h3 class='sectionHead' id='counter'><span class='titlemark'>5.4   </span> <a id='x1-360005.4'></a>Counter</h3>
-<!-- l. 1685 --><p class='noindent'>0… 1… 2… 3… An n-bit <span class='cmbx-12'>counter </span>is a unit that counts up/down after each clock
+<!-- l. 1686 --><p class='noindent'>0… 1… 2… 3… An n-bit <span class='cmbx-12'>counter </span>is a unit that counts up/down after each clock
 cycle, outputting an n-bit binary number. For example, here’s a truth table for
 3-bit <span class='cmti-12'>up counter </span>that counts by incrementing previous output and <span class='cmti-12'>down counter</span>
 that counts by decrementing it.
@@ -2800,7 +2802,7 @@ that counts by decrementing it.
                                                                           
 
                                                                           
-<!-- l. 1687 --><p class='indent' id='truth-table-for-bit-up-counter-and-down-counter'>   <a id='x1-36001r15'></a></p><figure class='float'>
+<!-- l. 1688 --><p class='indent' id='truth-table-for-bit-up-counter-and-down-counter'>   <a id='x1-36001r15'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -2819,18 +2821,18 @@ that counts by decrementing it.
                                                                           
    </figure>
    </div>
-<!-- l. 1708 --><p class='indent'>   Notice how the up counter’s output <span class='mathjax-inline'>\(Q^\text {up}_{t+1}\)</span> wraps around and becomes 000 when it
+<!-- l. 1709 --><p class='indent'>   Notice how the up counter’s output <span class='mathjax-inline'>\(Q^\text {up}_{t+1}\)</span> wraps around and becomes 000 when it
 reaches the highest 3-bit binary number 111 (7 in decimal) and how the down
 counter’s output <span class='mathjax-inline'>\(Q^\text {down}_{t+1}\)</span> becomes 111 when the ouptut reaches the smallest 3-bit binary
 number 000 (0 in decimal). This is not a bug – it’s actually a feature and we will
 see why when we build our computer!
-</p><!-- l. 1710 --><p class='indent'>   There are two types of counters regarding their circuit-level clock connections:
+</p><!-- l. 1711 --><p class='indent'>   There are two types of counters regarding their circuit-level clock connections:
 <span class='cmbx-12'>synchronous </span>and <span class='cmbx-12'>asynchronous </span>counters. Now, you will see how these two
 types are different from each other.
    
 </p>
    <h4 class='subsectionHead' id='synchronous-up-counter'><span class='titlemark'>5.4.1   </span> <a id='x1-370005.4.1'></a>Synchronous Up Counter</h4>
-<!-- l. 1713 --><p class='noindent'><span class='cmbx-12'>Synchronous </span>counter is a counter that uses clock to update all of its internal
+<!-- l. 1714 --><p class='noindent'><span class='cmbx-12'>Synchronous </span>counter is a counter that uses clock to update all of its internal
 registers simulateneously at the same raw clock edges. Calling this type of circuit
 synchronous makes sense because a single global clock orchastrates the update
 times for all the memory units inside, and therefore, we say that <span class='cmti-12'>all units are
@@ -2845,7 +2847,7 @@ practice:
                                                                           
 
                                                                           
-<!-- l. 1717 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/c5s4_sync_up_counter_impl.png' width='272' />
+<!-- l. 1718 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c5s4_sync_up_counter_impl.png' width='50%' />
                                                                           
 
                                                                           
@@ -2853,7 +2855,7 @@ practice:
    </figure>
    
    <h4 class='subsectionHead' id='asynchronous-ripple-counter'><span class='titlemark'>5.4.2   </span> <a id='x1-380005.4.2'></a>Asynchronous Ripple Counter</h4>
-<!-- l. 1723 --><p class='noindent'><span class='cmbx-12'>Asynchronous </span>counter, as opposed to the synchronous one, may use raw clock
+<!-- l. 1724 --><p class='noindent'><span class='cmbx-12'>Asynchronous </span>counter, as opposed to the synchronous one, may use raw clock
 signal for updating some of its internal registers and another signal for other
 registers. This implies that the updating of the all internal memory units does not
 happen at the same time as the <span class='cmbx-12'>clk </span>signals to different flip-flops come from
@@ -2868,13 +2870,13 @@ how it can be implemented:
                                                                           
 
                                                                           
-<!-- l. 1727 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/c5s4_async_up_counter_impl.png' width='272' />
+<!-- l. 1728 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c5s4_async_up_counter_impl.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 1732 --><p class='indent'>   Let’s analyze the circuit above with a bit more care and see why it is called an
+<!-- l. 1733 --><p class='indent'>   Let’s analyze the circuit above with a bit more care and see why it is called an
 asynchronous ripple counter. Before starting the analysis, just remember that the <span class='mathjax-inline'>\(\nearrow \)</span>
 notation is used for the <span class='mathjax-inline'>\(0 \rightarrow 1\)</span> clock transitioning, and these two notations are
 exchangeable.
@@ -2883,7 +2885,7 @@ exchangeable.
                                                                           
 
                                                                           
-<!-- l. 1734 --><p class='indent' id='analysis-of-a-bit-asyncronous-ripple-counter-that-counts-up-the-bit-output-represents-binary-number-y-y-y-where-y-is-msb-and-y-is-lsb'>   <a id='x1-38001r16'></a></p><figure class='float'>
+<!-- l. 1735 --><p class='indent' id='analysis-of-a-bit-asyncronous-ripple-counter-that-counts-up-the-bit-output-represents-binary-number-y-y-y-where-y-is-msb-and-y-is-lsb'>   <a id='x1-38001r16'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -2901,7 +2903,7 @@ exchangeable.
                                                                           
    </figure>
    </div>
-<!-- l. 1753 --><p class='indent'>   <span class='mathjax-inline'>\(\text {clk}_0\)</span> is directly connected to the global clock <span class='cmti-12'>clk</span>, so it is effectively updated with
+<!-- l. 1754 --><p class='indent'>   <span class='mathjax-inline'>\(\text {clk}_0\)</span> is directly connected to the global clock <span class='cmti-12'>clk</span>, so it is effectively updated with
 the global clock edges. <span class='mathjax-inline'>\(\text {clk}_1\)</span> is connected to <span class='mathjax-inline'>\(\overline {y_0}\)</span>, so it takes 2 global clock cycles to flip <span class='mathjax-inline'>\(y_1\)</span>.
 This is because <span class='mathjax-inline'>\(y_0\)</span> oscillates between <span class='mathjax-inline'>\(0 \rightarrow 1 \rightarrow 0\)</span>, making <span class='mathjax-inline'>\(\text {clk}_1 = \overline {y_0} = 1 \rightarrow 0 \rightarrow 1\)</span>. Therefore, <span class='mathjax-inline'>\(\text {clk}_1\)</span> goes from low to high
 after the second global clock cycle (that is, from t=1 to t=2 in the timing
@@ -2919,7 +2921,7 @@ meaningful.
    
 </p>
    <h3 class='sectionHead' id='timing1'><span class='titlemark'>5.5   </span> <a id='x1-390005.5'></a>Timing</h3>
-<!-- l. 1756 --><p class='noindent'>So far you have hopefully learned a great deal of things in computer architecture.
+<!-- l. 1757 --><p class='noindent'>So far you have hopefully learned a great deal of things in computer architecture.
 New readers might find this crowded with a lot of new information and this is
 fine. The organization that I have followed while writing this book in “one sitting”
 is not flawless because of the fact that the book’s been written in “one sitting”…
@@ -2931,7 +2933,7 @@ knowledge upon further self-study by themselves. Wihout further ado, let me
 introduce the timing framework used in circuit design. Before that let me
 actually motivate the reason that such a framework is used in the first
 place.
-</p><!-- l. 1758 --><p class='indent'>   You have seen how edge-triggered D flip-flop is implemented by using two D
+</p><!-- l. 1759 --><p class='indent'>   You have seen how edge-triggered D flip-flop is implemented by using two D
 latches. You have also seen the timing diagrams capturing its operational span.
 But have you ever scrutinized it really? If you have, then have you thought about
                                                                           
@@ -2950,7 +2952,7 @@ you.
                                                                           
 
                                                                           
-<!-- l. 1762 --><p class='noindent'><img alt='PIC' height='386' src='/assets/courses/comp-arch/figures/other/hold_d_flipflop.png' width='386' />
+<!-- l. 1763 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/hold_d_flipflop.png' width='95%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.11:  </span><span class='content'>Which  latch  becomes  transparent  and  which  one  becomes
 opaque? Spoiler: both latches become transparent for a moment <span class='mathjax-inline'>\(\implies \)</span> necessity
@@ -2959,7 +2961,7 @@ of <span class='cmbx-12'>hold time </span>for D flip-flop.</span></figcaption><!
 
                                                                           
    </figure>
-<!-- l. 1767 --><p class='indent'>   When clock transitions from low to high and data bit transitions from low to
+<!-- l. 1768 --><p class='indent'>   When clock transitions from low to high and data bit transitions from low to
 high at the same moment, it takes new D=1 to reach to the top NAND gate faster
 than the negated clock signal, leading the master latch to stay transparent and
 update <span class='mathjax-inline'>\(Q_m\)</span> with value 1. Then the high clock signal is propagated through the slave
@@ -2979,14 +2981,14 @@ intended.
                                                                           
 
                                                                           
-<!-- l. 1771 --><p class='noindent'><img alt='PIC' height='386' src='/assets/courses/comp-arch/figures/other/setup_d_flipflop.png' width='386' />
+<!-- l. 1772 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/setup_d_flipflop.png' width='95%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.12: </span><span class='content'>Necessity of <span class='cmbx-12'>setup time </span>for D flip-flop.</span></figcaption><!-- tex4ht:label?: x1-39002r12  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1776 --><p class='indent'>   Here is another case: when (1) the clock transitions from low to high and (2)
+<!-- l. 1777 --><p class='indent'>   Here is another case: when (1) the clock transitions from low to high and (2)
 the data bit D transitions from high to low and (3) <span class='mathjax-inline'>\(Q_m\)</span> is previously high, even
 though the intended behavior is to store D=0 in <span class='mathjax-inline'>\(Q\)</span>, the negated clock signal and the
 negated D may or may not reach the bottom NAND gate in the master latch at
@@ -3006,20 +3008,20 @@ above.
                                                                           
 
                                                                           
-<!-- l. 1780 --><p class='noindent'><img alt='PIC' height='386' src='/assets/courses/comp-arch/figures/other/proper_timing_d_flipflop.png' width='386' />
+<!-- l. 1781 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/proper_timing_d_flipflop.png' width='85%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.13: </span><span class='content'>Proper <span class='cmbx-12'>setup </span>and <span class='cmbx-12'>hold </span>durations.</span></figcaption><!-- tex4ht:label?: x1-39003r13  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1785 --><p class='indent'>   The timing diagram above depicts the behavior of a D flip flop when the setup
+<!-- l. 1786 --><p class='indent'>   The timing diagram above depicts the behavior of a D flip flop when the setup
 and hold times are well respected. Having this intuition about these two timing
 constraints, let’s formalize this framework.
    
 </p>
    <h4 class='subsectionHead' id='setup-time-constraint'><span class='titlemark'>5.5.1   </span> <a id='x1-400005.5.1'></a>Setup Time Constraint</h4>
-<!-- l. 1788 --><p class='noindent'>Imagine the basic but very essential flip-flop setup as shown below:
+<!-- l. 1789 --><p class='noindent'>Imagine the basic but very essential flip-flop setup as shown below:
 </p>
    <figure class='figure' id='x1-40001r14'><span id='setup-timing-for-flipflops-in-series'></span> 
 
@@ -3030,14 +3032,14 @@ constraints, let’s formalize this framework.
                                                                           
 
                                                                           
-<!-- l. 1792 --><p class='noindent'><img alt='PIC' height='312' src='/assets/courses/comp-arch/figures/other/setup_timing_2flipflops.png' width='312' />
+<!-- l. 1793 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/setup_timing_2flipflops.png' width='85%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.14: </span><span class='content'>Setup timing for 2 flip-flops in series.</span></figcaption><!-- tex4ht:label?: x1-40001r14  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1797 --><p class='indent'>   Note that <span class='mathjax-inline'>\(t_\text {clk}\)</span> is the clock period, <span class='mathjax-inline'>\(t_\text {clk2q}\)</span> is the time it takes for the <span class='cmbx-12'>clock </span>signal to
+<!-- l. 1798 --><p class='indent'>   Note that <span class='mathjax-inline'>\(t_\text {clk}\)</span> is the clock period, <span class='mathjax-inline'>\(t_\text {clk2q}\)</span> is the time it takes for the <span class='cmbx-12'>clock </span>signal to
 reach the output of the flip-flop, <span class='cmbx-12'>Q</span>. <span class='mathjax-inline'>\(t_\text {pd}\)</span> and <span class='mathjax-inline'>\(t_\text {cd}\)</span> are the respective <span class='cmbx-12'>propagation </span>and
 <span class='cmbx-12'>contamination </span>delays of the combinational circuit in between the flip-flops. This
 being clarified, suppose that the clock signal reaches the left flip-flop at time <span class='mathjax-inline'>\(T_\text {launch}\)</span> and
@@ -3045,7 +3047,7 @@ the right flip-flop at time <span class='mathjax-inline'>\(T_\text {capture}\)</
 hold:
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} T_\text {capture} + t_\text {clk} \geq T_\text {launch} + t_\text {clk2q} + t_\text {pd} + t_\text {setup} \end{align*}</div>
-<!-- l. 1803 --><p class='indent'>   Let me try to explain the inequality above. As the clock signal reaches the left
+<!-- l. 1804 --><p class='indent'>   Let me try to explain the inequality above. As the clock signal reaches the left
 (source) flip-flop at <span class='mathjax-inline'>\(T_\text {launch}\)</span>, it takes <span class='mathjax-inline'>\(t_\text {clk2q}\)</span> amount of time for it to affect source <span class='mathjax-inline'>\(Q\)</span> output and
 another <span class='mathjax-inline'>\(t_\text {pd}\)</span> amount of time to pass through the combinational circuit (in the worst
 case scenario). We know that the next clock edge will reach the right (target)
@@ -3057,7 +3059,7 @@ the output of the combinational circuit must be ready before <span class='mathja
    
 </p>
    <h4 class='subsectionHead' id='hold-time-constraint'><span class='titlemark'>5.5.2   </span> <a id='x1-410005.5.2'></a>Hold Time Constraint</h4>
-<!-- l. 1806 --><p class='noindent'>Here is the same picture for the hold time constraint, except that here we only
+<!-- l. 1807 --><p class='noindent'>Here is the same picture for the hold time constraint, except that here we only
 care about the shortest path that the signal takes to propagate through the
 combinational circuit in between the two flip-flops:
 </p>
@@ -3070,17 +3072,17 @@ combinational circuit in between the two flip-flops:
                                                                           
 
                                                                           
-<!-- l. 1810 --><p class='noindent'><img alt='PIC' height='312' src='/assets/courses/comp-arch/figures/other/hold_timing_2flipflops.png' width='312' />
+<!-- l. 1811 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/hold_timing_2flipflops.png' width='85%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.15: </span><span class='content'>Hold timing for 2 flip-flops in series.</span></figcaption><!-- tex4ht:label?: x1-41001r15  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1815 --><p class='indent'>   Here is the inequality for the hold time constraint:
+<!-- l. 1816 --><p class='indent'>   Here is the inequality for the hold time constraint:
 </p>
    <div class='mathjax-env mathjax-align*'>\begin{align*} T_\text {launch} + t_\text {clk2q} + t_\text {cd} \geq T_\text {capture} + t_\text {hold} \end{align*}</div>
-<!-- l. 1821 --><p class='indent'>   Let me now try to explain this inequality. After making sure that the setup
+<!-- l. 1822 --><p class='indent'>   Let me now try to explain this inequality. After making sure that the setup
 time is constraint is not violated, we then also have to check if the output of the
 combinational logic will stay the same for enough time period (a.k.a. <span class='mathjax-inline'>\(t_\text {hold}\)</span>) after the
 clock edge. As the clock edge reaches the source flip-flop at <span class='mathjax-inline'>\(T_\text {launch}\)</span>, then takes <span class='mathjax-inline'>\(t_\text {clk2q}\)</span> time to
@@ -3092,13 +3094,13 @@ violated).
                                                                           
 
                                                                           
-</p><!-- l. 1823 --><p class='indent'>
+</p><!-- l. 1824 --><p class='indent'>
                                                                           
 
                                                                           
 </p>
    <h2 class='chapterHead' id='lets-build-a-computer'><span class='titlemark'>Chapter 6</span><br /><a id='x1-420006'></a>Let’s Build a Computer!</h2>
-<!-- l. 1825 --><p class='noindent'>Congratulations! You have made this far, and now you get to understand and
+<!-- l. 1826 --><p class='noindent'>Congratulations! You have made this far, and now you get to understand and
 even build a custom 8-bit computer on your own through some guidance provided
 in this chapter. However, it is important to talk about the <span class='cmbx-12'>instruction set
 architecture </span>or <span class='cmbx-12'>ISA </span>before building anything. ISA is essentially a sheet
@@ -3116,7 +3118,7 @@ follows:
                                                                           
 
                                                                           
-<!-- l. 1827 --><p class='indent' id='bit-instruction-representation'>   <a id='x1-42001r1'></a></p><figure class='float'>
+<!-- l. 1828 --><p class='indent' id='bit-instruction-representation'>   <a id='x1-42001r1'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -3133,7 +3135,7 @@ follows:
                                                                           
    </figure>
    </div>
-<!-- l. 1840 --><p class='indent'>   The representation above explains the semantic division of the 2-byte
+<!-- l. 1841 --><p class='indent'>   The representation above explains the semantic division of the 2-byte
 instruction. The MSB (most significant bit) <span class='mathjax-inline'>\(b_{15}\)</span> indicates whether instruction is an
 ALU instruction (such as adding two numbers, logical AND, logical OR, and so
 on) or memory instruction (such as storing a number in memory, loading values
@@ -3152,14 +3154,14 @@ are going to work with <span class='mathjax-inline'>\(2^8 = 256\)</span> byte me
 represent one byte or 8 bits instead of a single bit. If we wanted to access the
 individual bits, then the memory would be called <span class='cmbx-12'>bit-addressable </span>and not
 byte-addressable.
-</p><!-- l. 1842 --><p class='indent'>   Lastly, since this is going to be an 8-bit computer (byte-addressable memory,
+</p><!-- l. 1843 --><p class='indent'>   Lastly, since this is going to be an 8-bit computer (byte-addressable memory,
 support for operations on byte-long numbers, byte-long bus width; in other words,
 only 8 bits can be travelling accross wires at a given moment), I will call this
 computer <span class='cmbx-12'>D</span>ummy <span class='cmbx-12'>x8 </span>or <span class='cmbx-12'>Dx8</span>!
    
 </p>
    <h3 class='sectionHead' id='instruction-set-architecture'><span class='titlemark'>6.1   </span> <a id='x1-430006.1'></a>Instruction Set Architecture</h3>
-<!-- l. 1845 --><p class='noindent'>One popular architecture for modern computing devices has been <span class='cmbx-12'>Von Neumann
+<!-- l. 1846 --><p class='noindent'>One popular architecture for modern computing devices has been <span class='cmbx-12'>Von Neumann
 architecture</span>. This architecture is essentially the one that mentions a <span class='cmbx-12'>central
 processing unit </span>or <span class='cmbx-12'>CPU </span>which works with a <span class='cmbx-12'>memory unit </span>where the data and
 the program is mixed. The CPU consists of a <span class='cmbx-12'>control unit </span>and <span class='cmbx-12'>arithmetic and
@@ -3181,14 +3183,14 @@ Memory).
                                                                           
 
                                                                           
-<!-- l. 1849 --><p class='noindent'><img alt='PIC' height='292' src='/assets/courses/comp-arch/figures/other/von_neumann_arch.png' width='292' />
+<!-- l. 1850 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/von_neumann_arch.png' width='50%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 6.1: </span><span class='content'>Von Neumann architecture.</span></figcaption><!-- tex4ht:label?: x1-43001r1  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1854 --><p class='indent'>   Now, let’s start designing our own ISA from scratch. Just keep in mind that,
+<!-- l. 1855 --><p class='indent'>   Now, let’s start designing our own ISA from scratch. Just keep in mind that,
 we will build computer around the architectural principles of Von Neumann’s,
 however, our instruction set and the microarchitecture (technical gate-level
 details) will be built and customized for our personal liking. Von Neumann
@@ -3197,11 +3199,11 @@ components there are and how they are frankly connected; it does not dictate how
 these components ought to be built or which instructions should they be able to
 carry out. So, we are free to do what the hell we want with this. Nice, let’s get to
 it!
-</p><!-- l. 1856 --><p class='indent'>   I visualize the general organization of the DX8 computer as follows:
+</p><!-- l. 1857 --><p class='indent'>   I visualize the general organization of the DX8 computer as follows:
 </p>
       <ul class='itemize1'>
       <li class='itemize'>
-      <!-- l. 1859 --><p class='noindent'>There is a CPU, which has a <span class='cmbx-12'>Control unit </span>and <span class='cmbx-12'>Arithmetic unit </span>(to
+      <!-- l. 1860 --><p class='noindent'>There is a CPU, which has a <span class='cmbx-12'>Control unit </span>and <span class='cmbx-12'>Arithmetic unit </span>(to
       perform <span class='mathjax-inline'>\(a + b\)</span>, comparison <span class='mathjax-inline'>\(a &lt; b ?\)</span>, etc.) + <span class='cmbx-12'>Logic unit </span>(to perform <span class='mathjax-inline'>\(a \operatorname {AND} b\)</span>, <span class='mathjax-inline'>\(\operatorname {NOT} a\)</span>, etc.)
       and a bunch of registers (R0, …, R7 – also known as Register file);
       </p>
@@ -3220,7 +3222,7 @@ it!
                                                                           
       </li>
       <li class='itemize'>
-      <!-- l. 1866 --><p class='noindent'>External input unit: </p>
+      <!-- l. 1867 --><p class='noindent'>External input unit: </p>
            <ul class='itemize2'>
            <li class='itemize'>8 ON/OFF switches (acting as a “keyboard”) to set the <span class='cmti-12'>data </span>to
            be written to the RAM;
@@ -3232,7 +3234,7 @@ it!
            </li>
            <li class='itemize'><span class='cmti-12'>Reset </span>switch to restart the computer.</li></ul>
       </li></ul>
-<!-- l. 1875 --><p class='indent'>   Here’s how I visualize this in my mind:
+<!-- l. 1876 --><p class='indent'>   Here’s how I visualize this in my mind:
 </p>
    <figure class='figure' id='x1-43002r2'><span id='dx-computer-organization'></span> 
 
@@ -3243,45 +3245,45 @@ it!
                                                                           
 
                                                                           
-<!-- l. 1879 --><p class='noindent'><img alt='PIC' height='382' src='/assets/courses/comp-arch/figures/other/dx8-organization.png' width='382' />
+<!-- l. 1880 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/dx8-organization.png' width='80%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 6.2: </span><span class='content'>DX8 computer organization.</span></figcaption><!-- tex4ht:label?: x1-43002r2  -->
                                                                           
 
                                                                           
    </figure>
-<!-- l. 1884 --><p class='indent'>   With this high-level visualization of the DX8 computer in mind, let’s see my
+<!-- l. 1885 --><p class='indent'>   With this high-level visualization of the DX8 computer in mind, let’s see my
 “beautiful” ISA:
 </p>
    <div class='table'>
                                                                           
 
                                                                           
-<!-- l. 1886 --><p class='indent' id='dx-isa'>   <a id='x1-43003r2'></a></p><figure class='float'>
+<!-- l. 1887 --><p class='indent' id='dx-isa'>   <a id='x1-43003r2'></a></p><figure class='float'>
                                                                           
 
                                                                           
-<div class='tabular'> <table class='tabular' id='TBL-52'><colgroup id='TBL-52-1g'><col id='TBL-52-1' /></colgroup><colgroup id='TBL-52-2g'><col id='TBL-52-2' /></colgroup><colgroup id='TBL-52-3g'><col id='TBL-52-3' /></colgroup><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr><tr id='TBL-52-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-1-1' style='white-space:normal; text-align:left;'> <!-- l. 1890 --><p class='noindent'><span class='cmbx-12'>Mnemonic</span>                  </p></td><td class='td11' id='TBL-52-1-2' style='white-space:normal; text-align:left;'> <!-- l. 1890 --><p class='noindent'><span class='cmbx-12'>Opcode</span>  </p></td><td class='td11' id='TBL-52-1-3' style='white-space:normal; text-align:left;'> <!-- l. 1890 --><p class='noindent'><span class='cmbx-12'>Semantics</span>                              </p></td>
-</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr><tr id='TBL-52-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-2-1' style='white-space:normal; text-align:left;'> <!-- l. 1892 --><p class='noindent'><span class='cmtt-12'>load </span><code class='lstinline'><span style='color:#000000'>$regX $memAddr</span></code>      </p></td><td class='td11' id='TBL-52-2-2' style='white-space:normal; text-align:left;'> <!-- l. 1892 --><p class='noindent'>0,0000     </p></td><td class='td11' id='TBL-52-2-3' style='white-space:normal; text-align:left;'> <!-- l. 1892 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regX} \leftarrow \texttt {memAddr}\)</span>                               </p></td>
-</tr><tr id='TBL-52-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-3-1' style='white-space:normal; text-align:left;'> <!-- l. 1893 --><p class='noindent'><span class='cmtt-12'>store </span><code class='lstinline'><span style='color:#000000'>$regX $memAddr</span></code>     </p></td><td class='td11' id='TBL-52-3-2' style='white-space:normal; text-align:left;'> <!-- l. 1893 --><p class='noindent'>0,0001     </p></td><td class='td11' id='TBL-52-3-3' style='white-space:normal; text-align:left;'> <!-- l. 1893 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {memAddr} \leftarrow \texttt {regX} \)</span>                               </p></td>
-</tr><tr id='TBL-52-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-4-1' style='white-space:normal; text-align:left;'> <!-- l. 1894 --><p class='noindent'><span class='cmtt-12'>move </span><code class='lstinline'><span style='color:#000000'>$regX $val</span></code>          </p></td><td class='td11' id='TBL-52-4-2' style='white-space:normal; text-align:left;'> <!-- l. 1894 --><p class='noindent'>0,0010     </p></td><td class='td11' id='TBL-52-4-3' style='white-space:normal; text-align:left;'> <!-- l. 1894 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regX} \leftarrow \texttt {val}\)</span>                               </p></td>
-</tr><tr id='TBL-52-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-5-1' style='white-space:normal; text-align:left;'> <!-- l. 1895 --><p class='noindent'><span class='cmtt-12'>arg1 </span><code class='lstinline'><span style='color:#000000'>$regX</span></code>              </p></td><td class='td11' id='TBL-52-5-2' style='white-space:normal; text-align:left;'> <!-- l. 1895 --><p class='noindent'>0,0011     </p></td><td class='td11' id='TBL-52-5-3' style='white-space:normal; text-align:left;'> <!-- l. 1895 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regA} \leftarrow \texttt {regX}\)</span>                               </p></td>
-</tr><tr id='TBL-52-6-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-6-1' style='white-space:normal; text-align:left;'> <!-- l. 1896 --><p class='noindent'><span class='cmtt-12'>arg2 </span><code class='lstinline'><span style='color:#000000'>$regX</span></code>              </p></td><td class='td11' id='TBL-52-6-2' style='white-space:normal; text-align:left;'> <!-- l. 1896 --><p class='noindent'>0,0100     </p></td><td class='td11' id='TBL-52-6-3' style='white-space:normal; text-align:left;'> <!-- l. 1896 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regB} \leftarrow \texttt {regX}\)</span>                               </p></td>
-</tr><tr id='TBL-52-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-7-1' style='white-space:normal; text-align:left;'> <!-- l. 1897 --><p class='noindent'><span class='cmtt-12'>cmp</span>                     </p></td><td class='td11' id='TBL-52-7-2' style='white-space:normal; text-align:left;'> <!-- l. 1897 --><p class='noindent'>1,0000     </p></td><td class='td11' id='TBL-52-7-3' style='white-space:normal; text-align:left;'> <!-- l. 1897 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {CMP regA regB}\)</span>                               </p></td>
-</tr><tr id='TBL-52-8-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-8-1' style='white-space:normal; text-align:left;'> <!-- l. 1898 --><p class='noindent'><span class='cmtt-12'>add</span>                     </p></td><td class='td11' id='TBL-52-8-2' style='white-space:normal; text-align:left;'> <!-- l. 1898 --><p class='noindent'>1,0001     </p></td><td class='td11' id='TBL-52-8-3' style='white-space:normal; text-align:left;'> <!-- l. 1898 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {regA} + \texttt {regB}\)</span>                               </p></td>
-</tr><tr id='TBL-52-9-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-9-1' style='white-space:normal; text-align:left;'> <!-- l. 1899 --><p class='noindent'><span class='cmtt-12'>neg</span>                     </p></td><td class='td11' id='TBL-52-9-2' style='white-space:normal; text-align:left;'> <!-- l. 1899 --><p class='noindent'>1,0010     </p></td><td class='td11' id='TBL-52-9-3' style='white-space:normal; text-align:left;'> <!-- l. 1899 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \text {NOT regA} + 1\)</span>                               </p></td>
-</tr><tr id='TBL-52-10-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-10-1' style='white-space:normal; text-align:left;'> <!-- l. 1900 --><p class='noindent'><span class='cmtt-12'>and</span>                     </p></td><td class='td11' id='TBL-52-10-2' style='white-space:normal; text-align:left;'> <!-- l. 1900 --><p class='noindent'>1,0011     </p></td><td class='td11' id='TBL-52-10-3' style='white-space:normal; text-align:left;'> <!-- l. 1900 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {regA AND regB}\)</span>                               </p></td>
-</tr><tr id='TBL-52-11-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-11-1' style='white-space:normal; text-align:left;'> <!-- l. 1901 --><p class='noindent'><span class='cmtt-12'>or</span>                      </p></td><td class='td11' id='TBL-52-11-2' style='white-space:normal; text-align:left;'> <!-- l. 1901 --><p class='noindent'>1,0100     </p></td><td class='td11' id='TBL-52-11-3' style='white-space:normal; text-align:left;'> <!-- l. 1901 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {regA OR regB}\)</span>                               </p></td>
-</tr><tr id='TBL-52-12-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-12-1' style='white-space:normal; text-align:left;'> <!-- l. 1902 --><p class='noindent'><span class='cmtt-12'>xor</span>                     </p></td><td class='td11' id='TBL-52-12-2' style='white-space:normal; text-align:left;'> <!-- l. 1902 --><p class='noindent'>1,0101     </p></td><td class='td11' id='TBL-52-12-3' style='white-space:normal; text-align:left;'> <!-- l. 1902 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {regA XOR regB}\)</span>                               </p></td>
-</tr><tr id='TBL-52-13-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-13-1' style='white-space:normal; text-align:left;'> <!-- l. 1903 --><p class='noindent'><span class='cmtt-12'>not</span>                     </p></td><td class='td11' id='TBL-52-13-2' style='white-space:normal; text-align:left;'> <!-- l. 1903 --><p class='noindent'>1,0110     </p></td><td class='td11' id='TBL-52-13-3' style='white-space:normal; text-align:left;'> <!-- l. 1903 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {NOT regA}\)</span>                               </p></td>
-</tr><tr id='TBL-52-14-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-14-1' style='white-space:normal; text-align:left;'> <!-- l. 1904 --><p class='noindent'><span class='cmtt-12'>rotl</span>                    </p></td><td class='td11' id='TBL-52-14-2' style='white-space:normal; text-align:left;'> <!-- l. 1904 --><p class='noindent'>1,0111     </p></td><td class='td11' id='TBL-52-14-3' style='white-space:normal; text-align:left;'> <!-- l. 1904 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {regA[6:0]\_regA[7]}\)</span>                               </p></td>
-</tr><tr id='TBL-52-15-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-15-1' style='white-space:normal; text-align:left;'> <!-- l. 1905 --><p class='noindent'><span class='cmtt-12'>rotr</span>                    </p></td><td class='td11' id='TBL-52-15-2' style='white-space:normal; text-align:left;'> <!-- l. 1905 --><p class='noindent'>1,1000     </p></td><td class='td11' id='TBL-52-15-3' style='white-space:normal; text-align:left;'> <!-- l. 1905 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {regA[0]\_regA[7:1]}\)</span>                               </p></td>
-</tr><tr id='TBL-52-16-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-16-1' style='white-space:normal; text-align:left;'> <!-- l. 1906 --><p class='noindent'><span class='cmtt-12'>shiftl</span>                  </p></td><td class='td11' id='TBL-52-16-2' style='white-space:normal; text-align:left;'> <!-- l. 1906 --><p class='noindent'>1,1001     </p></td><td class='td11' id='TBL-52-16-3' style='white-space:normal; text-align:left;'> <!-- l. 1906 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {regA[6:0]\_0}\)</span>                               </p></td>
-</tr><tr id='TBL-52-17-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-17-1' style='white-space:normal; text-align:left;'> <!-- l. 1907 --><p class='noindent'><span class='cmtt-12'>shiftr</span>                  </p></td><td class='td11' id='TBL-52-17-2' style='white-space:normal; text-align:left;'> <!-- l. 1907 --><p class='noindent'>1,1010     </p></td><td class='td11' id='TBL-52-17-3' style='white-space:normal; text-align:left;'> <!-- l. 1907 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {0\_regA[7:1]}\)</span>                               </p></td>
-</tr><tr id='TBL-52-18-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-18-1' style='white-space:normal; text-align:left;'> <!-- l. 1908 --><p class='noindent'><span class='cmtt-12'>jmp </span><code class='lstinline'><span style='color:#000000'>$val</span></code>                </p></td><td class='td11' id='TBL-52-18-2' style='white-space:normal; text-align:left;'> <!-- l. 1908 --><p class='noindent'>0,0101     </p></td><td class='td11' id='TBL-52-18-3' style='white-space:normal; text-align:left;'> <!-- l. 1908 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regIP} \leftarrow \texttt {val}\)</span>                               </p></td>
-</tr><tr id='TBL-52-19-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-19-1' style='white-space:normal; text-align:left;'> <!-- l. 1909 --><p class='noindent'><span class='cmtt-12'>jmpgt </span><code class='lstinline'><span style='color:#000000'>$val</span></code>              </p></td><td class='td11' id='TBL-52-19-2' style='white-space:normal; text-align:left;'> <!-- l. 1909 --><p class='noindent'>0,0110     </p></td><td class='td11' id='TBL-52-19-3' style='white-space:normal; text-align:left;'> <!-- l. 1909 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regIP} \leftarrow \begin {cases} \texttt {val}, \text {if gt flag is set} \\ \texttt {regIP} + 1, \text {otherwise} \end {cases}\)</span>                               </p></td>
-</tr><tr id='TBL-52-20-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-20-1' style='white-space:normal; text-align:left;'> <!-- l. 1914 --><p class='noindent'><span class='cmtt-12'>jmplt </span><code class='lstinline'><span style='color:#000000'>$val</span></code>              </p></td><td class='td11' id='TBL-52-20-2' style='white-space:normal; text-align:left;'> <!-- l. 1914 --><p class='noindent'>0,0111     </p></td><td class='td11' id='TBL-52-20-3' style='white-space:normal; text-align:left;'> <!-- l. 1914 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regIP} \leftarrow \begin {cases} \texttt {val}, \text {if lt flag is set} \\ \texttt {regIP} + 1, \text {otherwise} \end {cases}\)</span>                               </p></td>
-</tr><tr id='TBL-52-21-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-21-1' style='white-space:normal; text-align:left;'> <!-- l. 1919 --><p class='noindent'><span class='cmtt-12'>jmpeq </span><code class='lstinline'><span style='color:#000000'>$val</span></code>              </p></td><td class='td11' id='TBL-52-21-2' style='white-space:normal; text-align:left;'> <!-- l. 1919 --><p class='noindent'>0,1000     </p></td><td class='td11' id='TBL-52-21-3' style='white-space:normal; text-align:left;'> <!-- l. 1919 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regIP} \leftarrow \begin {cases} \texttt {val}, \text {if eq flag is set} \\ \texttt {regIP} + 1, \text {otherwise} \end {cases}\)</span>                               </p></td>
+<div class='tabular'> <table class='tabular' id='TBL-52'><colgroup id='TBL-52-1g'><col id='TBL-52-1' /></colgroup><colgroup id='TBL-52-2g'><col id='TBL-52-2' /></colgroup><colgroup id='TBL-52-3g'><col id='TBL-52-3' /></colgroup><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr><tr id='TBL-52-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-1-1' style='white-space:normal; text-align:left;'> <!-- l. 1891 --><p class='noindent'><span class='cmbx-12'>Mnemonic</span>                  </p></td><td class='td11' id='TBL-52-1-2' style='white-space:normal; text-align:left;'> <!-- l. 1891 --><p class='noindent'><span class='cmbx-12'>Opcode</span>  </p></td><td class='td11' id='TBL-52-1-3' style='white-space:normal; text-align:left;'> <!-- l. 1891 --><p class='noindent'><span class='cmbx-12'>Semantics</span>                              </p></td>
+</tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr><tr id='TBL-52-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-2-1' style='white-space:normal; text-align:left;'> <!-- l. 1893 --><p class='noindent'><span class='cmtt-12'>load </span><code class='lstinline'><span style='color:#000000'>$regX $memAddr</span></code>      </p></td><td class='td11' id='TBL-52-2-2' style='white-space:normal; text-align:left;'> <!-- l. 1893 --><p class='noindent'>0,0000     </p></td><td class='td11' id='TBL-52-2-3' style='white-space:normal; text-align:left;'> <!-- l. 1893 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regX} \leftarrow \texttt {memAddr}\)</span>                               </p></td>
+</tr><tr id='TBL-52-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-3-1' style='white-space:normal; text-align:left;'> <!-- l. 1894 --><p class='noindent'><span class='cmtt-12'>store </span><code class='lstinline'><span style='color:#000000'>$regX $memAddr</span></code>     </p></td><td class='td11' id='TBL-52-3-2' style='white-space:normal; text-align:left;'> <!-- l. 1894 --><p class='noindent'>0,0001     </p></td><td class='td11' id='TBL-52-3-3' style='white-space:normal; text-align:left;'> <!-- l. 1894 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {memAddr} \leftarrow \texttt {regX} \)</span>                               </p></td>
+</tr><tr id='TBL-52-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-4-1' style='white-space:normal; text-align:left;'> <!-- l. 1895 --><p class='noindent'><span class='cmtt-12'>move </span><code class='lstinline'><span style='color:#000000'>$regX $val</span></code>          </p></td><td class='td11' id='TBL-52-4-2' style='white-space:normal; text-align:left;'> <!-- l. 1895 --><p class='noindent'>0,0010     </p></td><td class='td11' id='TBL-52-4-3' style='white-space:normal; text-align:left;'> <!-- l. 1895 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regX} \leftarrow \texttt {val}\)</span>                               </p></td>
+</tr><tr id='TBL-52-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-5-1' style='white-space:normal; text-align:left;'> <!-- l. 1896 --><p class='noindent'><span class='cmtt-12'>arg1 </span><code class='lstinline'><span style='color:#000000'>$regX</span></code>              </p></td><td class='td11' id='TBL-52-5-2' style='white-space:normal; text-align:left;'> <!-- l. 1896 --><p class='noindent'>0,0011     </p></td><td class='td11' id='TBL-52-5-3' style='white-space:normal; text-align:left;'> <!-- l. 1896 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regA} \leftarrow \texttt {regX}\)</span>                               </p></td>
+</tr><tr id='TBL-52-6-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-6-1' style='white-space:normal; text-align:left;'> <!-- l. 1897 --><p class='noindent'><span class='cmtt-12'>arg2 </span><code class='lstinline'><span style='color:#000000'>$regX</span></code>              </p></td><td class='td11' id='TBL-52-6-2' style='white-space:normal; text-align:left;'> <!-- l. 1897 --><p class='noindent'>0,0100     </p></td><td class='td11' id='TBL-52-6-3' style='white-space:normal; text-align:left;'> <!-- l. 1897 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regB} \leftarrow \texttt {regX}\)</span>                               </p></td>
+</tr><tr id='TBL-52-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-7-1' style='white-space:normal; text-align:left;'> <!-- l. 1898 --><p class='noindent'><span class='cmtt-12'>cmp</span>                     </p></td><td class='td11' id='TBL-52-7-2' style='white-space:normal; text-align:left;'> <!-- l. 1898 --><p class='noindent'>1,0000     </p></td><td class='td11' id='TBL-52-7-3' style='white-space:normal; text-align:left;'> <!-- l. 1898 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {CMP regA regB}\)</span>                               </p></td>
+</tr><tr id='TBL-52-8-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-8-1' style='white-space:normal; text-align:left;'> <!-- l. 1899 --><p class='noindent'><span class='cmtt-12'>add</span>                     </p></td><td class='td11' id='TBL-52-8-2' style='white-space:normal; text-align:left;'> <!-- l. 1899 --><p class='noindent'>1,0001     </p></td><td class='td11' id='TBL-52-8-3' style='white-space:normal; text-align:left;'> <!-- l. 1899 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {regA} + \texttt {regB}\)</span>                               </p></td>
+</tr><tr id='TBL-52-9-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-9-1' style='white-space:normal; text-align:left;'> <!-- l. 1900 --><p class='noindent'><span class='cmtt-12'>neg</span>                     </p></td><td class='td11' id='TBL-52-9-2' style='white-space:normal; text-align:left;'> <!-- l. 1900 --><p class='noindent'>1,0010     </p></td><td class='td11' id='TBL-52-9-3' style='white-space:normal; text-align:left;'> <!-- l. 1900 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \text {NOT regA} + 1\)</span>                               </p></td>
+</tr><tr id='TBL-52-10-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-10-1' style='white-space:normal; text-align:left;'> <!-- l. 1901 --><p class='noindent'><span class='cmtt-12'>and</span>                     </p></td><td class='td11' id='TBL-52-10-2' style='white-space:normal; text-align:left;'> <!-- l. 1901 --><p class='noindent'>1,0011     </p></td><td class='td11' id='TBL-52-10-3' style='white-space:normal; text-align:left;'> <!-- l. 1901 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {regA AND regB}\)</span>                               </p></td>
+</tr><tr id='TBL-52-11-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-11-1' style='white-space:normal; text-align:left;'> <!-- l. 1902 --><p class='noindent'><span class='cmtt-12'>or</span>                      </p></td><td class='td11' id='TBL-52-11-2' style='white-space:normal; text-align:left;'> <!-- l. 1902 --><p class='noindent'>1,0100     </p></td><td class='td11' id='TBL-52-11-3' style='white-space:normal; text-align:left;'> <!-- l. 1902 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {regA OR regB}\)</span>                               </p></td>
+</tr><tr id='TBL-52-12-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-12-1' style='white-space:normal; text-align:left;'> <!-- l. 1903 --><p class='noindent'><span class='cmtt-12'>xor</span>                     </p></td><td class='td11' id='TBL-52-12-2' style='white-space:normal; text-align:left;'> <!-- l. 1903 --><p class='noindent'>1,0101     </p></td><td class='td11' id='TBL-52-12-3' style='white-space:normal; text-align:left;'> <!-- l. 1903 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {regA XOR regB}\)</span>                               </p></td>
+</tr><tr id='TBL-52-13-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-13-1' style='white-space:normal; text-align:left;'> <!-- l. 1904 --><p class='noindent'><span class='cmtt-12'>not</span>                     </p></td><td class='td11' id='TBL-52-13-2' style='white-space:normal; text-align:left;'> <!-- l. 1904 --><p class='noindent'>1,0110     </p></td><td class='td11' id='TBL-52-13-3' style='white-space:normal; text-align:left;'> <!-- l. 1904 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {NOT regA}\)</span>                               </p></td>
+</tr><tr id='TBL-52-14-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-14-1' style='white-space:normal; text-align:left;'> <!-- l. 1905 --><p class='noindent'><span class='cmtt-12'>rotl</span>                    </p></td><td class='td11' id='TBL-52-14-2' style='white-space:normal; text-align:left;'> <!-- l. 1905 --><p class='noindent'>1,0111     </p></td><td class='td11' id='TBL-52-14-3' style='white-space:normal; text-align:left;'> <!-- l. 1905 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {regA[6:0]\_regA[7]}\)</span>                               </p></td>
+</tr><tr id='TBL-52-15-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-15-1' style='white-space:normal; text-align:left;'> <!-- l. 1906 --><p class='noindent'><span class='cmtt-12'>rotr</span>                    </p></td><td class='td11' id='TBL-52-15-2' style='white-space:normal; text-align:left;'> <!-- l. 1906 --><p class='noindent'>1,1000     </p></td><td class='td11' id='TBL-52-15-3' style='white-space:normal; text-align:left;'> <!-- l. 1906 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {regA[0]\_regA[7:1]}\)</span>                               </p></td>
+</tr><tr id='TBL-52-16-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-16-1' style='white-space:normal; text-align:left;'> <!-- l. 1907 --><p class='noindent'><span class='cmtt-12'>shiftl</span>                  </p></td><td class='td11' id='TBL-52-16-2' style='white-space:normal; text-align:left;'> <!-- l. 1907 --><p class='noindent'>1,1001     </p></td><td class='td11' id='TBL-52-16-3' style='white-space:normal; text-align:left;'> <!-- l. 1907 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {regA[6:0]\_0}\)</span>                               </p></td>
+</tr><tr id='TBL-52-17-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-17-1' style='white-space:normal; text-align:left;'> <!-- l. 1908 --><p class='noindent'><span class='cmtt-12'>shiftr</span>                  </p></td><td class='td11' id='TBL-52-17-2' style='white-space:normal; text-align:left;'> <!-- l. 1908 --><p class='noindent'>1,1010     </p></td><td class='td11' id='TBL-52-17-3' style='white-space:normal; text-align:left;'> <!-- l. 1908 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {0\_regA[7:1]}\)</span>                               </p></td>
+</tr><tr id='TBL-52-18-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-18-1' style='white-space:normal; text-align:left;'> <!-- l. 1909 --><p class='noindent'><span class='cmtt-12'>jmp </span><code class='lstinline'><span style='color:#000000'>$val</span></code>                </p></td><td class='td11' id='TBL-52-18-2' style='white-space:normal; text-align:left;'> <!-- l. 1909 --><p class='noindent'>0,0101     </p></td><td class='td11' id='TBL-52-18-3' style='white-space:normal; text-align:left;'> <!-- l. 1909 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regIP} \leftarrow \texttt {val}\)</span>                               </p></td>
+</tr><tr id='TBL-52-19-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-19-1' style='white-space:normal; text-align:left;'> <!-- l. 1910 --><p class='noindent'><span class='cmtt-12'>jmpgt </span><code class='lstinline'><span style='color:#000000'>$val</span></code>              </p></td><td class='td11' id='TBL-52-19-2' style='white-space:normal; text-align:left;'> <!-- l. 1910 --><p class='noindent'>0,0110     </p></td><td class='td11' id='TBL-52-19-3' style='white-space:normal; text-align:left;'> <!-- l. 1910 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regIP} \leftarrow \begin {cases} \texttt {val}, \text {if gt flag is set} \\ \texttt {regIP} + 1, \text {otherwise} \end {cases}\)</span>                               </p></td>
+</tr><tr id='TBL-52-20-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-20-1' style='white-space:normal; text-align:left;'> <!-- l. 1915 --><p class='noindent'><span class='cmtt-12'>jmplt </span><code class='lstinline'><span style='color:#000000'>$val</span></code>              </p></td><td class='td11' id='TBL-52-20-2' style='white-space:normal; text-align:left;'> <!-- l. 1915 --><p class='noindent'>0,0111     </p></td><td class='td11' id='TBL-52-20-3' style='white-space:normal; text-align:left;'> <!-- l. 1915 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regIP} \leftarrow \begin {cases} \texttt {val}, \text {if lt flag is set} \\ \texttt {regIP} + 1, \text {otherwise} \end {cases}\)</span>                               </p></td>
+</tr><tr id='TBL-52-21-' style='vertical-align:baseline;'><td class='td11' id='TBL-52-21-1' style='white-space:normal; text-align:left;'> <!-- l. 1920 --><p class='noindent'><span class='cmtt-12'>jmpeq </span><code class='lstinline'><span style='color:#000000'>$val</span></code>              </p></td><td class='td11' id='TBL-52-21-2' style='white-space:normal; text-align:left;'> <!-- l. 1920 --><p class='noindent'>0,1000     </p></td><td class='td11' id='TBL-52-21-3' style='white-space:normal; text-align:left;'> <!-- l. 1920 --><p class='noindent'><span class='mathjax-inline'>\(\texttt {regIP} \leftarrow \begin {cases} \texttt {val}, \text {if eq flag is set} \\ \texttt {regIP} + 1, \text {otherwise} \end {cases}\)</span>                               </p></td>
 </tr><tr class='hline' style='border-top:1px solid #000'><td></td><td></td><td></td></tr></table>                                                      </div>
 <figcaption class='caption'><span class='id'>Table 6.2: </span><span class='content'>DX8 ISA</span></figcaption><!-- tex4ht:label?: x1-43003r2  -->
                                                                           
@@ -3289,7 +3291,7 @@ it!
                                                                           
    </figure>
    </div>
-<!-- l. 1930 --><p class='indent'>   Table <a href='#dx-isa'>6.2<!-- tex4ht:ref: tab:dx8-isa  --></a> is a very basic and naive instruction set that I have designed for the
+<!-- l. 1931 --><p class='indent'>   Table <a href='#dx-isa'>6.2<!-- tex4ht:ref: tab:dx8-isa  --></a> is a very basic and naive instruction set that I have designed for the
 DX8 computer. Let’s now try to build some of the components that are needed for
 our CPU. For example, ISA mentions that one should be able to execute <span class='cmbx-12'>add</span>
 instruction, which performs <span class='mathjax-inline'>\(\texttt {regOUT} \leftarrow \texttt {regA} + \texttt {regB}\)</span>. So, the plan is to build a subunit called Arithmetic
@@ -3298,7 +3300,7 @@ Let’s see how we can do this.
    
 </p>
    <h3 class='sectionHead' id='arithmetic'><span class='titlemark'>6.2   </span> <a id='x1-440006.2'></a>Arithmetic</h3>
-<!-- l. 1933 --><p class='noindent'>Suppose I wanted to add two 1-bit inputs <span class='cmtt-12'>in1 </span>and <span class='cmtt-12'>in2</span>. What I would like is to
+<!-- l. 1934 --><p class='noindent'>Suppose I wanted to add two 1-bit inputs <span class='cmtt-12'>in1 </span>and <span class='cmtt-12'>in2</span>. What I would like is to
 build a circuit that gives me their sum in a single bit, as well as their carry (in
 case the sum does not fit in a single bit). Such as circuit is called <span class='cmbx-12'>half adder </span>and
 its truth table can be given as follows:
@@ -3307,7 +3309,7 @@ its truth table can be given as follows:
                                                                           
 
                                                                           
-<!-- l. 1935 --><p class='indent' id='truth-table-for-half-adder'>   <a id='x1-44001r3'></a></p><figure class='float'>
+<!-- l. 1936 --><p class='indent' id='truth-table-for-half-adder'>   <a id='x1-44001r3'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -3322,7 +3324,7 @@ its truth table can be given as follows:
                                                                           
    </figure>
    </div>
-<!-- l. 1951 --><p class='indent'>   This is obviously very simple truth table, and therefore, the circuit for the half
+<!-- l. 1952 --><p class='indent'>   This is obviously very simple truth table, and therefore, the circuit for the half
 adder can be built as given below:
 </p>
    <figure class='figure'> 
@@ -3333,13 +3335,13 @@ adder can be built as given below:
                                                                           
 
                                                                           
-<!-- l. 1955 --><p class='noindent'><img alt='PIC' height='195' src='/assets/courses/comp-arch/figures/c6s2_half_adder_impl.png' width='195' />
+<!-- l. 1956 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c6s2_half_adder_impl.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 1960 --><p class='indent'>   The unfortunate thing about the half adder is that we cannot stack a bunch of
+<!-- l. 1961 --><p class='indent'>   The unfortunate thing about the half adder is that we cannot stack a bunch of
 these half adders to add two multiple-bit numbers, say <span class='mathjax-inline'>\(x_{7:0}\)</span> and <span class='mathjax-inline'>\(y_{7:0}\)</span>. The reason is
 obvious if you think about it for a second: because we have to use the carry
 output of the rightmost bits <span class='mathjax-inline'>\(a_i + b_i\)</span> while adding the bits on the left <span class='mathjax-inline'>\(x_{i+1} + y_{i+1}\)</span>. To do this, we
@@ -3352,7 +3354,7 @@ it:
                                                                           
 
                                                                           
-<!-- l. 1962 --><p class='indent' id='truth-table-for-full-adder'>   <a id='x1-44002r4'></a></p><figure class='float'>
+<!-- l. 1963 --><p class='indent' id='truth-table-for-full-adder'>   <a id='x1-44002r4'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -3370,7 +3372,7 @@ it:
                                                                           
    </figure>
    </div>
-<!-- l. 1982 --><p class='indent'>   With a little bit of SoP/PoS magic, it is easy to realize the following
+<!-- l. 1983 --><p class='indent'>   With a little bit of SoP/PoS magic, it is easy to realize the following
 implementation for the full adder:
 </p>
    <figure class='figure'> 
@@ -3381,13 +3383,13 @@ implementation for the full adder:
                                                                           
 
                                                                           
-<!-- l. 1986 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/c6s2_full_adder_impl.png' width='272' />
+<!-- l. 1987 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c6s2_full_adder_impl.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 1991 --><p class='indent'>   In order to add two 4-bit numbers <span class='mathjax-inline'>\(x_{3:0}\)</span> and <span class='mathjax-inline'>\(y_{3:0}\)</span>, we can stack up 4 full adders as
+<!-- l. 1992 --><p class='indent'>   In order to add two 4-bit numbers <span class='mathjax-inline'>\(x_{3:0}\)</span> and <span class='mathjax-inline'>\(y_{3:0}\)</span>, we can stack up 4 full adders as
 follows:
 </p>
    <figure class='figure'> 
@@ -3398,26 +3400,26 @@ follows:
                                                                           
 
                                                                           
-<!-- l. 1995 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/c6s2_full_adder_4b_impl.png' width='272' />
+<!-- l. 1996 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c6s2_full_adder_4b_impl.png' width='80%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 2000 --><p class='indent'>   I think it is hopefully pretty obvious how we could scale this up to 8 bits or
+<!-- l. 2001 --><p class='indent'>   I think it is hopefully pretty obvious how we could scale this up to 8 bits or
 even further. For our computer, we only need 8-bit adder, so we will stack 4
 more full adders on top of the ones shown above and we will call it a
 day!
    
 </p>
    <h3 class='sectionHead' id='logic'><span class='titlemark'>6.3   </span> <a id='x1-450006.3'></a>Logic</h3>
-<!-- l. 2003 --><p class='noindent'>Performing basic logic on input(s) is much more easier because this is what the
+<!-- l. 2004 --><p class='noindent'>Performing basic logic on input(s) is much more easier because this is what the
 logic gates, such as AND, NOT, OR, do by default. All we need to do to scale
 these logical operations from 1-bit inputs to 8-bit inputs. Doing this is very easy
 and trivial: given two 8-bit inputs <span class='mathjax-inline'>\(x_{7:0}\)</span> and <span class='mathjax-inline'>\(y_{7:0}\)</span>, connect each bit <span class='mathjax-inline'>\(a_i\)</span> and <span class='mathjax-inline'>\(b_i\)</span> to a different
 AND/OR/XOR gate <span class='mathjax-inline'>\(G_i\)</span>, then the final 8-bit output is the concationation of the
 outputs of these gates, <span class='mathjax-inline'>\(\overline {G_7 \dots G_0}\)</span>.
-</p><!-- l. 2005 --><p class='indent'>   What about comparing two 1-bit numbers? Well here is a pretty intuitive
+</p><!-- l. 2006 --><p class='indent'>   What about comparing two 1-bit numbers? Well here is a pretty intuitive
 implementation of 1-bit comparator:
 </p>
    <figure class='figure'> 
@@ -3428,13 +3430,13 @@ implementation of 1-bit comparator:
                                                                           
 
                                                                           
-<!-- l. 2009 --><p class='noindent'><img alt='PIC' height='195' src='/assets/courses/comp-arch/figures/c6s3_comparator_impl.png' width='195' />
+<!-- l. 2010 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c6s3_comparator_impl.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 2014 --><p class='indent'>   If you wonder how you can build it, just remember that the first step is to
+<!-- l. 2015 --><p class='indent'>   If you wonder how you can build it, just remember that the first step is to
 write down the truth table for the comparator. My stupid truth table for the
 circuit above looked like this:
 </p>
@@ -3442,7 +3444,7 @@ circuit above looked like this:
                                                                           
 
                                                                           
-<!-- l. 2016 --><p class='indent' id='truth-table-for-bit-comparator'>   <a id='x1-45001r5'></a></p><figure class='float'>
+<!-- l. 2017 --><p class='indent' id='truth-table-for-bit-comparator'>   <a id='x1-45001r5'></a></p><figure class='float'>
                                                                           
 
                                                                           
@@ -3458,7 +3460,7 @@ circuit above looked like this:
                                                                           
    </figure>
    </div>
-<!-- l. 2032 --><p class='indent'>   If we wanted to extend this circuit to compare 4-bit numbers instead, we could
+<!-- l. 2033 --><p class='indent'>   If we wanted to extend this circuit to compare 4-bit numbers instead, we could
 do it by stacking up a bunch of these simpler 1-bit comparator units
 and adding some extra logic that I will leave for you to figure out on
 your own as an exercise. But here is the circuit for comparing two 4-bit
@@ -3472,18 +3474,18 @@ numbers:
                                                                           
 
                                                                           
-<!-- l. 2036 --><p class='noindent'><img alt='PIC' height='273' src='/assets/courses/comp-arch/figures/c6s3_comparator_4b_impl.png' width='272' />
+<!-- l. 2037 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c6s3_comparator_4b_impl.png' width='80%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 2041 --><p class='indent'>   Scaling this further to 8-bit number comparison, the same simple logic follows.
+<!-- l. 2042 --><p class='indent'>   Scaling this further to 8-bit number comparison, the same simple logic follows.
 Try to do this yourself to see what I mean.
    
 </p>
    <h3 class='sectionHead' id='arithmetic-logic-unit-alu'><span class='titlemark'>6.4   </span> <a id='x1-460006.4'></a>Arithmetic Logic Unit (ALU)</h3>
-<!-- l. 2044 --><p class='noindent'>Now that we have built both <span class='cmbx-12'>arithmetic unit </span>and <span class='cmbx-12'>logic unit</span>, we can combine
+<!-- l. 2045 --><p class='noindent'>Now that we have built both <span class='cmbx-12'>arithmetic unit </span>and <span class='cmbx-12'>logic unit</span>, we can combine
 them under the <span class='cmbx-12'>arithmetic and logic unit</span>. Moreover, we will add some more
 functionality to this ALU bad boy. Here are the things I want my ALU to be
 capable of doing:
@@ -3503,13 +3505,13 @@ capable of doing:
                                                                           
 
                                                                           
-<!-- l. 2054 --><p class='noindent'><img alt='PIC' height='351' src='/assets/courses/comp-arch/figures/c6s4_alu_8b_impl.png' width='350' />
+<!-- l. 2055 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c6s4_alu_8b_impl.png' width='80%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 2059 --><p class='indent'>   Since our ISA has assigned special opcodes for each operation, we connect
+<!-- l. 2060 --><p class='indent'>   Since our ISA has assigned special opcodes for each operation, we connect
 outputs of these arithmetic and logic components (such as rotl, rotr, shiftl,
 shiftl, 8-bit adder, 8-bit comparator, NOTx8, ANDx8, ORx8 XORx8, 2’s
 complementer) to a 16x1 MUX and provide the 4-bit opcode (<span class='mathjax-inline'>\(b_{14:11}\)</span>) as the selector
@@ -3517,7 +3519,7 @@ bits.
    
 </p>
    <h3 class='sectionHead' id='random-access-memory-ram'><span class='titlemark'>6.5   </span> <a id='x1-470006.5'></a>Random Access Memory (RAM)</h3>
-<!-- l. 2062 --><p class='noindent'>Having learned about the latches and flip-flops, building an 8-bit register is easy:
+<!-- l. 2063 --><p class='noindent'>Having learned about the latches and flip-flops, building an 8-bit register is easy:
 just stack 8 flip-flops (or latches if you don’t want edge-triggered memory). Since
 we want edge-triggered memory, here is a simple implementation by using 8 D
 flip-flops, all in sync with the global clock:
@@ -3530,13 +3532,13 @@ flip-flops, all in sync with the global clock:
                                                                           
 
                                                                           
-<!-- l. 2066 --><p class='noindent'><img alt='PIC' height='269' src='/assets/courses/comp-arch/figures/c6s5_reg_8b_impl.png' width='269' />
+<!-- l. 2067 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c6s5_reg_8b_impl.png' width='50%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 2071 --><p class='indent'>   We will come back to this 8-bit register in a bit. Now, let’s understand how
+<!-- l. 2072 --><p class='indent'>   We will come back to this 8-bit register in a bit. Now, let’s understand how
 addressing works in a basic <span class='cmbx-12'>bit-level addressable memory</span>. Say there are 4 D
 flip-flops (conventionally indexed from 00 to 11 in binary) and we would
 like to ”use” the third one (at index 10). By ”using”, we have to also
@@ -3554,13 +3556,13 @@ unit:
                                                                           
 
                                                                           
-<!-- l. 2075 --><p class='noindent'><img alt='PIC' height='370' src='/assets/courses/comp-arch/figures/c6s5_ram_4b_impl.png' width='370' />
+<!-- l. 2076 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c6s5_ram_4b_impl.png' width='80%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 2080 --><p class='indent'>   Now, let’s go back our 8-bit register once again. This is essentially what
+<!-- l. 2081 --><p class='indent'>   Now, let’s go back our 8-bit register once again. This is essentially what
 byte-addressable memory uses: we stack up 256 of these 8-bit registers and only
 active one of them depending on the 8-bit address, as well as WE/RE bits. We
 used four 2x1 MUXs to select one out of 4 D flip-flops previously. It is easy to
@@ -3582,20 +3584,20 @@ RAM.
                                                                           
 
                                                                           
-<!-- l. 2084 --><p class='noindent'><img alt='PIC' height='386' src='/assets/courses/comp-arch/figures/c6s5_ram_8x8_impl.png' width='386' />
+<!-- l. 2085 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c6s5_ram_8x8_impl.png' width='80%' />
                                                                           
 
                                                                           
 </p>
    </figure>
-<!-- l. 2089 --><p class='indent'>   The figure above shows the construction of 8x8 RAM by using four 6x8 RAM
+<!-- l. 2090 --><p class='indent'>   The figure above shows the construction of 8x8 RAM by using four 6x8 RAM
 units, each of which is similarly constructed by using four 4x8 RAM units
 (this goes on until we use four 8-bit registers to construct a 2x2 RAM
 unit).
    
 </p>
    <h3 class='sectionHead' id='the-dx-computer'><span class='titlemark'>6.6   </span> <a id='x1-480006.6'></a>The DX8 Computer</h3>
-<!-- l. 2092 --><p class='noindent'>We are going to build the four high-level components that we are going to use to
+<!-- l. 2093 --><p class='noindent'>We are going to build the four high-level components that we are going to use to
 assembly my DX8 computer. These components are the following:
 </p>
       <ul class='itemize1'>
@@ -3613,10 +3615,10 @@ assembly my DX8 computer. These components are the following:
                                                                           
 
                                                                           
-<!-- l. 2101 --><p class='indent'>   It is very natural to ask why the hell we need a thing called <span class='cmbx-12'>stepper </span>in the
+<!-- l. 2102 --><p class='indent'>   It is very natural to ask why the hell we need a thing called <span class='cmbx-12'>stepper </span>in the
 first place. Well, to understand the reason we need it, I first need to introduce the
 four main stages of computation that goes inside a computer:
-</p><!-- l. 2103 --><p class='indent'>
+</p><!-- l. 2104 --><p class='indent'>
       </p><ol class='enumerate1'>
 <li class='enumerate' id='x1-48002x1'><span class='cmbx-12'>Fetch </span>- in this stage Controller sets the RE control bits of RAM to read
       data, and sets the WE control bits of Register file and other bunch of
@@ -3634,10 +3636,10 @@ four main stages of computation that goes inside a computer:
 <li class='enumerate' id='x1-48008x4'><span class='cmbx-12'>Load </span>- in this stage the temporarily saved results from the previous
       stage gets written back to the main memory unit (RAM) if needed,
       and cycle repeats again.</li></ol>
-<!-- l. 2110 --><p class='indent'>   There are different ways of going through these 4 stages inside computers in
+<!-- l. 2111 --><p class='indent'>   There are different ways of going through these 4 stages inside computers in
 general. Here are 3 different ways that a computer can be built to go through
 these <span class='cmbx-12'>Fetch-Decode-Execute-Load </span>stages:
-</p><!-- l. 2112 --><p class='indent'>
+</p><!-- l. 2113 --><p class='indent'>
                                                                           
 
                                                                           
@@ -3652,7 +3654,7 @@ these <span class='cmbx-12'>Fetch-Decode-Execute-Load </span>stages:
 <li class='enumerate' id='x1-48014x3'><span class='cmbx-12'>Pipelined  </span>processing   further   imporoves   the   performance   of   a
       multi-cycle CPU by not putting the next instructions throught the idle
       stages not used by the current instruction anymore.</li></ol>
-<!-- l. 2118 --><p class='indent'>   If you do not fully understand what is <span class='cmbx-12'>pipelining</span>, do not worry about it too
+<!-- l. 2119 --><p class='indent'>   If you do not fully understand what <span class='cmbx-12'>pipelining </span>is, do not worry about it too
 much for now. I have decided that I want to go with multi-cycle processor design
 for the DX8 CPU. You can view it as a tradeoff for performance and simplicity for
 this book. Building single-cycle is the simplest and the pipelined is the
@@ -3660,85 +3662,377 @@ hardest, while single-cycle is the least efficient and the pipelined is the
 most efficient. This leaves the multi-cycle CPU in the middle: moderate
 complexity in design and moderate performance in practice! That’s what I
 wanted.
+   
 </p>
-   <figure class='figure' id='x1-48015r3'><span id='step-stepper-implementation'></span> 
-
+   <h4 class='subsectionHead' id='singlecycle-multicycle-pipelined-design'><span class='titlemark'>6.6.1   </span> <a id='x1-490006.6.1'></a>Single-cycle, Multi-cycle, Pipelined Design</h4>
+<!-- l. 2122 --><p class='noindent'>We said there are 4 stages of electricity running inside our computer: (1)
+electricity running to fetch instruction from main memory to the instruction
+register IR, (2) electricity running to decode the fetched IR content to know what
+control signals should be sent to the rest of the hardware to execute the
                                                                           
 
                                                                           
-
-                                                                          
-
-                                                                          
-<!-- l. 2122 --><p class='noindent'><img alt='PIC' height='386' src='/assets/courses/comp-arch/figures/c6s6_stepper_impl.png' width='386' />
+instruction in IR, (3) electricity running to actually follow the generated control
+signal to the different hardware components in order to execute the instruction
+and save results into their corresponding registers, (4) electricity running to store
+these results held in temporary registers into the main memory if needed. Well,
+having 4 stages like this makes the design process easier and modular. Here is the
+roughly drawn picture illustrating these 4 stages in a single-cycle and multi-cycle
+processor:
 </p>
-<figcaption class='caption'><span class='id'>Figure 6.3: </span><span class='content'>8-step Stepper implementation.</span></figcaption><!-- tex4ht:label?: x1-48015r3  -->
+   <figure class='figure' id='x1-49001r3'><span id='fetchdecodeexecuteload-in-top-singlecycle-and-bottom-multicycle-cpu'></span> 
+
+                                                                          
+
+                                                                          
+
+                                                                          
+
+                                                                          
+<!-- l. 2126 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/fdel-single-cycle.png' width='50%' />
+</p><!-- l. 2128 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/fdel-multi-cycle.png' width='50%' />
+</p>
+<figcaption class='caption'><span class='id'>Figure 6.3: </span><span class='content'>Fetch-Decode-Execute-Load in <span class='cmbx-12'>(top) </span>single-cycle and <span class='cmbx-12'>bottom)</span>
+multi-cycle CPU.</span></figcaption><!-- tex4ht:label?: x1-49001r3  -->
                                                                           
 
                                                                           
    </figure>
-   <figure class='figure' id='x1-48016r4'><span id='bit-pseudocpu-implementation'></span><span id='register-file-implementation-with-addressable-bit-register-r-r'></span> 
-
-                                                                          
-
-                                                                          
-<a id='x1-48017r5'></a>
-                                                                          
-
-                                                                          
-<div class='minipage'><!-- l. 2130 --><p class='noindent'><img alt='PIC' height='347' src='/assets/courses/comp-arch/figures/c6s6_reg_3x8_impl.png' width='347' />
+<!-- l. 2133 --><p class='indent'>   In a pipelined processing, the unused stages by the current instruction is given
+to the use for the next instruction. This makes the next instruction to already
+start executing even when the previous instruction is not completely finished with
+all the stages. This is shown in the figure below clearly:
 </p>
-<figcaption class='caption'><span class='id'>Figure 6.4: </span><span class='content'>Register File implementation with 8 addressable 8-bit
-register: <span class='mathjax-inline'>\(\texttt {R0}_{7:0}, \dots , \texttt {R7}_{7:0}\)</span>.</span></figcaption><!-- tex4ht:label?: x1-48016r4  -->                                                          </div>
-<div class='minipage'><!-- l. 2138 --><p class='noindent'><img alt='PIC' height='347' src='/assets/courses/comp-arch/figures/c6s6_cpu_8b_impl.png' width='347' />
+   <figure class='figure' id='x1-49002r4'><span id='fetchdecodeexecuteload-in-top-multicycle-and-bottom-pipelined-cpu'></span> 
+
+                                                                          
+
+                                                                          
+
+                                                                          
+
+                                                                          
+<!-- l. 2137 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/fdel-multi-cycle-blocking.png' width='90%' />
+</p><!-- l. 2139 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/fdel-pipelined.png' width='90%' />
 </p>
-<figcaption class='caption'><span class='id'>Figure 6.5: </span><span class='content'>8-bit (pseudo-)CPU implementation.</span></figcaption><!-- tex4ht:label?: x1-48017r5  -->                   </div>
+<figcaption class='caption'><span class='id'>Figure 6.4: </span><span class='content'>Fetch-Decode-Execute-Load in <span class='cmbx-12'>(top) </span>multi-cycle and <span class='cmbx-12'>(bottom)</span>
+pipelined CPU.</span></figcaption><!-- tex4ht:label?: x1-49002r4  -->
                                                                           
 
                                                                           
    </figure>
-   <figure class='figure' id='x1-48018r6'><span id='controller-implementation'></span> 
-
-                                                                          
-
-                                                                          
-
-                                                                          
-
-                                                                          
-<!-- l. 2146 --><p class='noindent'><img alt='PIC' height='386' src='/assets/courses/comp-arch/figures/c6s6_controller_impl.png' width='386' />
+<!-- l. 2144 --><p class='indent'>   Speaking of optimizing CPU performance, here is something that I want to
+mention very briefly for the curious readers out there. The <span class='cmti-12'>amount of time it
+takes for the CPU to finish one instruction </span>is called <span class='cmbx-12'>latency</span>, and the
+<span class='cmti-12'>number of instructions finished in each “second” </span>is called <span class='cmbx-12'>throughput</span>.
+Moving from single-cycle to multi-cycle processor design clearly improves
+performance by reducing the latency, and moving from multi-cycle to pipelined
+processor does not inherently change the latency (that is, an instruction
+still takes the same 4 stages in multiple cycles to finish) but increases
+the throughput. This can be clearly observed from the figure above as
+follows:
 </p>
-<figcaption class='caption'><span class='id'>Figure 6.6: </span><span class='content'>Controller implementation.</span></figcaption><!-- tex4ht:label?: x1-48018r6  -->
+      <ul class='itemize1'>
+      <li class='itemize'>If the longest instruction takes 100 ns then the clock period must be
+      at least 100 ns in single-cycle CPU in order to finish even the hardest
+      instruction properly;
+      </li>
+      <li class='itemize'>In a single cycle CPU, setting clock period to 100 ns will also cause
+      every instruction to finish in 100 ns (even if some instruction could
+      have been finished sooner than that);
+      </li>
+      <li class='itemize'>Multi-cycle  CPU  solves  this  problem  by  allocating  varying  number
+      of  cycles  for  each  stage  in  Fetch-Decode-Execute-Load;  now,  if  an
+      instruction could be fetched in 2 cycles then only 2 cycles are spared
+      for it, and if a single cycle is enough for decoding then only single cycle
+      is spared for decoding, and so on;
+      </li>
+      <li class='itemize'>However,  the  next  instruction  must  wait  for  the  current  one  to
+      completely finish in multi-cycle CPU; but if current instruction has
+      already finished the Fetch stage and now is processed in the Decode
+                                                                          
+
+                                                                          
+      stage, why shouldn’t we allow the next instruction to be fetched since
+      our “fetcher” is idle?
+      </li>
+      <li class='itemize'>Pipelined CPU solves this problem by pipelining instructions next to
+      one another, increasing the throughput.</li></ul>
+<!-- l. 2154 --><p class='indent'>   Even though the latency does not change when we go from multi-cycle
+CPU to pipelined one (see the diagram above again – clock period is the
+same for both), in multi-cycle design it would take 24 cycles to execute 3
+instructions (assuming each phase takes exactly 2 cycles, and therefore,
+each instruction takes exactly 8 cycles), whereas in pipelined design it
+would take 10 cycles for the same 3 instructions to finish. In this example,
+throughput for the multi-cycle CPU would be <span class='mathjax-inline'>\(\frac {3}{24} = 0.125\)</span>, and for pipelined CPU
+it would be <span class='mathjax-inline'>\(\frac {3}{10} = 0.3\)</span>; this is 2.4x more throughput… 2.4x more instructions per
+cycle.
+   
+</p>
+   <h4 class='subsectionHead' id='stepper'><span class='titlemark'>6.6.2   </span> <a id='x1-500006.6.2'></a>Stepper</h4>
+<!-- l. 2157 --><p class='noindent'>To have a clear separation of which phase is executing for a given instruction, we
+are going to build a component called <span class='cmbx-12'>stepper</span>. Stepper has one external
+<span class='cmtt-12'>reset </span>input. It operates with the clock signal to output one-hot encoded
+values to indicate which stage the CPU should be in the current clock
+cycle. To build a stepper, we can use a binary counter and a decoder as
+follows:
+</p>
+   <figure class='figure' id='x1-50001r5'><span id='step-stepper-implementation'></span> 
+
+                                                                          
+
+                                                                          
+
+                                                                          
+
+                                                                          
+<!-- l. 2161 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c6s6_stepper_impl.png' width='50%' />
+</p>
+<figcaption class='caption'><span class='id'>Figure 6.5: </span><span class='content'>8-step Stepper implementation.</span></figcaption><!-- tex4ht:label?: x1-50001r5  -->
                                                                           
 
                                                                           
    </figure>
-   <figure class='figure' id='x1-48019r7'><span id='the-dx-computer1'></span> 
-
-                                                                          
-
-                                                                          
-
-                                                                          
-
-                                                                          
-<!-- l. 2153 --><p class='noindent'><img alt='PIC' height='386' src='/assets/courses/comp-arch/figures/c6s6_dx8.png' width='386' />
+<!-- l. 2166 --><p class='indent'>   To build DX8, I am going to allocate maximum of 2 steps (or 2 clock cycles)
+for each stage. Therefore, <span class='cmbx-12'>Fetch </span>will take 2 clock cycles (steps 1 and 2), <span class='cmbx-12'>Decode</span>
+will take the next 2 clock cycles after <span class='cmbx-12'>Fetch </span>(steps 3 and 4), <span class='cmbx-12'>Execute </span>will take
+the next 2 clock cycles (that is steps 5 and 6), and <span class='cmbx-12'>Load </span>will take the last 2 clock
+cycles (steps 7 and 8). Notice that the stepper will go from step 1 to step 8, and
+then it will go back to step 1 again, and the same behavior will repeat. This is
+literally what stepper is useful for: for telling us which stage we are in
+currently.
+</p><!-- l. 2168 --><p class='indent'>   Before ending this section, let me briefly show you another pair of useful
+components that are going to be used in DX8: <span class='cmbx-12'>register file with 8 8-bit
+registers </span>and <span class='cmbx-12'>8-bit ALU</span>. Designing the register file is really easy since we have
+already seen how RAM is built. We will use the same logic to build 3x8 RAM
+(byte-addressable RAM with 3-bit addresses):
 </p>
-<figcaption class='caption'><span class='id'>Figure 6.7: </span><span class='content'>The DX8 Computer!</span></figcaption><!-- tex4ht:label?: x1-48019r7  -->
+   <figure class='figure' id='x1-50002r6'><span id='register-file-implementation-with-addressable-bit-register-r-r'></span> 
+
+                                                                          
+
+                                                                          
+
+                                                                          
+
+                                                                          
+<!-- l. 2172 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c6s6_reg_3x8_impl.png' width='80%' />
+</p>
+<figcaption class='caption'><span class='id'>Figure 6.6: </span><span class='content'>Register File implementation with 8 addressable 8-bit register: <span class='mathjax-inline'>\(\texttt {R0}_{7:0}, \dots , \texttt {R7}_{7:0}\)</span>.</span></figcaption><!-- tex4ht:label?: x1-50002r6  -->
                                                                           
 
                                                                           
    </figure>
+<!-- l. 2176 --><p class='indent'>   The register file built in the figure above actually holds 16 registers, but we
+will only use the first 8 of them. Now, let’s see our ALU component that we built
+previously but did not “containarize” it.
+</p>
+   <figure class='figure' id='x1-50003r7'><span id='bit-pseudocpu-implementation'></span> 
+
                                                                           
 
                                                                           
-<!-- l. 2158 --><p class='indent'>
+
+                                                                          
+
+                                                                          
+<div class='minipage'><!-- l. 2181 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c6s6_cpu_8b_impl.png' width='65%' />
+</p>
+<figcaption class='caption'><span class='id'>Figure 6.7: </span><span class='content'>8-bit (pseudo-)CPU implementation.</span></figcaption><!-- tex4ht:label?: x1-50003r7  -->                   </div>
+                                                                          
+
+                                                                          
+   </figure>
+<!-- l. 2187 --><p class='indent'>   There you go. We have a 8-bit ALU component as well as the register
+file.
+   
+</p>
+   <h4 class='subsectionHead' id='controller'><span class='titlemark'>6.6.3   </span> <a id='x1-510006.6.3'></a>Controller</h4>
+<!-- l. 2190 --><p class='noindent'>We need to build the last component before we put everything together for my
+DX8 computer. The component we are going to build is called <span class='cmbx-12'>Control Unit </span>or
+<span class='cmbx-12'>Controller</span>. But you may wonder why we need such a component in the first
+place. Let me explain.
+</p><!-- l. 2192 --><p class='indent'>   Suppose we are in the first stage where we need to fetch an instruction from
+the main memory into the instruction register IR. The question is, which
+wires are going to be active during this stage? To be able to answer this
+question, let’s see the <span class='cmbx-12'>data path </span>of the DX8 computer that I gave you
+earlier:
+</p>
+   <figure class='figure' id='x1-51001r8'><span id='data-path-for-the-dx-computer-while-fetching'></span> 
+
+                                                                          
+
+                                                                          
+
+                                                                          
+
+                                                                          
+<!-- l. 2196 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/dx8-datapath-fetch.png' width='80%' />
+</p>
+<figcaption class='caption'><span class='id'>Figure 6.8: </span><span class='content'>Data path for the DX8 computer while <span class='cmbx-12'>fetching</span>.</span></figcaption><!-- tex4ht:label?: x1-51001r8  -->
+                                                                          
+
+                                                                          
+   </figure>
+<!-- l. 2201 --><p class='indent'>   When decoding the arguments present in the instruction must be
+sent to their corresponding register regA and regB and the operation
+must be sent in 4-bits to the ALU, assuming it is an ALU instruction.
+Therefore, the data path for decoding should roughly look like something
+below:
+</p>
+   <figure class='figure' id='x1-51002r9'><span id='data-path-for-the-dx-computer-while-decoding'></span> 
+
+                                                                          
+
+                                                                          
+
+                                                                          
+
+                                                                          
+<!-- l. 2205 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/dx8-datapath-decode.png' width='80%' />
+</p>
+<figcaption class='caption'><span class='id'>Figure 6.9: </span><span class='content'>Data path for the DX8 computer while <span class='cmbx-12'>decoding</span>.</span></figcaption><!-- tex4ht:label?: x1-51002r9  -->
+                                                                          
+
+                                                                          
+   </figure>
+   <figure class='figure' id='x1-51003r10'><span id='data-path-for-the-dx-computer-while-executing'></span> 
+
+                                                                          
+
+                                                                          
+
+                                                                          
+
+                                                                          
+<!-- l. 2212 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/dx8-datapath-execute.png' width='80%' />
+</p>
+<figcaption class='caption'><span class='id'>Figure 6.10: </span><span class='content'>Data path for the DX8 computer while <span class='cmbx-12'>executing</span>.</span></figcaption><!-- tex4ht:label?: x1-51003r10  -->
+                                                                          
+
+                                                                          
+   </figure>
+   <figure class='figure' id='x1-51004r11'><span id='data-path-for-the-dx-computer-while-loading'></span> 
+
+                                                                          
+
+                                                                          
+
+                                                                          
+
+                                                                          
+<!-- l. 2219 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/dx8-datapath-load.png' width='80%' />
+</p>
+<figcaption class='caption'><span class='id'>Figure 6.11: </span><span class='content'>Data path for the DX8 computer while <span class='cmbx-12'>loading</span>.</span></figcaption><!-- tex4ht:label?: x1-51004r11  -->
+                                                                          
+
+                                                                          
+   </figure>
+<!-- l. 2224 --><p class='indent'>   Now that we know what wires become “hot” during each and every stage of
+clock cycles, how do we make these wires become “hot” and active? Well, we do it
+by basically read-enabling outputs of a source component and write-enabling the
+target component that the data needs to transfer to. Controlling these
+read-enable, write-enable, or some of the select bits of MUXs used to transfer data
+is the job of <span class='cmbx-12'>controller</span>. The controller takes signal from various sources,
+important one being the stepper’s output to know which stage is executing and
+the instruction itself, and decides which enable/select bits must be turned on and
+off for other components.
+</p>
+   <figure class='figure' id='x1-51005r12'><span id='controller-implementation'></span> 
+
+                                                                          
+
+                                                                          
+
+                                                                          
+
+                                                                          
+<!-- l. 2228 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c6s6_controller_impl.png' width='95%' />
+</p>
+<figcaption class='caption'><span class='id'>Figure 6.12: </span><span class='content'>Controller implementation.</span></figcaption><!-- tex4ht:label?: x1-51005r12  -->
+                                                                          
+
+                                                                          
+   </figure>
+<!-- l. 2233 --><p class='indent'>   Above you see the implementation of the control unit that is used in DX8. It is
+not too fancy: if you take a look at it closely, you will be able to figure it out
+easily. For example, look at what happens when controller’s <span class='cmbx-12'>s1 </span>input becomes
+high: <span class='cmbx-12'>regFileWE </span>turns high (which is connected to the write-enable input of the
+register file), allowing the instruction to be copied from the main memory to the
+register file during the first cycle of <span class='cmbx-12'>fetching</span>. The inputs and outputs of the
+controller will make sense once you see all the components together inside the
+DX8 computer. That’s when you will be able to track each output and wire to see
+which components get affected by the control outputs. So, let’s see the whole
+thing!
+   
+</p>
+   <h4 class='subsectionHead' id='putting-everything-together'><span class='titlemark'>6.6.4   </span> <a id='x1-520006.6.4'></a>Putting everything together!</h4>
+<!-- l. 2236 --><p class='noindent'>Here is the <span class='rm-qzcmi-x-x-144'>8-bit Dummy </span>computer:
+</p>
+   <figure class='figure' id='x1-52001r13'><span id='the-dx-computer1'></span> 
+
+                                                                          
+
+                                                                          
+
+                                                                          
+
+                                                                          
+<!-- l. 2240 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/c6s6_dx8.png' width='100%' />
+</p>
+<figcaption class='caption'><span class='id'>Figure 6.13: </span><span class='content'>The DX8 Computer!</span></figcaption><!-- tex4ht:label?: x1-52001r13  -->
+                                                                          
+
+                                                                          
+   </figure>
+<!-- l. 2245 --><p class='indent'>   It even has very basic keyboard: <span class='cmbx-12'>8-bit data </span>input switches and <span class='cmbx-12'>8-bit addr</span>
+address switches (with which you can specify the memory address inside RAM
+you want to put your <span class='cmti-12'>input data</span>). Before I explain how input system works
+for this computer, let me first tell you the difference between a (push)
+<span class='cmbx-12'>button </span>and a <span class='cmbx-12'>switch</span>. A button sends high signal through its output
+wire as long as it is pressed; its output immediately drops to 0 when you
+lift your finger up. In contrast, a switch becomes ON (sends high signal
+through its output wire) once you turn it on, and then you can keep your
+fingers away from it and it will still keep sending 1 through the wire; it will
+become OFF again once you turn it off and then it will stay OFF unless
+you turn it on again later on. The difference may sound subtle, but it is
+important: to make push button become ON (to send high signal) you need to
+actively use your finger to press it, whereas you only need your finger
+once to turn on the switch. Having clarified this difference between these
+two essential input components, this is how you can operate the DX8
+computer:
+      </p><ol class='enumerate1'>
+<li class='enumerate' id='x1-52003x1'>Turn on the single-bit <span class='cmbx-12'>reset </span>switch.
+      </li>
+<li class='enumerate' id='x1-52005x2'>
+      <!-- l. 2249 --><p class='noindent'>If you want to program the computer before letting it run:
+           </p><ol class='enumerate2'>
+<li class='enumerate' id='x1-52007x1'>Put in the data bits in the <span class='cmbx-12'>8-bit data </span>switch.
+           </li>
+<li class='enumerate' id='x1-52009x2'>Put in the address bits in the <span class='cmbx-12'>8-bit addr </span>switch.
+                                                                          
+
+                                                                          
+           </li>
+<li class='enumerate' id='x1-52011x3'>Push the <span class='cmbx-12'>write </span>button (it is essentially the same as turning on
+           1-bit switch and then turning it off instantly).
+           </li>
+<li class='enumerate' id='x1-52013x4'>Repeat  this  process  as  long  as  you  haven’t  finished  putting
+           everything you need in the main memory.</li></ol>
+      </li>
+<li class='enumerate' id='x1-52015x3'>Turn off the <span class='cmbx-12'>reset </span>switch and the DX8 will start working.</li></ol>
+<!-- l. 2259 --><p class='indent'>   I hope you enjoyed reading this book. You can find everything related to DX8
+in the following github repo:  <a href='https://github.com/AliKhudiyev/alikhudiyev.github.io/tree/main//assets/courses/comp-arch'>dx8-course-material</a>.
+                                                                          
+
+                                                                          
+</p><!-- l. 2261 --><p class='indent'>
                                                                           
 
                                                                           
 </p>
-   <h2 class='chapterHead' id='epilogue'><span class='titlemark'>Chapter 7</span><br /><a id='x1-490007'></a>Epilogue</h2>
-<!-- l. 2159 --><p class='noindent'>You have reached the end of this journey. Thanks for reading this unpolished
+   <h2 class='chapterHead' id='epilogue'><span class='titlemark'>Chapter 7</span><br /><a id='x1-530007'></a>Epilogue</h2>
+<!-- l. 2262 --><p class='noindent'>You have reached the end of this journey. Thanks for reading this unpolished
 draft book, which is more like a lecture notes from the caveman. I want you to
 know that any constructive feedback is appreciated. You can contact me via my
 email for this. Now, if you are a sharp reader you may catch a lot of things and
