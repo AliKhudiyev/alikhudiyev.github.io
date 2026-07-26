@@ -3896,6 +3896,17 @@ below:
 
                                                                           
    </figure>
+<!-- l. 2210 --><p class='indent'>   Assuming we are executing an ALU instruction, the wires connecting two
+operands <span class='cmtt-12'>regA </span>and <span class='cmtt-12'>regB </span>to the ALU (because ALU will be reading inputs from
+these registers), the wire connecting <span class='cmtt-12'>IR </span>to ALU (because ALU will output the
+result of the operation corresponding to the instruction held in the <span class='cmtt-12'>IR</span>), the wires
+connecting ALU to the temporary output registers <span class='cmtt-12'>regOUT </span>and <span class='cmtt-12'>regFLAG</span>
+(because ALU ouput will be stored in these registers), and a bunch of wires
+connected/connecting the Controller (because Controller decides these control
+signals that I mentioned based on the context, such as Stepper’s output and IR’s
+content) on the datapath will need to become active. The active wires are shown
+with orange color in the figure below:
+</p>
    <figure class='figure' id='x1-51003r10'><span id='data-path-for-the-dx-computer-while-executing'></span> 
 
                                                                           
@@ -3912,6 +3923,11 @@ below:
 
                                                                           
    </figure>
+<!-- l. 2219 --><p class='indent'>   Finally, the <span class='cmti-12'>load </span>or <span class='cmti-12'>write-back </span>stage may require <span class='cmtt-12'>regOUT </span>and <span class='cmtt-12'>regFlAG </span>content
+to be moved into the register file, or some register’s content in the register file to
+be stored in the RAM by providing an address from the <span class='cmtt-12'>IP</span>. This is illustrated in
+the figure given below:
+</p>
    <figure class='figure' id='x1-51004r11'><span id='data-path-for-the-dx-computer-while-loading'></span> 
 
                                                                           
