@@ -25,7 +25,7 @@ layout: base
 <section style="margin-bottom: 2em;">
     <h2>Background</h2>
     <p>
-    I realized my deep interest in math and programming when I was a high school student at Turkiye Diyanat Vagfi - Baku Turskish Lyceum (TDV-BTL). After graduating from TDV-BTL, I began my journey in <i>Computer Science</i> with a BSc from French-Azerbaijani University (UFAZ) in 2016. Due to COVID breakdown, I started my MSc at UFAZ in <i>Data Science & Artificial Intelligence</i>. Then, I started my PhD at Strasbourg University in 2022, where I proposed working on making machine learning computationally unbounded by fixing the non-scalability of current AI scaling approaches. Currently, I’m an Engineer/Researcher at UFAZ and my research focus is revolving around the same/similar things that I did in my PhD.
+    I realized my deep interest in math and programming when I was a high school student at Turkiye Diyanat Vagfi - Baku Turskish Lyceum (TDV-BTL). After graduating from TDV-BTL, I began my journey in <i>Computer Science</i> with a BSc from French-Azerbaijani University (UFAZ) in 2016. Due to COVID breakdown, I started my MSc at UFAZ in <i>Data Science & Artificial Intelligence</i>. Then, I started my PhD at Strasbourg University in 2022, where I proposed working on making machine learning computationally unbounded by fixing the non-scalability of current AI scaling approaches. Currently, I’m working as a Program Director at AZSET (AZCON School of Engineering and Technology) in Computer Science department while teaching Computer Architecture and Fundamental Programming courses to undergrads, and my research focus is revolving around the same/similar things that I did in my PhD.
     </p>
 </section>
 
@@ -59,8 +59,14 @@ layout: base
     <h2>Works and Publications</h2>
     <p>Below is a selection of my recent publications. For a full list, see my <a href="https://scholar.google.com/citations?user=OFCiSWIAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>.</p>
     <!-- Example publication with LaTeX equation -->
+    <strong>Peer-reviewed</strong>
     <ul>
-    <li>Capacity-Aware Learning by Rejecting Complex Samples</li>
+    <li><a target="_blank" href="https://doi.org/10.1016/j.procs.2025.09.254">Capacity-Aware Learning by Rejecting Complex Samples</a></li>
+    </ul>
+    <strong>Unpublished</strong>
+    <ul>
+    <li><a href="https://alikhudiyev.github.io/courses/self-study/c/tutorial/book/2025/01/15/c-book-1.html">A Student's C Book I</a></li>
+    <li><a href="https://alikhudiyev.github.io/courses/self-study/computer-architecture/book/2026/05/12/computer-architecture-1.html">A Student's Computer Architecture Book I</a></li>
     </ul>
 </section>
 
