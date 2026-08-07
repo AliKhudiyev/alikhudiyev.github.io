@@ -236,6 +236,11 @@ title: "Quotes"
 ---Alonzo Church
 <hr style="opacity:15%;">
 
+> If you have a wooden stick in your hand, dig the land instead of mining for the gold.
+
+---Ali Khudiyev
+<hr style="opacity:15%;">
+
 > The limits of my language are the limits of my mind. All I know is what I have words for.
 
 ---Ludwig Wittgenstein
