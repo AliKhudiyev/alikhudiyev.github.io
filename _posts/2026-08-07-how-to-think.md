@@ -6,6 +6,9 @@ title: "How to Think as a Student"
 date: 2026-08-07 19:00:00 +0400
 categories: blog education mindset
 ---
+
+This post is for students who choose to pursue academic excellence. Many students may experience better or worse educational practices during their studies. Regardless of your experience, you may still decide whether or not you want to pursue the highest possible goals achievable in academia. If you choose this path to excellence, then you should embrace a new culture, a mindset that will shape your reality from now on. In this post, I describe 8 rules that will hopefully help you to integrate with this kind of culture. It is important to change your mindset for the better, because your actions from now on will impact your future greatly. Now, I leave you with the 8 rules that will be your first informal introduction to achieving academic success.
+
 # Be curious and explore a lot {#rule:be-curious}
 
 You need to get comfortable with being suspicious of everything you are
