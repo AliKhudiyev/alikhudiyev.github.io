@@ -6,7 +6,6 @@ title: "How to Think as a Student"
 date: 2026-08-07 19:00:00 +0400
 categories: blog education mindset
 ---
-
 # Be curious and explore a lot {#rule:be-curious}
 
 You need to get comfortable with being suspicious of everything you are
@@ -30,27 +29,27 @@ should instead be excited when something difficult comes up, because you
 should know that it is something that is pushing the boundaries of your
 knowledge. By tackling something difficult, it is almost always certain
 that you will improve signficantly by the end of the process. Even
-though the thing you encounter might llok like impossible to be cracked,
+though the thing you encounter might look like impossible to be cracked,
 it might still be very worth of trying to crack it.
 
 Imagine a hypothetical scenario: suppose that there is a 100 ton rock in
 front of you, which you would want to lift up by using your human body.
 You may think that there is no point in even trying to lift it up since
-it won't even move a bit in 100 years even if you tried. Well, you are
-probably right about the part that it won't move in 100 years. The part
-you probably miss is the fact that how trying to lift something that
-heavy will improve your power and shape your body greatly. Just not try
-to get under it desparately because you might also get yourself killed
-that way. Even though the rock won't ever move, you will change and
-improve. So, is it really worthless to pursue an impossible goal in
-life? Well, as you see, it might very well be worth of pursuing one; not
-because the initial goal will be achieved, but because you will achieve
-something that you wouldn't if you didn't pursue a goal this hard.
-That's what I mean when I say *"trust the process"* -- you may not see
-progress quickly, but the progress will always be there, waiting to
-shine on you in the right moment. Keep in mind that the important thing
-is finding the balance between trying to lift the rock and letting it
-be.
+it won't move even a bit in 100 years. Well, you are probably right
+about the part that it is highly likely that it won't move in 100 years.
+The part you probably miss is the fact that how trying to lift something
+that heavy will improve your power and shape your body greatly. Just
+don't try to get under it desparately because you might also get
+yourself killed that way. *Even though the rock won't ever move, you
+body and mind will change and improve.* So, is it really worthless to
+pursue an impossible goal in life? Well, as you see, it might very well
+be worth of pursuing one; not because the initial goal will be achieved,
+but because you will achieve something that you wouldn't if you didn't
+pursue a goal this hard. That's what I mean when I say *"trust the
+process"* -- you may not see progress quickly, but the progress will
+always be there, waiting to shine on you in the right moment. Keep in
+mind that the important thing is finding the balance between trying to
+lift the rock and letting it be.
 
 # Do NOT study for grades {#rule:forget-grades}
 
@@ -65,9 +64,9 @@ miserable position by any reasonable life standard. When you fail, and
 YOU WILL FAIL, don't lose your hope nor your discipline. Look at your
 grades once, and then go study the things you failed on. Don't be afraid
 of owning your failures. Be confident enough to speak about them when
-you are asked, and be dedicated to work on the knowledge you have lacked
-constantly to the point where you don't even feel bad for failing in the
-past.
+you are asked, and be dedicated to work constantly on the knowledge you
+have lacked to the point where you don't even feel bad for failing in
+the past.
 
 # Try to do everything by yourself {#rule:own-your-work}
 
@@ -87,8 +86,7 @@ It is very crucial for you to get a feeling for the thing you are
 learning. Knowledge becomes a product of memorization if you don't
 posses the right intuitions for the things that you "*know*". Building
 things on your own from scratch
-([4](#rule:own-your-work){reference-type="ref"
-reference="rule:own-your-work"}) helps you gain vast amount of intution.
+([4](#rule:own-your-work)) helps you gain vast amount of intution.
 You should always develop gut feelings for the things that you are
 taught in your classes. If you speak about something that you don't
 quite feel right about or lack instinctive for it, then you haven't
@@ -113,7 +111,9 @@ makes things straight for you. It doesn't mean you should lay on your
 back and do completely nothing about the thing you struggle
 understanding; in fact, you should always allocate some amount of time
 to think about the very thing that you are struggling with while
-expecting no visible progress during that one week.
+expecting no visible progress during that one week. Do not worry too
+much, you will start seeing progress in a few months if you keep showing
+up for it every day.
 
 # Consistency beats motivation {#rule:be-consistent}
 
@@ -126,8 +126,7 @@ excited to do something because you probably think you will get it done
 pretty soon; in contrast, consistency is all about doing the things over
 and over again, as an emotionless robot, even though you are not seeing
 the results yet. Close your eyes, and *believe in the process
-([2](#rule:expect-difficulty){reference-type="ref"
-reference="rule:expect-difficulty"})*: believe that this non-ending
+([2](#rule:expect-difficulty))*: believe that this non-ending
 cycle of doing the same kinds of things on a daily basis over and over
 again will surely get your somewhere greater.
 
@@ -137,8 +136,8 @@ again will surely get your somewhere greater.
 be greedy or very self-oriented. You are a part of the team with all of
 your group mates in it. Explain them the things you understand, ask them
 to explain you the things you don't understand. It is okay to have a
-competitive mindset, but you should never let yourself to cheat or drag
-others down in order get yourself up high somewhere. It is only a
-healthy competition if you do nothing but work on your own lacking
-aspects to move up. We do need a healthy competition and you should
-definitely have a competitive mindset to a certain extent.
+competitive mindset, but you should never let yourself cheat or drag
+others down in order to get yourself up. It is only a healthy
+competition if you do nothing but work on your own lacking aspects to
+move up. We do need a healthy competition and you should definitely have
+a competitive mindset to a certain extent.
