@@ -3,7 +3,7 @@ layout: post
 author:
 - Ali Khudiyev
 title: "A Student's Computer Architecture Book I"
-categories: courses self-study computer-architecture book
+categories: courses self-study computer-architecture tutorial book
 ---
 
 <!-- <!DOCTYPE html> --> 
@@ -576,7 +576,7 @@ time to compose these smaller detectors to represent our final function
 </p><!-- l. 366 --><p class='indent'>   The logic for constructing the detector for the rows for which our function
 outputs 1 is as follows: we define
 </p>
-   <div class='mathjax-env mathjax-align*'>\begin{align*} f(\text {input}) = \begin {cases} 1, \text {\makecell {if input is given on \\ the \textbf {second row} OR \\ the \textbf {fourth row} OR \\ the \textbf {sixth row} OR \\ the \textbf {seventh row} OR \\ the \textbf {eighth row} \\ of the truth table}} \\ 0, \text {otherwise} \end {cases}. \end{align*}</div>
+   <div class='mathjax-env mathjax-align*'>\begin{align*} f(\text {input}) = \begin {cases} 1, \begin{array}[t]{l} \text{if input is given on} \\ \textit{the \textbf {second row} OR} \\ \text{the \textbf {fourth row} OR} \\ \text{the \textbf {sixth row} OR} \\ \text{the \textbf {seventh row} OR} \\ \text{the \textbf {eighth row}} \\ \text{of the truth table} \end{array} \\ 0, \text {otherwise} \end {cases}. \end{align*}</div>
 <!-- l. 376 --><p class='indent'>   Therefore, we can combine 5 detectors to construct a representation for <span class='mathjax-inline'>\(f\)</span> as
 follows: <span class='mathjax-inline'>\(f(x, y, z) = r_2(x, y, z) + r_4(x, y, z) + r_6(x, y, z) + r_7(x, y, z) + r_8(x, y, z)\)</span>. In other words, we may write <span class='mathjax-inline'>\(f(x, y, z) = \sum m(1, 3, 5, 6, 7)\)</span> – sum of <span class='cmbx-12'>minterms </span>(products).
 </p>
@@ -641,13 +641,13 @@ input is the one given on the first, third, and fifth rows, respectively. Here
 are such three functions: <span class='mathjax-inline'>\(r_0(x, y, z) = x'y'z'\)</span>, <span class='mathjax-inline'>\(r_2(x, y, z) = x'yz'\)</span>, and <span class='mathjax-inline'>\(r_4(x, y, z) = xy'z'\)</span>. Now, we could rewrite <span class='mathjax-inline'>\(f\)</span>’s definition as
 follows:
 </p>
-   <div class='mathjax-block'>\[ f(\text {input}) = \begin {cases} 0, \text {\makecell {if input appears on \\ the \textbf {first row} OR \\ the \textbf {third row} OR \\ the \textbf {fifth row}}} \\ 1, \text {otherwise} \end {cases} \]</div>
+   <div class='mathjax-block'>\[ f(\text {input}) = \begin {cases} 0, \begin{array}[t]{l} \text{if input appears on} \\ \text{the \textbf {first row} OR} \\ \text{the \textbf {third row} OR} \\ \text{the \textbf {fifth row}} \end{array} \\ 1, \text {otherwise} \end {cases} \]</div>
 <!-- l. 398 --><p class='indent'>   To implement this definition of <span class='mathjax-inline'>\(f\)</span>, we could first try to detect whether the input
 appears on one of the rows that make <span class='mathjax-inline'>\(f\)</span>’s output 0 by combining three previously
 built detectors by summing them (SoP): <span class='mathjax-inline'>\(r_0(x, y, z) + r_2(x, y, z) + r_4(x, y, z)\)</span>. Now this SoP formula has the following
 definition:
 </p>
-   <div class='mathjax-block'>\[ r_0(\text {input}) + r_2(\text {input}) + r_4(\text {input}) = \begin {cases} 1, \text {\makecell {if input appears on \\ the \textbf {first row} OR \\ the \textbf {third row} OR \\ the \textbf {fifth row}}} \\ 0, \text {otherwise} \end {cases} \]</div>
+   <div class='mathjax-block'>\[ r_0(\text {input}) + r_2(\text {input}) + r_4(\text {input}) = \begin {cases} 1, \begin{array}[t]{l} \text{if input appears on} \\ \text{the \textbf {first row} OR} \\ \text{the \textbf {third row} OR} \\ \text{the \textbf {fifth row}} \end{array} \\ 0, \text {otherwise} \end {cases} \]</div>
 <!-- l. 407 --><p class='indent'>   Realize how this definition is the complete opposite of the <span class='mathjax-inline'>\(f\)</span>’s definition.
 Therefore, we could just conclude that
 </p>
@@ -721,7 +721,16 @@ outputs:
                                                                           
 
                                                                           
-<div class='tabular'> <table class='tabular' id='TBL-6'><colgroup id='TBL-6-1g'><col id='TBL-6-1' /></colgroup><colgroup id='TBL-6-2g'><col id='TBL-6-2' /></colgroup><colgroup id='TBL-6-3g'><col id='TBL-6-3' /></colgroup><tr id='TBL-6-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-1-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 443 --><p class='noindent'><span class='mathjax-inline'>\(\vcenter {\hbox {\diagbox@pict }}\)</span>      </p></td><td class='td11' colspan='2' id='TBL-6-1-2' style='white-space:nowrap; text-align:center;'>  <div class='multicolumn' style='white-space:nowrap; text-align:center;'>0          1</div></td></tr><tr class='cline'><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-6-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-3-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 445 --><p class='noindent'>00       </p></td><td class='td11' id='TBL-6-3-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 445 --><p class='noindent'>
+<div class='tabular'> <table class='tabular' id='TBL-6'><colgroup id='TBL-6-1g'><col id='TBL-6-1' /></colgroup><colgroup id='TBL-6-2g'><col id='TBL-6-2' /></colgroup><colgroup id='TBL-6-3g'><col id='TBL-6-3' /></colgroup><tr id='TBL-6-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-1-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 443 -->
+<!-- <p class='noindent'><span class='mathjax-inline'>\(\vcenter {\hbox {\diagbox@pict }}\)</span>      </p> -->
+<div class="diagbox-cell">
+  <svg class="diagbox-svg" viewBox="0 0 70 44" preserveAspectRatio="none">
+    <line x1="0" y1="0" x2="70" y2="44" stroke="currentColor" stroke-width="1"/>
+  </svg>
+  <span class="diagbox-label diagbox-label-bl">xy</span>
+  <span class="diagbox-label diagbox-label-tr">z</span>
+</div>
+</td><td class='td11' colspan='2' id='TBL-6-1-2' style='white-space:nowrap; text-align:center;'>  <div class='multicolumn' style='white-space:nowrap; text-align:center;'>0          1</div></td></tr><tr class='cline'><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-6-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-3-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 445 --><p class='noindent'>00       </p></td><td class='td11' id='TBL-6-3-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 445 --><p class='noindent'>
       </p></td><td class='td11' id='TBL-6-3-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 446 --><p class='noindent'>
       </p></td></tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-6-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-6-5-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 447 --><p class='noindent'>01       </p></td><td class='td11' id='TBL-6-5-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 447 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-6-5-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 448 --><p class='noindent'>
       </p></td>
@@ -759,7 +768,16 @@ ordering.
                                                                           
 
                                                                           
-<div class='tabular'> <table class='tabular' id='TBL-9'><colgroup id='TBL-9-1g'><col id='TBL-9-1' /></colgroup><colgroup id='TBL-9-2g'><col id='TBL-9-2' /></colgroup><colgroup id='TBL-9-3g'><col id='TBL-9-3' /></colgroup><tr id='TBL-9-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-1-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 465 --><p class='noindent'><span class='mathjax-inline'>\(\vcenter {\hbox {\diagbox@pict }}\)</span>      </p></td><td class='td11' colspan='2' id='TBL-9-1-2' style='white-space:nowrap; text-align:center;'>  <div class='multicolumn' style='white-space:nowrap; text-align:center;'>0          1</div></td></tr><tr class='cline'><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-9-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-3-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 467 --><p class='noindent'>00       </p></td><td class='td11' id='TBL-9-3-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 467 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-9-3-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 467 --><p class='noindent'>1        </p></td></tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-9-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-5-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 469 --><p class='noindent'>01       </p></td><td class='td11' id='TBL-9-5-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 469 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-9-5-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 469 --><p class='noindent'>1        </p></td>
+<div class='tabular'> <table class='tabular' id='TBL-9'><colgroup id='TBL-9-1g'><col id='TBL-9-1' /></colgroup><colgroup id='TBL-9-2g'><col id='TBL-9-2' /></colgroup><colgroup id='TBL-9-3g'><col id='TBL-9-3' /></colgroup><tr id='TBL-9-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-1-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 465 -->
+<!-- <p class='noindent'><span class='mathjax-inline'>\(\vcenter {\hbox {\diagbox@pict }}\)</span>      </p> -->
+<div class="diagbox-cell">
+  <svg class="diagbox-svg" viewBox="0 0 70 44" preserveAspectRatio="none">
+    <line x1="0" y1="0" x2="70" y2="44" stroke="currentColor" stroke-width="1"/>
+  </svg>
+  <span class="diagbox-label diagbox-label-bl">xy</span>
+  <span class="diagbox-label diagbox-label-tr">z</span>
+</div>
+</td><td class='td11' colspan='2' id='TBL-9-1-2' style='white-space:nowrap; text-align:center;'>  <div class='multicolumn' style='white-space:nowrap; text-align:center;'>0          1</div></td></tr><tr class='cline'><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-9-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-3-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 467 --><p class='noindent'>00       </p></td><td class='td11' id='TBL-9-3-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 467 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-9-3-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 467 --><p class='noindent'>1        </p></td></tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-9-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-5-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 469 --><p class='noindent'>01       </p></td><td class='td11' id='TBL-9-5-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 469 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-9-5-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 469 --><p class='noindent'>1        </p></td>
 </tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-9-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-7-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 471 --><p class='noindent'>11       </p></td><td class='td11' id='TBL-9-7-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 471 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-9-7-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 471 --><p class='noindent'>0        </p></td>
 </tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-9-9-' style='vertical-align:baseline;'><td class='td11' id='TBL-9-9-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 473 --><p class='noindent'>10       </p></td><td class='td11' id='TBL-9-9-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 473 --><p class='noindent'>1        </p></td><td class='td11' id='TBL-9-9-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 473 --><p class='noindent'>1        </p></td>
 </tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr></table>                                                                </div>
@@ -782,7 +800,16 @@ valid.
                                                                           
 
                                                                           
-<div class='tabular'> <table class='tabular' id='TBL-12'><colgroup id='TBL-12-1g'><col id='TBL-12-1' /></colgroup><colgroup id='TBL-12-2g'><col id='TBL-12-2' /></colgroup><colgroup id='TBL-12-3g'><col id='TBL-12-3' /></colgroup><tr id='TBL-12-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-1-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 487 --><p class='noindent'><span class='mathjax-inline'>\(\vcenter {\hbox {\diagbox@pict }}\)</span>      </p></td><td class='td11' colspan='2' id='TBL-12-1-2' style='white-space:nowrap; text-align:center;'>  <div class='multicolumn' style='white-space:nowrap; text-align:center;'>0          1</div></td></tr><tr class='cline'><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-12-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-3-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 489 --><p class='noindent'>00       </p></td><td class='td11' id='TBL-12-3-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 489 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-12-3-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 489 --><p class='noindent'>1        </p></td>
+<div class='tabular'> <table class='tabular' id='TBL-12'><colgroup id='TBL-12-1g'><col id='TBL-12-1' /></colgroup><colgroup id='TBL-12-2g'><col id='TBL-12-2' /></colgroup><colgroup id='TBL-12-3g'><col id='TBL-12-3' /></colgroup><tr id='TBL-12-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-1-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 487 -->
+<!-- <p class='noindent'><span class='mathjax-inline'>\(\vcenter {\hbox {\diagbox@pict }}\)</span>      </p> -->
+<div class="diagbox-cell">
+  <svg class="diagbox-svg" viewBox="0 0 70 44" preserveAspectRatio="none">
+    <line x1="0" y1="0" x2="70" y2="44" stroke="currentColor" stroke-width="1"/>
+  </svg>
+  <span class="diagbox-label diagbox-label-bl">xy</span>
+  <span class="diagbox-label diagbox-label-tr">z</span>
+</div>
+</td><td class='td11' colspan='2' id='TBL-12-1-2' style='white-space:nowrap; text-align:center;'>  <div class='multicolumn' style='white-space:nowrap; text-align:center;'>0          1</div></td></tr><tr class='cline'><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-12-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-3-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 489 --><p class='noindent'>00       </p></td><td class='td11' id='TBL-12-3-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 489 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-12-3-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 489 --><p class='noindent'>1        </p></td>
 </tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-12-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-5-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 491 --><p class='noindent'>01       </p></td><td class='td11' id='TBL-12-5-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 491 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-12-5-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 491 --><p class='noindent'>1        </p></td>
 </tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-12-7-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-7-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 493 --><p class='noindent'>11       </p></td><td class='td11' id='TBL-12-7-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 493 --><p class='noindent'>0        </p></td><td class='td11' id='TBL-12-7-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 493 --><p class='noindent'>0        </p></td>
 </tr><tr class='cline'><td></td><td style='border-top:1px solid #000;'></td><td style='border-top:1px solid #000;'></td></tr><tr id='TBL-12-9-' style='vertical-align:baseline;'><td class='td11' id='TBL-12-9-1' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 495 --><p class='noindent'>10       </p></td><td class='td11' id='TBL-12-9-2' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 495 --><p class='noindent'>1        </p></td><td class='td11' id='TBL-12-9-3' style='white-space:normal; text-align:left; vertical-align:middle;'><!-- l. 495 --><p class='noindent'>1        </p></td>
@@ -1753,7 +1780,7 @@ say:
                                                                           
 
                                                                           
-<!-- l. 1129 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/turnstile_state_diagram.png' width='50%' />
+<!-- l. 1129 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/turnstile_state_diagram.png' width='75%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 5.1: </span><span class='content'>State diagram for a 2-state turnstile.</span></figcaption><!-- tex4ht:label?: x1-26001r1  -->
                                                                           
@@ -2436,7 +2463,7 @@ time step as follows:
                                                                           
 
                                                                           
-<!-- l. 1497 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/sr-latch-set.png' width='50%' />
+<!-- l. 1497 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/sr-latch-set.png' width='75%' />
                                                                           
 
                                                                           
@@ -2453,7 +2480,7 @@ to store 1. Then this is what happens in the next time step:
                                                                           
 
                                                                           
-<!-- l. 1506 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/sr-latch-hold.png' width='50%' />
+<!-- l. 1506 --><p class='noindent'><img alt='PIC'  src='/assets/courses/comp-arch/figures/other/sr-latch-hold.png' width='75%' />
                                                                           
 
                                                                           
