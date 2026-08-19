@@ -31,7 +31,8 @@ higher entrance scores than those of students of the F classes. Based on
 my score, I was put as the first highest-scoring student in the F class.
 Once again, I was the best of the worst... *Obviously, I use the word
 "worst" in a certain context here, not trying to demean anyone in any
-bad way.*
+bad way; not to mention that grades mean nothing in the big picture of
+how things evolve.*
 
 After I graduated from the school, I applied to study computer science
 at UFAZ, a double-degree university. They had an internal examination
@@ -87,3 +88,5 @@ another stairs, you know, for the fun of it.
 <figure>
 <img src="/assets/blog/cartoon_people_on_stairs_jumping.png" width="70%" style="margin: auto;" />
 </figure>
+
+[^1]: Charlotte Payen had a significant impact on my life, and she died due to cancer after a few years.
