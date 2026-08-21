@@ -43,7 +43,7 @@ foundation year in another field, which was free of annual fees and then
 got transferred to the CS faculty at UFAZ with an exemption from annual
 university fees due to my good performance on the foundation year, which
 was appreciated by a
-<a target="_blank" href="https://www.linkedin.com/in/charlotte-payen-724160100/">person</a> in
+<a target="_blank" href="https://www.linkedin.com/in/charlotte-payen-724160100/">person</a>[^1] in
 charge at that time. Anyway, once again, I got the best consequence of
 the worst situation! There were other times similar things happened to
 me after I graduated from UFAZ with a computer science degree, but I
@@ -60,7 +60,7 @@ worst among the best, over and over again.
 
 <figure>
 <img src="/assets/blog/cartoon_man_climbing_stairs.png" width="70%" style="margin: auto;"/>
-<figure>
+</figure>
 
 It is like the drawing above: the worst of the worst $\rightarrow$ the
 best of the worst $\rightarrow$ the worst of the best $\rightarrow$ the

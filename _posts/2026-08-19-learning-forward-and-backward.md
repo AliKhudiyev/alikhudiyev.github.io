@@ -13,7 +13,7 @@ many different ways to attack this new big thing, and you have spent
 hours and hours on it. But still, you don't have a good grasp on it.
 What should you do to make progress and move forward? We will the answer
 to this question in this post; I will talk about my strategy that has
-worked for me when I had the same difficulties.
+worked for me when I had the same kinds of difficulties.
 
 Answering this question is not as simple as it may perphaps seem.
 Humans' learning process is such a complex topic and very poorly

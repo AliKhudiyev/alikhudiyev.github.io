@@ -236,7 +236,7 @@ title: "Quotes"
 ---Alonzo Church
 <hr style="opacity:15%;">
 
-> If you have a wooden stick in your hand, dig the land instead of mining for the gold.
+> If you have a wooden stick in your hand, maybe try digging the land before mining for the gold.
 
 ---Ali Khudiyev
 <hr style="opacity:15%;">
