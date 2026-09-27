@@ -23,8 +23,8 @@ more fundamental experiences for humans are gained by taking actions
 that they are capable of taking by using their limbs. I want you to
 think about this: if knowledge was truly the only way to strive for if
 you wanted to build a better future for yourself, how would a mother
-living in 1000 BCE could have possibly tell her kid that knowledge is
-very important? The people living in 1000 BCE couldn't even probably
+living in 300,000 BCE could have possibly tell her kid that knowledge is
+very important? The people living in 3000,000 BCE couldn't even probably
 talk, let alone having a word in their vocabulary for "knowledge". Then
 what were the parents doing to make their kids live a better life? They
 were probably teaching them how to walk, how to run, how to hun, how to
