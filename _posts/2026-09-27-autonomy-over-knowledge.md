@@ -8,7 +8,7 @@ categories: blog opinion
 ---
 
 When it comes to "what's more importatnt in life?" type of questions,
-many parent tell their kids it is the knowledge that they should have in
+many parents tell their kids it is the knowledge that they should have in
 order to live a better future life. That's why education is a profitable
 business model: people are willing to put their kids through this
 "sacred" system, because the conception is that one cannot otherwise
@@ -24,7 +24,7 @@ that they are capable of taking by using their limbs. I want you to
 think about this: if knowledge was truly the only way to strive for if
 you wanted to build a better future for yourself, how would a mother
 living in 300,000 BCE could have possibly tell her kid that knowledge is
-very important? The people living in 3000,000 BCE couldn't even probably
+very important? The people living in 300,000 BCE couldn't even probably
 talk, let alone having a word in their vocabulary for "knowledge". Then
 what were the parents doing to make their kids live a better life? They
 were probably teaching them how to walk, how to run, how to hun, how to
